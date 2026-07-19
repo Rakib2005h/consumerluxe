@@ -1,2799 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Consumer Luxe — Curated Rewards for Smart Shoppers</title>
-  <meta name="description" content="Consumer Luxe curates premium fashion, jewelry, beauty, fitness, electronics and lifestyle deals for smart shoppers. Affiliate deals, shopping guides and verified recommendations." />
-  <meta name="keywords" content="consumer luxe, fashion deals, jewelry deals, beauty offers, lifestyle rewards, smart shopping, affiliate deals, product recommendations" />
-  <meta name="author" content="Consumer Luxe" />
-  <meta name="robots" content="index, follow" />
-
-  <meta property="og:title" content="Consumer Luxe — Curated Rewards for Smart Shoppers" />
-  <meta property="og:description" content="Premium fashion, jewelry, beauty and lifestyle deal recommendations for smart shoppers." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://consumerluxe.xyz/" />
-
-  <link rel="canonical" href="https://consumerluxe.xyz/" />
-
-  <style>
-    :root {
-      --black: #070707;
-      --navy: #0b1020;
-      --navy-soft: #111827;
-      --gold: #d4af37;
-      --gold-soft: #f3d77a;
-      --champagne: #fff8e7;
-      --white: #ffffff;
-      --cream: #f7f2e8;
-      --muted: #9ca3af;
-      --text: #1f2937;
-      --danger: #e11d48;
-      --success: #16a34a;
-      --line: rgba(212, 175, 55, 0.22);
-      --shadow: 0 20px 60px rgba(0,0,0,.18);
-      --shadow-soft: 0 12px 35px rgba(0,0,0,.08);
-      --radius: 22px;
-      --radius-sm: 14px;
-      --ease: cubic-bezier(.22,1,.36,1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 110px;
-    }
-
-    body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(212,175,55,.12), transparent 34%),
-        linear-gradient(180deg, #fffaf0 0%, #f8f5ee 46%, #ffffff 100%);
-      color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    button,
-    input,
-    textarea,
-    select {
-      font-family: inherit;
-    }
-
-    button {
-      border: 0;
-      cursor: pointer;
-    }
-
-    .container {
-      width: min(1240px, calc(100% - 32px));
-      margin-inline: auto;
-    }
-
-    .skip-link {
-      position: absolute;
-      top: -100px;
-      left: 16px;
-      background: var(--gold);
-      color: #111;
-      padding: 10px 14px;
-      border-radius: 10px;
-      z-index: 9999;
-    }
-
-    .skip-link:focus {
-      top: 16px;
-    }
-
-    /* Top Disclosure */
-    .top-disclosure {
-      background: linear-gradient(90deg, var(--black), var(--navy), var(--black));
-      color: rgba(255,255,255,.86);
-      font-size: 12px;
-      letter-spacing: .2px;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(212,175,55,.25);
-    }
-
-    .top-disclosure .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      text-align: center;
-      flex-wrap: wrap;
-    }
-
-    .top-disclosure strong {
-      color: var(--gold-soft);
-    }
-
-    /* Header */
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 900;
-      background: rgba(7,7,7,.92);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(212,175,55,.2);
-    }
-
-    .header-inner {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: max-content;
-    }
-
-    .brand-mark {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      color: var(--black);
-      font-weight: 900;
-      letter-spacing: -1px;
-      background:
-        linear-gradient(135deg, var(--gold-soft), var(--gold)),
-        radial-gradient(circle at top, #fff, transparent);
-      box-shadow: 0 12px 34px rgba(212,175,55,.22);
-    }
-
-    .brand-title {
-      color: var(--white);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 24px;
-      line-height: 1;
-      letter-spacing: -.4px;
-    }
-
-    .brand-sub {
-      display: block;
-      color: rgba(255,255,255,.58);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      margin-top: 4px;
-    }
-
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      margin-left: auto;
-    }
-
-    .desktop-nav a {
-      color: rgba(255,255,255,.72);
-      font-size: 13px;
-      font-weight: 650;
-      padding: 10px 12px;
-      border-radius: 999px;
-      transition: .25s var(--ease);
-      white-space: nowrap;
-    }
-
-    .desktop-nav a:hover {
-      color: var(--gold-soft);
-      background: rgba(255,255,255,.06);
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 800;
-      transition: .25s var(--ease);
-      border: 1px solid transparent;
-      white-space: nowrap;
-    }
-
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-      color: #111;
-      box-shadow: 0 10px 30px rgba(212,175,55,.22);
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 40px rgba(212,175,55,.32);
-    }
-
-    .btn-dark {
-      background: var(--black);
-      color: var(--white);
-      border-color: rgba(212,175,55,.35);
-    }
-
-    .btn-dark:hover {
-      background: var(--navy);
-      transform: translateY(-2px);
-    }
-
-    .btn-light {
-      background: rgba(255,255,255,.1);
-      color: var(--white);
-      border-color: rgba(255,255,255,.15);
-    }
-
-    .btn-light:hover {
-      background: rgba(255,255,255,.16);
-      color: var(--gold-soft);
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.08);
-      color: var(--white);
-      font-size: 22px;
-    }
-
-    .mobile-nav {
-      display: none;
-      border-top: 1px solid rgba(212,175,55,.18);
-      padding: 10px 0 16px;
-    }
-
-    .mobile-nav a {
-      display: block;
-      color: rgba(255,255,255,.78);
-      padding: 12px 4px;
-      font-size: 14px;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 78% 15%, rgba(212,175,55,.22), transparent 28%),
-        linear-gradient(135deg, #070707 0%, #0b1020 54%, #050505 100%);
-      color: var(--white);
-      padding: 82px 0 64px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(212,175,55,.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(212,175,55,.055) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,.8), transparent);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 44px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid rgba(212,175,55,.35);
-      color: var(--gold-soft);
-      background: rgba(255,255,255,.055);
-      padding: 8px 15px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      margin-bottom: 20px;
-    }
-
-    .pulse {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 0 rgba(212,175,55,.8);
-      animation: pulse 1.7s infinite;
-    }
-
-    @keyframes pulse {
-      70% { box-shadow: 0 0 0 12px rgba(212,175,55,0); }
-      100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
-    }
-
-    .hero h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(40px, 5vw, 72px);
-      line-height: 1.04;
-      letter-spacing: -1.8px;
-      max-width: 740px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: var(--gold-soft);
-    }
-
-    .hero-text {
-      color: rgba(255,255,255,.68);
-      max-width: 620px;
-      font-size: 17px;
-      margin-bottom: 28px;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 34px;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 14px;
-      max-width: 620px;
-    }
-
-    .stat {
-      background: rgba(255,255,255,.065);
-      border: 1px solid rgba(255,255,255,.09);
-      border-radius: 18px;
-      padding: 16px;
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--gold-soft);
-      font-size: 22px;
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .stat span {
-      color: rgba(255,255,255,.55);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .hero-card {
-      position: relative;
-      background:
-        linear-gradient(160deg, rgba(255,255,255,.12), rgba(255,255,255,.045)),
-        linear-gradient(180deg, rgba(212,175,55,.08), transparent);
-      border: 1px solid rgba(212,175,55,.28);
-      border-radius: 32px;
-      padding: 18px;
-      box-shadow: 0 30px 90px rgba(0,0,0,.38);
-    }
-
-    .hero-card-main {
-      overflow: hidden;
-      border-radius: 26px;
-      background: #111;
-      min-height: 475px;
-      position: relative;
-    }
-
-    .hero-card-main img {
-      width: 100%;
-      height: 475px;
-      object-fit: cover;
-      opacity: .82;
-      filter: saturate(1.05) contrast(1.08);
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: auto 18px 18px 18px;
-      background: rgba(7,7,7,.78);
-      border: 1px solid rgba(212,175,55,.32);
-      backdrop-filter: blur(14px);
-      border-radius: 22px;
-      padding: 18px;
-    }
-
-    .hero-overlay h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
-
-    .hero-overlay p {
-      color: rgba(255,255,255,.62);
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-
-    .mini-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .mini-pill {
-      color: var(--gold-soft);
-      border: 1px solid rgba(212,175,55,.3);
-      background: rgba(212,175,55,.08);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    /* Category Rail */
-    .category-rail {
-      margin-top: -34px;
-      position: relative;
-      z-index: 5;
-    }
-
-    .category-panel {
-      background: var(--white);
-      border: 1px solid rgba(212,175,55,.2);
-      border-radius: 28px;
-      padding: 18px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .category-list {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 12px;
-    }
-
-    .cat-card {
-      background:
-        linear-gradient(180deg, #fff, #fffaf0);
-      border: 1px solid rgba(212,175,55,.2);
-      border-radius: 20px;
-      padding: 16px 12px;
-      text-align: center;
-      transition: .25s var(--ease);
-      cursor: pointer;
-    }
-
-    .cat-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(212,175,55,.55);
-      box-shadow: 0 16px 30px rgba(0,0,0,.08);
-    }
-
-    .cat-icon {
-      font-size: 28px;
-      margin-bottom: 7px;
-      display: block;
-    }
-
-    .cat-card strong {
-      display: block;
-      font-size: 12px;
-      color: var(--navy);
-    }
-
-    .cat-card span {
-      display: block;
-      font-size: 10px;
-      color: #6b7280;
-      margin-top: 2px;
-    }
-
-    /* General Sections */
-    section {
-      padding: 70px 0;
-    }
-
-    .section-head {
-      text-align: center;
-      margin-bottom: 34px;
-    }
-
-    .section-kicker {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1.6px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .section-head h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--black);
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.1;
-      letter-spacing: -1.1px;
-      margin-bottom: 12px;
-    }
-
-    .section-head p {
-      color: #6b7280;
-      max-width: 720px;
-      margin: 0 auto;
-      font-size: 15px;
-    }
-
-    /* Trust Strip */
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 16px;
-    }
-
-    .trust-card {
-      background: var(--white);
-      border: 1px solid rgba(212,175,55,.18);
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .trust-card .icon {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: #111;
-      color: var(--gold-soft);
-      margin-bottom: 14px;
-      font-size: 22px;
-    }
-
-    .trust-card h3 {
-      color: var(--black);
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-
-    .trust-card p {
-      color: #6b7280;
-      font-size: 13px;
-    }
-
-    /* Ads */
-    .ad-wrap {
-      margin: 22px auto;
-      display: flex;
-      justify-content: center;
-    }
-
-    .ad-box {
-      width: min(100%, 760px);
-      min-height: 74px;
-      border: 1px dashed rgba(212,175,55,.48);
-      border-radius: 18px;
-      background: rgba(255,255,255,.7);
-      padding: 12px;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .ad-label {
-      display: block;
-      color: #8a6d16;
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 7px;
-    }
-
-    .native-ad {
-      margin-top: 34px;
-      border-radius: 24px;
-      border: 1px dashed rgba(212,175,55,.4);
-      background: #fff;
-      padding: 18px;
-      overflow: hidden;
-    }
-
-    .ad-note {
-      font-size: 11px;
-      color: #6b7280;
-      text-align: center;
-      margin-top: 7px;
-    }
-
-    /* Controls */
-    .deal-toolbar {
-      background: var(--white);
-      border: 1px solid rgba(212,175,55,.2);
-      border-radius: 26px;
-      padding: 16px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 14px;
-      align-items: center;
-      box-shadow: var(--shadow-soft);
-      margin-bottom: 24px;
-    }
-
-    .search-box {
-      position: relative;
-    }
-
-    .search-box input {
-      width: 100%;
-      border: 1px solid rgba(17,24,39,.12);
-      background: #fbfaf7;
-      border-radius: 999px;
-      padding: 14px 18px 14px 44px;
-      outline: none;
-      transition: .25s;
-      font-size: 14px;
-    }
-
-    .search-box input:focus {
-      border-color: rgba(212,175,55,.75);
-      box-shadow: 0 0 0 4px rgba(212,175,55,.12);
-      background: #fff;
-    }
-
-    .search-icon {
-      position: absolute;
-      left: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #9ca3af;
-    }
-
-    .toolbar-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .sort-select {
-      border: 1px solid rgba(17,24,39,.12);
-      background: #fbfaf7;
-      border-radius: 999px;
-      padding: 13px 16px;
-      outline: none;
-      font-weight: 700;
-      color: var(--navy);
-      min-width: 180px;
-    }
-
-    .filter-pills {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-
-    .filter-btn {
-      padding: 10px 13px;
-      border-radius: 999px;
-      border: 1px solid rgba(212,175,55,.22);
-      background: #fff;
-      color: #374151;
-      font-size: 12px;
-      font-weight: 800;
-      transition: .22s var(--ease);
-    }
-
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: #111;
-      color: var(--gold-soft);
-      border-color: rgba(212,175,55,.7);
-      transform: translateY(-1px);
-    }
-
-    /* Product Cards */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 22px;
-    }
-
-    .product-card {
-      background: var(--white);
-      border-radius: 24px;
-      border: 1px solid rgba(212,175,55,.18);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      transition: .28s var(--ease);
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    .product-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 22px 55px rgba(0,0,0,.14);
-      border-color: rgba(212,175,55,.45);
-    }
-
-    .product-media {
-      position: relative;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: #111;
-    }
-
-    .product-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: .45s var(--ease);
-    }
-
-    .product-card:hover .product-media img {
-      transform: scale(1.06);
-    }
-
-    .badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(7,7,7,.82);
-      color: var(--gold-soft);
-      border: 1px solid rgba(212,175,55,.38);
-      backdrop-filter: blur(10px);
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: .6px;
-      text-transform: uppercase;
-    }
-
-    .save-btn {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 38px;
-      height: 38px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.92);
-      color: #111;
-      display: grid;
-      place-items: center;
-      font-size: 18px;
-      transition: .22s;
-    }
-
-    .save-btn:hover,
-    .save-btn.saved {
-      background: var(--gold);
-      color: #111;
-      transform: scale(1.05);
-    }
-
-    .product-body {
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .product-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .category-name {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-
-    .merchant {
-      color: #6b7280;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .product-title {
-      color: var(--navy);
-      font-size: 15px;
-      line-height: 1.38;
-      min-height: 63px;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      margin-bottom: 12px;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: flex-end;
-      gap: 9px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-
-    .price {
-      font-size: 24px;
-      font-weight: 950;
-      color: #111;
-      letter-spacing: -.8px;
-    }
-
-    .original {
-      color: #9ca3af;
-      text-decoration: line-through;
-      font-size: 13px;
-      margin-bottom: 3px;
-    }
-
-    .discount {
-      color: #064e3b;
-      background: #dcfce7;
-      border: 1px solid #bbf7d0;
-      font-size: 11px;
-      font-weight: 900;
-      padding: 3px 8px;
-      border-radius: 999px;
-      margin-bottom: 3px;
-    }
-
-    .tag-row {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .tag {
-      background: #f8f5ee;
-      color: #6b7280;
-      border: 1px solid rgba(212,175,55,.18);
-      border-radius: 999px;
-      padding: 4px 8px;
-      font-size: 10px;
-      font-weight: 750;
-    }
-
-    .card-actions {
-      display: grid;
-      grid-template-columns: 1fr 42px;
-      gap: 8px;
-      margin-top: auto;
-    }
-
-    .deal-link {
-      background: linear-gradient(135deg, #111, #1f2937);
-      color: var(--white);
-      border-radius: 14px;
-      padding: 12px 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 900;
-      transition: .25s;
-    }
-
-    .deal-link:hover {
-      background: linear-gradient(135deg, #0b1020, #000);
-      color: var(--gold-soft);
-      transform: translateY(-1px);
-    }
-
-    .details-btn {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: #fff8e7;
-      border: 1px solid rgba(212,175,55,.35);
-      color: #111;
-      font-size: 18px;
-      transition: .25s;
-    }
-
-    .details-btn:hover {
-      background: var(--gold);
-    }
-
-    .small-disclosure {
-      color: #6b7280;
-      font-size: 10px;
-      line-height: 1.45;
-      margin-top: 11px;
-    }
-
-    /* Feature Sections */
-    .feature-band {
-      background:
-        radial-gradient(circle at top right, rgba(212,175,55,.14), transparent 35%),
-        linear-gradient(135deg, var(--black), var(--navy));
-      color: white;
-      border-radius: 32px;
-      padding: 34px;
-      border: 1px solid rgba(212,175,55,.28);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .feature-band-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .feature-tile {
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 22px;
-      padding: 20px;
-    }
-
-    .feature-tile .emoji {
-      font-size: 34px;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .feature-tile h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-      color: var(--gold-soft);
-    }
-
-    .feature-tile p {
-      color: rgba(255,255,255,.64);
-      font-size: 13px;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .info-card {
-      background: var(--white);
-      border: 1px solid rgba(212,175,55,.18);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .info-card h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--black);
-      font-size: 28px;
-      margin-bottom: 12px;
-      line-height: 1.14;
-    }
-
-    .info-card p,
-    .info-card li {
-      color: #6b7280;
-      font-size: 14px;
-    }
-
-    .info-card ul {
-      list-style: none;
-      margin-top: 16px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .info-card li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .check {
-      color: #064e3b;
-      background: #dcfce7;
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      display: inline-grid;
-      place-items: center;
-      flex: 0 0 22px;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .youtube-box {
-      background:
-        linear-gradient(rgba(7,7,7,.32), rgba(7,7,7,.68)),
-        url("https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1200&q=80");
-      background-size: cover;
-      background-position: center;
-      min-height: 330px;
-      border-radius: 28px;
-      color: white;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      border: 1px solid rgba(212,175,55,.25);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .youtube-box h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .youtube-box p {
-      color: rgba(255,255,255,.74);
-      max-width: 480px;
-      margin-bottom: 18px;
-    }
-
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 22px;
-    }
-
-    .article-card {
-      background: #fff;
-      border: 1px solid rgba(212,175,55,.18);
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      transition: .25s;
-    }
-
-    .article-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(0,0,0,.12);
-    }
-
-    .article-img {
-      height: 190px;
-      overflow: hidden;
-      background: #111;
-    }
-
-    .article-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: .45s;
-    }
-
-    .article-card:hover .article-img img {
-      transform: scale(1.07);
-    }
-
-    .article-body {
-      padding: 20px;
-    }
-
-    .article-label {
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .article-body h3 {
-      color: var(--navy);
-      font-size: 17px;
-      line-height: 1.35;
-      margin-bottom: 8px;
-    }
-
-    .article-body p {
-      color: #6b7280;
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-
-    .read-more {
-      color: #111;
-      font-weight: 900;
-      font-size: 13px;
-    }
-
-    .newsletter {
-      background:
-        radial-gradient(circle at top, rgba(212,175,55,.2), transparent 35%),
-        linear-gradient(135deg, #060606, #111827);
-      color: white;
-      border-radius: 34px;
-      padding: 46px 28px;
-      text-align: center;
-      border: 1px solid rgba(212,175,55,.28);
-      box-shadow: var(--shadow);
-    }
-
-    .newsletter h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(30px,4vw,46px);
-      margin-bottom: 12px;
-    }
-
-    .newsletter p {
-      color: rgba(255,255,255,.68);
-      max-width: 640px;
-      margin: 0 auto 24px;
-    }
-
-    .newsletter-form {
-      display: flex;
-      gap: 10px;
-      max-width: 560px;
-      margin: auto;
-    }
-
-    .newsletter-form input {
-      flex: 1;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.08);
-      color: white;
-      padding: 15px 18px;
-      border-radius: 999px;
-      outline: none;
-    }
-
-    .newsletter-form input::placeholder {
-      color: rgba(255,255,255,.5);
-    }
-
-    /* Footer */
-    .footer {
-      background: #050505;
-      color: rgba(255,255,255,.66);
-      padding: 58px 0 28px;
-      border-top: 1px solid rgba(212,175,55,.22);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 34px;
-      margin-bottom: 34px;
-    }
-
-    .footer h3,
-    .footer h4 {
-      color: white;
-      margin-bottom: 14px;
-    }
-
-    .footer h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-    }
-
-    .footer p,
-    .footer a,
-    .footer li {
-      font-size: 13px;
-      color: rgba(255,255,255,.62);
-    }
-
-    .footer a:hover {
-      color: var(--gold-soft);
-    }
-
-    .footer ul {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding-top: 22px;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      font-size: 12px;
-    }
-
-    .socials {
-      display: flex;
-      gap: 9px;
-      margin-top: 16px;
-      flex-wrap: wrap;
-    }
-
-    .socials a {
-      width: 38px;
-      height: 38px;
-      border: 1px solid rgba(212,175,55,.2);
-      border-radius: 13px;
-      display: grid;
-      place-items: center;
-      color: var(--gold-soft);
-      background: rgba(255,255,255,.05);
-    }
-
-    /* Modal */
-    .modal {
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      background: rgba(0,0,0,.68);
-      backdrop-filter: blur(10px);
-    }
-
-    .modal.active {
-      display: flex;
-    }
-
-    .modal-card {
-      width: min(960px, 100%);
-      max-height: min(88vh, 880px);
-      overflow: auto;
-      background: #fff;
-      border-radius: 30px;
-      border: 1px solid rgba(212,175,55,.3);
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-
-    .modal-close {
-      position: sticky;
-      top: 14px;
-      margin-left: auto;
-      transform: translateX(-14px);
-      z-index: 4;
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      background: #111;
-      color: var(--gold-soft);
-      font-size: 22px;
-    }
-
-    .modal-content {
-      padding: 0 28px 28px;
-    }
-
-    .modal-grid {
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .modal-img {
-      border-radius: 24px;
-      overflow: hidden;
-      background: #111;
-      aspect-ratio: 1 / 1;
-    }
-
-    .modal-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .modal-title {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 32px;
-      color: #111;
-      line-height: 1.12;
-      margin-bottom: 12px;
-    }
-
-    .modal-desc {
-      color: #6b7280;
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-
-    .modal-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 18px 0;
-    }
-
-    .review-box {
-      margin-top: 18px;
-      padding: 16px;
-      background: #fbfaf7;
-      border: 1px solid rgba(212,175,55,.2);
-      border-radius: 20px;
-    }
-
-    .review-box h4 {
-      margin-bottom: 8px;
-    }
-
-    .review-box input,
-    .review-box textarea {
-      width: 100%;
-      border: 1px solid rgba(17,24,39,.12);
-      border-radius: 14px;
-      padding: 12px;
-      margin-top: 8px;
-      outline: none;
-      background: #fff;
-    }
-
-    .review-box textarea {
-      min-height: 80px;
-      resize: vertical;
-    }
-
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 22px;
-      transform: translateX(-50%) translateY(20px);
-      background: #111;
-      color: #fff;
-      border: 1px solid rgba(212,175,55,.3);
-      padding: 12px 16px;
-      border-radius: 999px;
-      z-index: 3000;
-      opacity: 0;
-      pointer-events: none;
-      transition: .25s;
-      font-size: 13px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    .cookie {
-      position: fixed;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      z-index: 1900;
-      display: none;
-      background: rgba(7,7,7,.96);
-      color: rgba(255,255,255,.78);
-      border: 1px solid rgba(212,175,55,.32);
-      border-radius: 22px;
-      padding: 16px;
-      box-shadow: var(--shadow);
-      max-width: 940px;
-      margin: auto;
-      gap: 12px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .cookie.show {
-      display: flex;
-    }
-
-    .cookie p {
-      font-size: 12px;
-    }
-
-    .cookie a {
-      color: var(--gold-soft);
-      font-weight: 800;
-    }
-
-    .empty-state {
-      grid-column: 1 / -1;
-      text-align: center;
-      background: #fff;
-      border: 1px dashed rgba(212,175,55,.35);
-      border-radius: 24px;
-      padding: 36px;
-      color: #6b7280;
-    }
-
-    /* Responsive */
-    @media (max-width: 1100px) {
-      .desktop-nav {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: grid;
-        place-items: center;
-      }
-      .mobile-nav.open {
-        display: block;
-      }
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-card-main,
-      .hero-card-main img {
-        height: 420px;
-        min-height: 420px;
-      }
-      .category-list {
-        grid-template-columns: repeat(3,1fr);
-      }
-      .product-grid {
-        grid-template-columns: repeat(3,1fr);
-      }
-      .trust-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .container {
-        width: min(100% - 24px, 1240px);
-      }
-
-      .header-inner {
-        min-height: 68px;
-      }
-
-      .brand-title {
-        font-size: 20px;
-      }
-
-      .brand-sub {
-        letter-spacing: 1.6px;
-      }
-
-      .header-actions .join-top {
-        display: none;
-      }
-
-      .hero {
-        padding: 52px 0 52px;
-      }
-
-      .hero-text {
-        font-size: 15px;
-      }
-
-      .hero-stats {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .hero-card-main,
-      .hero-card-main img {
-        height: 360px;
-        min-height: 360px;
-      }
-
-      .category-list {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      section {
-        padding: 52px 0;
-      }
-
-      .deal-toolbar {
-        grid-template-columns: 1fr;
-      }
-
-      .toolbar-right {
-        width: 100%;
-      }
-
-      .sort-select {
-        width: 100%;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(2, minmax(0,1fr));
-        gap: 14px;
-      }
-
-      .product-body {
-        padding: 14px;
-      }
-
-      .product-title {
-        font-size: 13px;
-        min-height: 56px;
-      }
-
-      .price {
-        font-size: 20px;
-      }
-
-      .feature-band {
-        padding: 24px;
-      }
-
-      .feature-band-grid,
-      .two-col,
-      .article-grid,
-      .modal-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .newsletter-form {
-        flex-direction: column;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-      }
-
-      .cookie {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 460px) {
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .category-list {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .hero-cta {
-        width: 100%;
-      }
-
-      .hero-card {
-        padding: 10px;
-        border-radius: 24px;
-      }
-
-      .hero-card-main {
-        border-radius: 20px;
-      }
-    }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Consumer Luxe",
-    "url": "https://consumerluxe.xyz/",
-    "email": "contact@consumerluxe.xyz",
-    "description": "Consumer Luxe curates premium lifestyle, fashion, jewelry, beauty and smart shopping recommendations.",
-    "sameAs": []
-  }
-  </script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Consumer Luxe — Curated Rewards for Smart Shoppers</title>
+<meta name="description" content="Consumer Luxe curates premium fashion, jewelry, beauty, fitness, electronics and lifestyle deals for smart shoppers. Verified affiliate recommendations updated daily."/>
+<meta name="keywords" content="Consumer Luxe, fashion deals, jewelry deals, beauty offers, lifestyle rewards, smart shopping, affiliate deals"/>
+<meta name="author" content="Consumer Luxe"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://consumerluxe.xyz/"/>
+<meta property="og:title" content="Consumer Luxe — Curated Rewards for Smart Shoppers"/>
+<meta property="og:description" content="Premium fashion, jewelry, beauty and lifestyle deal recommendations for smart shoppers."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://consumerluxe.xyz/"/>
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23070707'/><circle cx='50' cy='50' r='32' fill='%23d4af37'/><text x='50' y='59' text-anchor='middle' font-family='Georgia' font-size='28' font-weight='700' fill='%23070707'>CL</text></svg>"/>
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0QK3JP39N"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-C0QK3JP39N');</script>
+
+<style>
+:root{
+--bk:#070707;--nv:#0b1020;--nv2:#111827;
+--gd:#d4af37;--gd2:#f3d77a;
+--cr:#fff8e7;--pp:#fffaf0;
+--wh:#fff;--tx:#1f2937;--mt:#6b7280;
+--ln:rgba(212,175,55,.24);
+--sh:0 18px 55px rgba(0,0,0,.10);
+--sh2:0 28px 80px rgba(0,0,0,.20);
+--rd:24px;--ez:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:105px}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--tx);background:radial-gradient(circle at top left,rgba(212,175,55,.15),transparent 35%),linear-gradient(180deg,#fffaf0 0%,#f8f3e8 38%,#fff 100%);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button,input,select,textarea{font-family:inherit}
+button{border:0;cursor:pointer}
+.c{width:min(1240px,calc(100% - 32px));margin:auto}
+
+/* Top Disclosure */
+.top{background:linear-gradient(90deg,var(--bk),var(--nv),var(--bk));color:rgba(255,255,255,.82);border-bottom:1px solid rgba(212,175,55,.25);font-size:12px;padding:10px 0;text-align:center}
+.top strong{color:var(--gd2)}
+
+/* Header */
+.hd{position:sticky;top:0;z-index:900;background:rgba(7,7,7,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,175,55,.20)}
+.hd-in{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.br{display:flex;align-items:center;gap:12px;min-width:max-content}
+.br-m{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gd2),var(--gd));color:#111;font-weight:950;letter-spacing:-1px;box-shadow:0 12px 34px rgba(212,175,55,.23)}
+.br-t{color:#fff;font-family:Georgia,"Times New Roman",serif;font-size:24px;line-height:1}
+.br-s{display:block;color:rgba(255,255,255,.56);font-size:10px;text-transform:uppercase;letter-spacing:2.4px;margin-top:4px}
+.nv{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nv a{color:rgba(255,255,255,.72);font-size:13px;font-weight:750;padding:10px 12px;border-radius:999px;transition:.22s var(--ez);white-space:nowrap}
+.nv a:hover{background:rgba(255,255,255,.07);color:var(--gd2)}
+.ac{display:flex;align-items:center;gap:10px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 18px;font-size:13px;font-weight:900;transition:.22s var(--ez);border:1px solid transparent;white-space:nowrap}
+.btn-g{background:linear-gradient(135deg,var(--gd2),var(--gd));color:#111;box-shadow:0 12px 30px rgba(212,175,55,.22)}
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(212,175,55,.33)}
+.btn-d{background:#111;color:#fff;border-color:rgba(212,175,55,.30)}
+.btn-d:hover{background:var(--nv);color:var(--gd2);transform:translateY(-1px)}
+.btn-l{background:rgba(255,255,255,.09);color:#fff;border-color:rgba(255,255,255,.14)}
+.btn-l:hover{background:rgba(255,255,255,.15);color:var(--gd2)}
+.mb{display:none;width:42px;height:42px;border-radius:14px;background:rgba(255,255,255,.09);color:#fff;font-size:22px}
+.mn{display:none;border-top:1px solid rgba(212,175,55,.18);padding:8px 0 14px}
+.mn.open{display:block}
+.mn a{display:block;color:rgba(255,255,255,.78);padding:12px 4px;border-bottom:1px solid rgba(255,255,255,.06);font-size:14px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 80% 10%,rgba(212,175,55,.22),transparent 30%),linear-gradient(135deg,#050505 0%,#0b1020 55%,#070707 100%);padding:82px 0 62px}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(212,175,55,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,.055) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(180deg,rgba(0,0,0,.75),transparent)}
+.hg{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.eb{display:inline-flex;align-items:center;gap:9px;color:var(--gd2);border:1px solid rgba(212,175,55,.35);background:rgba(255,255,255,.06);padding:8px 15px;border-radius:999px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:20px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--gd);box-shadow:0 0 0 0 rgba(212,175,55,.8);animation:pulse 1.7s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(212,175,55,0)}100%{box-shadow:0 0 0 0 rgba(212,175,55,0)}}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,5vw,72px);line-height:1.04;letter-spacing:-1.7px;margin-bottom:20px;max-width:760px}
+.hero h1 span{color:var(--gd2)}
+.hero>div>div>p{color:rgba(255,255,255,.68);max-width:640px;font-size:17px;margin-bottom:28px}
+.hc{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.sts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:660px}
+.st{background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:15px}
+.st strong{display:block;color:var(--gd2);font-size:21px;line-height:1;margin-bottom:5px}
+.st span{color:rgba(255,255,255,.58);font-size:12px;font-weight:750}
+.hrc{padding:18px;border-radius:32px;background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.045));border:1px solid rgba(212,175,55,.28);box-shadow:var(--sh2)}
+.hrm{position:relative;overflow:hidden;border-radius:26px;background:#111;min-height:475px}
+.hrm img{width:100%;height:475px;object-fit:cover;opacity:.84;filter:saturate(1.05) contrast(1.05)}
+.hrp{position:absolute;left:18px;right:18px;bottom:18px;background:rgba(7,7,7,.78);border:1px solid rgba(212,175,55,.32);backdrop-filter:blur(14px);border-radius:22px;padding:18px}
+.hrp h3{font-family:Georgia,"Times New Roman",serif;font-size:22px;margin-bottom:6px}
+.hrp p{font-size:13px;margin-bottom:12px;color:rgba(255,255,255,.64)}
+.pr{display:flex;flex-wrap:wrap;gap:8px}
+.pl{color:var(--gd2);background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.30);border-radius:999px;padding:6px 10px;font-size:11px;font-weight:900}
+
+/* Categories */
+.cs{margin-top:-34px;position:relative;z-index:5}
+.cb{background:#fff;border:1px solid rgba(212,175,55,.22);border-radius:28px;padding:18px;box-shadow:var(--sh)}
+.cg{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.ct{background:linear-gradient(180deg,#fff,#fffaf0);border:1px solid rgba(212,175,55,.20);border-radius:20px;padding:15px 10px;text-align:center;transition:.22s var(--ez)}
+.ct:hover{transform:translateY(-4px);border-color:rgba(212,175,55,.55);box-shadow:0 14px 28px rgba(0,0,0,.08)}
+.ct span{display:block;font-size:28px;margin-bottom:6px}
+.ct b{display:block;color:var(--nv);font-size:12px}
+.ct small{color:#6b7280;font-size:10px}
+
+/* Sections */
+section{padding:70px 0}
+.sh{text-align:center;margin-bottom:34px}
+.kk{display:inline-flex;align-items:center;gap:8px;color:var(--gd);font-size:12px;font-weight:950;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:12px}
+.sh h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,48px);line-height:1.1;color:#111;letter-spacing:-1px;margin-bottom:12px}
+.sh p{color:var(--mt);max-width:740px;margin:auto;font-size:15px}
+
+/* Trust */
+.tg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tc{background:#fff;border:1px solid rgba(212,175,55,.18);border-radius:22px;padding:22px;box-shadow:var(--sh)}
+.ti{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;background:#111;color:var(--gd2);margin-bottom:14px;font-size:22px}
+.tc h3{font-size:15px;color:#111;margin-bottom:6px}
+.tc p{font-size:13px;color:var(--mt)}
+
+/* Ads */
+.as{margin:22px auto;display:flex;justify-content:center}
+.ab{width:min(100%,760px);min-height:76px;border:1px dashed rgba(212,175,55,.50);background:rgba(255,255,255,.78);border-radius:18px;padding:12px;text-align:center;overflow:hidden}
+.al{display:block;color:#8a6d16;font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:7px}
+.an{font-size:11px;color:#6b7280;margin-top:7px;text-align:center}
+.na{margin-top:34px;background:#fff;border:1px dashed rgba(212,175,55,.45);border-radius:24px;padding:18px;overflow:hidden}
+
+/* Toolbar */
+.tb{display:grid;grid-template-columns:1fr auto;gap:14px;background:#fff;border:1px solid rgba(212,175,55,.20);border-radius:26px;padding:16px;box-shadow:var(--sh);margin-bottom:22px}
+.sb{position:relative}
+.sb input{width:100%;border:1px solid rgba(17,24,39,.12);background:#fbfaf7;border-radius:999px;padding:14px 18px 14px 44px;outline:0;font-size:14px}
+.sb input:focus{border-color:rgba(212,175,55,.75);box-shadow:0 0 0 4px rgba(212,175,55,.12);background:#fff}
+.sb:before{content:"⌕";position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#9ca3af;font-weight:900}
+.ss{border:1px solid rgba(17,24,39,.12);background:#fbfaf7;border-radius:999px;padding:13px 16px;outline:0;font-weight:800;color:#111827;min-width:180px}
+.fp{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.fb{padding:10px 13px;border-radius:999px;border:1px solid rgba(212,175,55,.22);background:#fff;color:#374151;font-size:12px;font-weight:900;transition:.2s var(--ez)}
+.fb:hover,.fb.active{background:#111;color:var(--gd2);border-color:rgba(212,175,55,.70);transform:translateY(-1px)}
+
+/* Product Grid */
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.pc{background:#fff;border:1px solid rgba(212,175,55,.18);border-radius:24px;overflow:hidden;box-shadow:var(--sh);transition:.26s var(--ez);display:flex;flex-direction:column}
+.pc:hover{transform:translateY(-7px);box-shadow:0 22px 55px rgba(0,0,0,.14);border-color:rgba(212,175,55,.45)}
+.pm{position:relative;aspect-ratio:1/1;background:#111;overflow:hidden}
+.pm img{width:100%;height:100%;object-fit:cover;transition:.45s var(--ez)}
+.pc:hover .pm img{transform:scale(1.06)}
+.bd{position:absolute;top:12px;left:12px;background:rgba(7,7,7,.84);color:var(--gd2);border:1px solid rgba(212,175,55,.38);border-radius:999px;padding:6px 10px;font-size:10px;font-weight:950;letter-spacing:.6px;text-transform:uppercase;backdrop-filter:blur(10px)}
+.sv{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:999px;background:rgba(255,255,255,.92);color:#111;font-size:18px;display:grid;place-items:center}
+.sv.saved{background:var(--gd);color:#111}
+.pb{padding:18px;display:flex;flex-direction:column;flex:1}
+.mt{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}
+.cn{color:var(--gd);font-size:10px;font-weight:950;letter-spacing:1.2px;text-transform:uppercase}
+.mr{color:#6b7280;font-size:11px;font-weight:800}
+.tt{color:var(--nv);font-size:15px;line-height:1.38;min-height:63px;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pw{display:flex;align-items:flex-end;gap:9px;flex-wrap:wrap;margin-bottom:12px}
+.pp{font-size:24px;font-weight:950;color:#111;letter-spacing:-.8px}
+.po{color:#9ca3af;text-decoration:line-through;font-size:13px;margin-bottom:3px}
+.pd{color:#064e3b;background:#dcfce7;border:1px solid #bbf7d0;font-size:11px;font-weight:950;padding:3px 8px;border-radius:999px;margin-bottom:3px}
+.tgs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tg2{background:#f8f5ee;color:#6b7280;border:1px solid rgba(212,175,55,.18);border-radius:999px;padding:4px 8px;font-size:10px;font-weight:800}
+.ca{display:grid;grid-template-columns:1fr 42px;gap:8px;margin-top:auto}
+.dl{background:linear-gradient(135deg,#111,#1f2937);color:#fff;border-radius:14px;padding:12px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:950;transition:.22s var(--ez)}
+.dl:hover{color:var(--gd2);background:linear-gradient(135deg,#0b1020,#000);transform:translateY(-1px)}
+.ib{width:42px;height:42px;border-radius:14px;background:#fff8e7;border:1px solid rgba(212,175,55,.35);color:#111;font-size:18px;font-weight:950}
+.ib:hover{background:var(--gd)}
+.md{font-size:10px;line-height:1.45;color:#6b7280;margin-top:11px}
+
+/* Feature */
+.ft{background:radial-gradient(circle at top right,rgba(212,175,55,.14),transparent 34%),linear-gradient(135deg,#050505,#111827);color:#fff;border-radius:32px;border:1px solid rgba(212,175,55,.28);padding:34px;box-shadow:var(--sh2)}
+.ft h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,46px);line-height:1.1;margin-bottom:10px}
+.ft>p{color:rgba(255,255,255,.68);max-width:780px}
+.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.fl{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);border-radius:22px;padding:20px}
+.fl span{display:block;font-size:32px;margin-bottom:10px}
+.fl h3{color:var(--gd2);font-size:16px;margin-bottom:7px}
+.fl p{font-size:13px;color:rgba(255,255,255,.64)}
+
+/* Two Col */
+.tw{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ic{background:#fff;border:1px solid rgba(212,175,55,.18);border-radius:28px;padding:28px;box-shadow:var(--sh)}
+.ic h3{font-family:Georgia,"Times New Roman",serif;color:#111;font-size:28px;line-height:1.14;margin-bottom:12px}
+.ic p,.ic li{color:#6b7280;font-size:14px}
+.ic ul{list-style:none;display:grid;gap:10px;margin-top:16px}
+.ic li{display:flex;align-items:flex-start;gap:10px}
+.ck{width:22px;height:22px;border-radius:999px;background:#dcfce7;color:#064e3b;display:grid;place-items:center;flex:0 0 22px;font-size:12px;font-weight:950}
+
+/* YouTube */
+.yt{min-height:330px;border-radius:28px;border:1px solid rgba(212,175,55,.25);box-shadow:var(--sh);overflow:hidden;color:#fff;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(rgba(7,7,7,.25),rgba(7,7,7,.76)),url("https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1200&q=70");background-size:cover;background-position:center}
+.yt h3{font-family:Georgia,"Times New Roman",serif;font-size:32px;margin-bottom:10px}
+.yt p{color:rgba(255,255,255,.74);max-width:600px;margin-bottom:18px}
+
+/* Articles */
+.ag{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ac2{background:#fff;border:1px solid rgba(212,175,55,.18);border-radius:26px;overflow:hidden;box-shadow:var(--sh);transition:.22s var(--ez)}
+.ac2:hover{transform:translateY(-5px)}
+.ai{height:190px;overflow:hidden;background:#111}
+.ai img{width:100%;height:100%;object-fit:cover;transition:.45s}
+.ac2:hover img{transform:scale(1.06)}
+.ab2{padding:20px}
+.ab2 .lbl{display:block;color:var(--gd);font-size:10px;font-weight:950;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:8px}
+.ab2 h3{color:var(--nv);font-size:17px;line-height:1.35;margin-bottom:8px}
+.ab2 p{color:#6b7280;font-size:13px;margin-bottom:12px}
+.ab2 a{font-weight:950;font-size:13px;color:#111}
+
+/* Newsletter */
+.nl{background:radial-gradient(circle at top,rgba(212,175,55,.20),transparent 36%),linear-gradient(135deg,#050505,#111827);color:#fff;border:1px solid rgba(212,175,55,.28);border-radius:34px;padding:46px 28px;text-align:center;box-shadow:var(--sh2)}
+.nl h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,46px);margin-bottom:12px}
+.nl p{color:rgba(255,255,255,.68);max-width:660px;margin:0 auto 24px}
+.nl form{display:flex;gap:10px;max-width:560px;margin:auto}
+.nl input{flex:1;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#fff;border-radius:999px;padding:15px 18px;outline:0}
+.nl input::placeholder{color:rgba(255,255,255,.50)}
+
+/* Footer */
+.fo{background:#050505;color:rgba(255,255,255,.66);padding:58px 0 28px;border-top:1px solid rgba(212,175,55,.22)}
+.fgg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px;margin-bottom:34px}
+.fo h3{color:#fff;font-family:Georgia,"Times New Roman",serif;font-size:28px;margin-bottom:14px}
+.fo h4{color:#fff;margin-bottom:14px;font-size:14px;text-transform:uppercase;letter-spacing:1px}
+.fo p,.fo a,.fo li{font-size:13px;color:rgba(255,255,255,.62)}
+.fo a:hover{color:var(--gd2)}
+.fo ul{list-style:none;display:grid;gap:10px}
+.sc{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.sc a{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;border:1px solid rgba(212,175,55,.20);color:var(--gd2);background:rgba(255,255,255,.05);font-weight:950}
+.fb2{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px}
+
+/* Modal */
+.mo{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.68);backdrop-filter:blur(10px);padding:18px}
+.mo.active{display:flex}
+.mc{width:min(960px,100%);max-height:88vh;overflow:auto;background:#fff;border-radius:30px;border:1px solid rgba(212,175,55,.30);box-shadow:var(--sh2);position:relative}
+.mx{position:sticky;top:14px;margin-left:auto;transform:translateX(-14px);z-index:5;width:42px;height:42px;border-radius:999px;display:grid;place-items:center;background:#111;color:var(--gd2);font-size:24px}
+.mi{padding:0 28px 28px}
+.mg{display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;align-items:start}
+.mimg{aspect-ratio:1/1;border-radius:24px;background:#111;overflow:hidden}
+.mimg img{width:100%;height:100%;object-fit:cover}
+.mtl{font-family:Georgia,"Times New Roman",serif;font-size:32px;line-height:1.12;color:#111;margin-bottom:12px}
+.mds{color:#6b7280;font-size:14px;margin-bottom:16px}
+.ma{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.rv{margin-top:18px;background:#fbfaf7;border:1px solid rgba(212,175,55,.20);border-radius:20px;padding:16px}
+.rv input,.rv textarea{width:100%;border:1px solid rgba(17,24,39,.12);border-radius:14px;padding:12px;margin-top:8px;outline:0}
+.rv textarea{min-height:80px;resize:vertical}
+
+/* Legal Modal */
+.lm{padding:28px}
+.lm h2{font-family:Georgia,"Times New Roman",serif;font-size:28px;margin-bottom:14px;color:#111}
+.lm h3{font-family:Georgia,"Times New Roman",serif;font-size:22px;margin:22px 0 8px;color:#111}
+.lm h3:first-child{margin-top:0}
+.lm p,.lm li{color:#4b5563;font-size:15px;margin-bottom:8px}
+.lm ul{margin-left:20px;margin-bottom:12px}
+.lm a{color:#111;font-weight:800;text-decoration:underline;text-decoration-color:var(--gd)}
+.lm .nt{background:#111;color:rgba(255,255,255,.72);border:1px solid rgba(212,175,55,.3);border-radius:18px;padding:16px;margin-top:18px}
+.lm .nt strong{color:var(--gd2)}
+
+/* Toast */
+.ts{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);z-index:3000;background:#111;color:#fff;border:1px solid rgba(212,175,55,.30);border-radius:999px;padding:12px 16px;font-size:13px;opacity:0;pointer-events:none;transition:.22s;box-shadow:var(--sh)}
+.ts.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Cookie */
+.ck2{position:fixed;left:16px;right:16px;bottom:16px;z-index:1900;display:none;align-items:center;justify-content:space-between;gap:12px;max-width:940px;margin:auto;background:rgba(7,7,7,.96);color:rgba(255,255,255,.78);border:1px solid rgba(212,175,55,.32);border-radius:22px;padding:16px;box-shadow:var(--sh2)}
+.ck2.show{display:flex}
+.ck2 p{font-size:12px}
+.ck2 a{color:var(--gd2);font-weight:900}
+
+.empty{grid-column:1/-1;text-align:center;background:#fff;border:1px dashed rgba(212,175,55,.36);border-radius:24px;padding:36px;color:#6b7280}
+
+/* Responsive */
+@media(max-width:1100px){
+.nv{display:none}.mb{display:grid;place-items:center}
+.hg{grid-template-columns:1fr}
+.hrm,.hrm img{height:420px;min-height:420px}
+.cg{grid-template-columns:repeat(3,1fr)}
+.pg{grid-template-columns:repeat(3,1fr)}
+.tg{grid-template-columns:repeat(2,1fr)}
+.fgg{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+.c{width:min(100% - 24px,1240px)}
+.hd-in{min-height:68px}
+.br-t{font-size:20px}.br-s{letter-spacing:1.5px}
+.jt{display:none}
+.hero{padding:52px 0}.hero>div>div>p{font-size:15px}
+.sts{grid-template-columns:repeat(2,1fr)}
+.hrm,.hrm img{height:360px;min-height:360px}
+.cg{grid-template-columns:repeat(2,1fr)}
+section{padding:52px 0}
+.tb{grid-template-columns:1fr}.ss{width:100%}
+.pg{grid-template-columns:repeat(2,1fr);gap:14px}
+.pb{padding:14px}.tt{font-size:13px;min-height:56px}.pp{font-size:20px}
+.ft{padding:24px}
+.fg,.tw,.ag,.mg{grid-template-columns:1fr}
+.tg{grid-template-columns:1fr}
+.nl form{flex-direction:column}
+.fgg{grid-template-columns:1fr}
+.fb2{flex-direction:column}
+.ck2{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:460px){
+.pg{grid-template-columns:1fr}
+.hero h1{font-size:36px}
+.hc .btn{width:100%}
+.hrc{padding:10px;border-radius:24px}
+.hrm{border-radius:20px}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Consumer Luxe","url":"https://consumerluxe.xyz/","email":"contact@consumerluxe.xyz","description":"Consumer Luxe curates premium lifestyle, fashion, jewelry, beauty and smart shopping recommendations."}
+</script>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <div class="top-disclosure">
-    <div class="container">
-      <span>Affiliate Disclosure:</span>
-      <strong>Consumer Luxe may earn a commission from qualifying purchases at no extra cost to you.</strong>
-      <span>Prices and availability can change on merchant websites.</span>
-    </div>
-  </div>
-
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a class="brand" href="#" aria-label="Consumer Luxe home">
-          <div class="brand-mark">CL</div>
-          <div>
-            <div class="brand-title">Consumer Luxe</div>
-            <span class="brand-sub">Curated Rewards</span>
-          </div>
-        </a>
-
-        <nav class="desktop-nav" aria-label="Primary navigation">
-          <a href="#deals">Deals</a>
-          <a href="#categories">Categories</a>
-          <a href="#giftcards">Gift Cards</a>
-          <a href="#guides">Guides</a>
-          <a href="#youtube">YouTube</a>
-          <a href="#about">About</a>
-        </nav>
-
-        <div class="header-actions">
-          <button class="btn btn-light" type="button" onclick="showSaved()">♡ Saved <span id="savedCount">0</span></button>
-          <a class="btn btn-gold join-top" href="#newsletter">Join Free</a>
-          <button class="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
-        </div>
-      </div>
-
-      <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation">
-        <a href="#deals" onclick="toggleMobileMenu(false)">Deals</a>
-        <a href="#categories" onclick="toggleMobileMenu(false)">Categories</a>
-        <a href="#giftcards" onclick="toggleMobileMenu(false)">Gift Cards</a>
-        <a href="#guides" onclick="toggleMobileMenu(false)">Guides</a>
-        <a href="#youtube" onclick="toggleMobileMenu(false)">YouTube</a>
-        <a href="#about" onclick="toggleMobileMenu(false)">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <div class="eyebrow"><span class="pulse"></span> US-Focused Smart Shopping Hub</div>
-            <h1>Curated Rewards for <span>Smart Shoppers</span></h1>
-            <p class="hero-text">
-              Discover premium fashion, jewelry, beauty, fitness, electronics and lifestyle deals in one trusted place.
-              We focus on clean recommendations, transparent disclosures and shopping guides designed to help you buy smarter.
-            </p>
-
-            <div class="hero-cta">
-              <a class="btn btn-gold" href="#deals">Explore Today’s Deals</a>
-              <a class="btn btn-light" href="#about">How We Curate</a>
-            </div>
-
-            <div class="hero-stats">
-              <div class="stat"><strong>12+</strong><span>Lifestyle categories</span></div>
-              <div class="stat"><strong>Daily</strong><span>Deal updates</span></div>
-              <div class="stat"><strong>FTC</strong><span>Disclosure ready</span></div>
-              <div class="stat"><strong>Mobile</strong><span>First experience</span></div>
-            </div>
-          </div>
-
-          <div class="hero-card" aria-label="Featured lifestyle shopping visual">
-            <div class="hero-card-main">
-              <img
-                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80"
-                alt="Premium fashion shopping bags and lifestyle products"
-                loading="eager"
-              />
-              <div class="hero-overlay">
-                <h3>Premium Deal Shelf</h3>
-                <p>Fashion, jewelry, beauty, fitness and everyday essentials — curated with a luxury shopping feel.</p>
-                <div class="mini-row">
-                  <span class="mini-pill">Fashion</span>
-                  <span class="mini-pill">Jewelry</span>
-                  <span class="mini-pill">Beauty</span>
-                  <span class="mini-pill">Fitness</span>
-                  <span class="mini-pill">Tech</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- Categories -->
-    <div class="category-rail" id="categories">
-      <div class="container">
-        <div class="category-panel">
-          <div class="category-list" id="categoryCards">
-            <!-- JS renders category cards -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Trust -->
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">✦ Trust First</div>
-          <h2>Built Like a Real Shopping Brand</h2>
-          <p>
-            Consumer Luxe is designed as a transparent affiliate shopping destination — no fake countdowns,
-            no hidden redirects, no misleading gift card promises.
-          </p>
-        </div>
-
-        <div class="trust-grid">
-          <div class="trust-card">
-            <div class="icon">✓</div>
-            <h3>Transparent Affiliate Disclosure</h3>
-            <p>Every purchase may generate a commission, but shoppers never pay extra because of our links.</p>
-          </div>
-          <div class="trust-card">
-            <div class="icon">★</div>
-            <h3>Curated Deal Experience</h3>
-            <p>Products are organized by lifestyle categories so visitors can quickly find what they need.</p>
-          </div>
-          <div class="trust-card">
-            <div class="icon">⚡</div>
-            <h3>Mobile-First Performance</h3>
-            <p>The layout is built for modern mobile shoppers with fast browsing and clean product cards.</p>
-          </div>
-          <div class="trust-card">
-            <div class="icon">🔒</div>
-            <h3>No Forced Popups</h3>
-            <p>We avoid intrusive ad behavior that can damage user trust, SEO and network approval chances.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Safe Banner Ad -->
-    <div class="container">
-      <div class="ad-wrap" aria-label="Advertisement">
-        <div class="ad-box">
-          <span class="ad-label">Advertisement</span>
-          <!-- Safe 320x50 banner ad placement -->
-          <script>
-            atOptions = {
-              'key' : 'e17b4c9d672c26e069960b87e1050631',
-              'format' : 'iframe',
-              'height' : 50,
-              'width' : 320,
-              'params' : {}
-            };
-          </script>
-          <script src="https://www.highperformanceformat.com/e17b4c9d672c26e069960b87e1050631/invoke.js"></script>
-          <div class="ad-note">Sponsored placement. Ads are separated from editorial recommendations.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Deals -->
-    <section id="deals">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">✦ Top On-Sale Product Recommendations</div>
-          <h2>Today’s Curated Deal Collection</h2>
-          <p>
-            Browse fashion, jewelry, beauty, fitness, tech and lifestyle picks. Product links may lead to third-party merchant websites.
-          </p>
-        </div>
-
-        <div class="deal-toolbar">
-          <div class="search-box">
-            <span class="search-icon">⌕</span>
-            <input id="searchInput" type="search" placeholder="Search deals, categories, products..." oninput="renderProducts()" />
-          </div>
-
-          <div class="toolbar-right">
-            <select id="sortSelect" class="sort-select" onchange="renderProducts()" aria-label="Sort deals">
-              <option value="featured">Sort: Featured</option>
-              <option value="discount">Highest Discount</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="filter-pills" id="filterPills">
-          <!-- JS renders filters -->
-        </div>
-
-        <div class="product-grid" id="productGrid">
-          <!-- JS renders product cards -->
-        </div>
-
-        <!-- Native Ad Slot -->
-        <div class="native-ad" aria-label="Sponsored native advertisement">
-          <span class="ad-label">Sponsored Native Recommendations</span>
-          <script async="async" data-cfasync="false" src="https://pl30329464.effectivecpmnetwork.com/1fc61a1244a0fb91cae53c28da258d58/invoke.js"></script>
-          <div id="container-1fc61a1244a0fb91cae53c28da258d58"></div>
-          <p class="ad-note">Native sponsored content is separate from Consumer Luxe editorial product recommendations.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works -->
-    <section id="about">
-      <div class="container">
-        <div class="feature-band">
-          <div class="section-kicker">✦ How Consumer Luxe Works</div>
-          <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,4vw,46px);line-height:1.1;margin-bottom:10px;">
-            A premium shopping experience without pretending to be the merchant.
-          </h2>
-          <p style="color:rgba(255,255,255,.68);max-width:760px;">
-            We help shoppers discover products and deals from third-party merchants. We do not directly sell, ship or issue warranty for these products.
-            Always check final price, shipping and product terms on the merchant website before purchasing.
-          </p>
-
-          <div class="feature-band-grid">
-            <div class="feature-tile">
-              <span class="emoji">🔎</span>
-              <h3>Discover</h3>
-              <p>Browse curated deal cards organized by fashion, jewelry, beauty, fitness, tech and essentials.</p>
-            </div>
-            <div class="feature-tile">
-              <span class="emoji">🛍️</span>
-              <h3>Compare</h3>
-              <p>Check the current sale price, original price, discount percentage and product category.</p>
-            </div>
-            <div class="feature-tile">
-              <span class="emoji">↗</span>
-              <h3>Shop Securely</h3>
-              <p>Click the merchant link and complete purchase directly on the third-party store website.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gift Cards / Rewards Guide -->
-    <section id="giftcards">
-      <div class="container">
-        <div class="two-col">
-          <div class="info-card">
-            <div class="section-kicker">✦ Gift Card Guide</div>
-            <h3>Gift Cards & Rewards — Clear Disclaimer</h3>
-            <p>
-              Consumer Luxe does not issue, sell or guarantee gift cards directly. Any gift card or reward-related content on this website is
-              for shopping education, partner offers or merchant promotions only.
-            </p>
-            <ul>
-              <li><span class="check">✓</span><span>We will clearly label gift card content as guide, partner offer or merchant promotion.</span></li>
-              <li><span class="check">✓</span><span>No fake “free gift card” promise will be shown unless the offer is real and verified.</span></li>
-              <li><span class="check">✓</span><span>Users should always read merchant terms before participating in any reward offer.</span></li>
-            </ul>
-          </div>
-
-          <div class="info-card">
-            <div class="section-kicker">✦ Referral Ready</div>
-            <h3>Invite Friends Without Fake Promises</h3>
-            <p>
-              Referral features are safe when they are transparent. This template includes a share system to help visitors invite friends.
-              A real reward/referral program can be added later with backend tracking.
-            </p>
-            <ul>
-              <li><span class="check">✓</span><span>Share button uses native mobile sharing where available.</span></li>
-              <li><span class="check">✓</span><span>No fake earning claim is shown.</span></li>
-              <li><span class="check">✓</span><span>Backend referral tracking can be added later.</span></li>
-            </ul>
-            <button class="btn btn-dark" style="margin-top:18px;" onclick="shareSite()">Share Consumer Luxe</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- YouTube -->
-    <section id="youtube">
-      <div class="container">
-        <div class="youtube-box">
-          <div class="section-kicker" style="justify-content:flex-start;">✦ YouTube Channel</div>
-          <h3>Video Reviews & Shopping Guides</h3>
-          <p>
-            Add your YouTube channel link here later. Product reviews, deal roundups and shopping tips can increase trust,
-            lower bounce rate and help affiliate network approval.
-          </p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <a class="btn btn-gold" href="#" onclick="event.preventDefault(); showToast('YouTube channel link will be added later.');">Subscribe Placeholder</a>
-            <a class="btn btn-light" href="#guides">Read Shopping Guides</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Guides -->
-    <section id="guides">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">✦ Editorial Guides</div>
-          <h2>Smart Shopping Content</h2>
-          <p>
-            These article sections make the site feel complete and trusted. Later you should add full blog posts for SEO and affiliate approval.
-          </p>
-        </div>
-
-        <div class="article-grid">
-          <article class="article-card">
-            <div class="article-img">
-              <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80" alt="Women's fashion guide" loading="lazy">
-            </div>
-            <div class="article-body">
-              <span class="article-label">Fashion Guide</span>
-              <h3>How to Build a Premium Wardrobe on a Smart Budget</h3>
-              <p>Simple tips for choosing versatile clothing, accessories and seasonal essentials without overspending.</p>
-              <a class="read-more" href="#" onclick="event.preventDefault(); showToast('Full article page can be added later.');">Read guide →</a>
-            </div>
-          </article>
-
-          <article class="article-card">
-            <div class="article-img">
-              <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80" alt="Jewelry buying guide" loading="lazy">
-            </div>
-            <div class="article-body">
-              <span class="article-label">Jewelry Guide</span>
-              <h3>What to Check Before Buying Budget Sterling Silver Jewelry</h3>
-              <p>Understand material claims, plating, sizing, shipping time and merchant reviews before purchasing.</p>
-              <a class="read-more" href="#" onclick="event.preventDefault(); showToast('Full article page can be added later.');">Read guide →</a>
-            </div>
-          </article>
-
-          <article class="article-card">
-            <div class="article-img">
-              <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80" alt="Beauty shopping guide" loading="lazy">
-            </div>
-            <div class="article-body">
-              <span class="article-label">Beauty Guide</span>
-              <h3>Beauty Deals: How to Shop Safely for Skincare Online</h3>
-              <p>Always check ingredients, seller ratings, patch test recommendations and return policies.</p>
-              <a class="read-more" href="#" onclick="event.preventDefault(); showToast('Full article page can be added later.');">Read guide →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section id="newsletter">
-      <div class="container">
-        <div class="newsletter">
-          <div class="section-kicker">✦ Luxe Club</div>
-          <h2>Join the Smart Shopper List</h2>
-          <p>
-            Get curated deal alerts, style guides and product recommendations. No spam — just shopping intelligence.
-          </p>
-
-          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-            <input type="email" placeholder="Enter your email address" required aria-label="Email address">
-            <button class="btn btn-gold" type="submit">Join Free</button>
-          </form>
-
-          <p style="font-size:11px;margin-top:14px;color:rgba(255,255,255,.52);">
-            By joining, you agree to receive emails from Consumer Luxe. You can unsubscribe anytime.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h3>Consumer Luxe</h3>
-          <p>
-            Curated rewards for smart shoppers. Consumer Luxe is an affiliate-style shopping discovery platform.
-            We recommend third-party products and may earn commission from qualifying purchases.
-          </p>
-          <p style="margin-top:12px;">Contact: <a href="mailto:contact@consumerluxe.xyz">contact@consumerluxe.xyz</a></p>
-          <div class="socials">
-            <a href="#" aria-label="Facebook" onclick="event.preventDefault(); showToast('Social link will be added later.');">f</a>
-            <a href="#" aria-label="Instagram" onclick="event.preventDefault(); showToast('Social link will be added later.');">◎</a>
-            <a href="#" aria-label="YouTube" onclick="event.preventDefault(); showToast('YouTube link will be added later.');">▶</a>
-            <a href="#" aria-label="TikTok" onclick="event.preventDefault(); showToast('TikTok link will be added later.');">♪</a>
-          </div>
-        </div>
-
-        <div>
-          <h4>Categories</h4>
-          <ul>
-            <li><a href="#deals" onclick="setCategoryFromLink('women')">Women’s Fashion</a></li>
-            <li><a href="#deals" onclick="setCategoryFromLink('jewelry')">Jewelry</a></li>
-            <li><a href="#deals" onclick="setCategoryFromLink('beauty')">Beauty</a></li>
-            <li><a href="#deals" onclick="setCategoryFromLink('fitness')">Fitness</a></li>
-            <li><a href="#deals" onclick="setCategoryFromLink('electronics')">Electronics</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#about">About Consumer Luxe</a></li>
-            <li><a href="#guides">Shopping Guides</a></li>
-            <li><a href="#youtube">YouTube</a></li>
-            <li><a href="mailto:contact@consumerluxe.xyz">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#" onclick="openLegal('affiliate'); return false;">Affiliate Disclosure</a></li>
-            <li><a href="#" onclick="openLegal('privacy'); return false;">Privacy Policy</a></li>
-            <li><a href="#" onclick="openLegal('terms'); return false;">Terms of Service</a></li>
-            <li><a href="#" onclick="openLegal('cookie'); return false;">Cookie Policy</a></li>
-            <li><a href="#" onclick="openLegal('disclaimer'); return false;">Disclaimer</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© 2025 Consumer Luxe. All rights reserved.</span>
-        <span>Prices, availability and discount information are subject to change on merchant websites.</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Product Modal -->
-  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-label="Product details">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">×</button>
-      <div class="modal-content" id="modalContent"></div>
-    </div>
-  </div>
-
-  <!-- Legal Modal -->
-  <div class="modal" id="legalModal" role="dialog" aria-modal="true" aria-label="Legal information">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeLegal()" aria-label="Close legal modal">×</button>
-      <div class="modal-content" id="legalContent"></div>
-    </div>
-  </div>
-
-  <!-- Cookie Notice -->
-  <div class="cookie" id="cookieNotice">
-    <p>
-      We use cookies and third-party tools to improve browsing, measure performance and display ads.
-      Read our <a href="#" onclick="openLegal('cookie'); return false;">Cookie Policy</a>.
-    </p>
-    <button class="btn btn-gold" type="button" onclick="acceptCookies()">Accept</button>
-  </div>
-
-  <div class="toast" id="toast"></div>
-
-  <script>
-    const CONTACT_EMAIL = "contact@consumerluxe.xyz";
-
-    const categories = [
-      { id: "all", label: "All Deals", icon: "✦", sub: "Full collection" },
-      { id: "women", label: "Women’s Fashion", icon: "👗", sub: "Clothing & style" },
-      { id: "jewelry", label: "Jewelry", icon: "💍", sub: "Bracelets & chains" },
-      { id: "beauty", label: "Beauty", icon: "💄", sub: "Skincare & nails" },
-      { id: "fitness", label: "Fitness", icon: "🧘", sub: "Activewear" },
-      { id: "men", label: "Men’s Fashion", icon: "👔", sub: "Casual essentials" },
-      { id: "electronics", label: "Electronics", icon: "🎧", sub: "Gadgets & gear" },
-      { id: "home", label: "Home & Living", icon: "🏡", sub: "Useful essentials" },
-      { id: "gifts", label: "Gifts", icon: "🎁", sub: "Gift ideas" },
-      { id: "sports", label: "Sports", icon: "⚽", sub: "Event-ready picks" },
-      { id: "kitchen", label: "Food & Kitchen", icon: "🍽️", sub: "Coming guides" },
-      { id: "travel", label: "Travel", icon: "✈️", sub: "Smart packing" }
-    ];
-
-    const products = [
-      {
-        id: "bracelet-snake-bone",
-        title: "Handmade Original Fine Jewelry 925 Sterling Silver Charm Bracelet for Women",
-        category: "jewelry",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 1.57,
-        discount: 37,
-        badge: "Jewelry Pick",
-        image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c2yOaaPZ",
-        tags: ["Bracelet", "Gift", "Women"],
-        desc: "A budget-friendly jewelry deal listed by the merchant. Check sizing, metal details, seller rating and shipping terms before purchasing."
-      },
-      {
-        id: "silver-chain-set",
-        title: "925 Sterling Silver 4MM Chain Bracelet Necklace Jewelry Set for Men & Women",
-        category: "jewelry",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 2.30,
-        discount: 57,
-        badge: "Gift Deal",
-        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c3w4pxqF",
-        tags: ["Chain", "Unisex", "Gift"],
-        desc: "A chain jewelry deal suitable for gift browsing. Verify material claims and merchant reviews on the product page."
-      },
-      {
-        id: "silver-necklace-chain",
-        title: "Wholesale 925 Sterling Silver Necklace Chain 2–12mm Width, 40–75cm Length",
-        category: "jewelry",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 2.23,
-        discount: 56,
-        badge: "On Sale",
-        image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c4dUgwaR",
-        tags: ["Necklace", "Chain", "Unisex"],
-        desc: "A low-price necklace chain listing. Always compare width, length and clasp information before ordering."
-      },
-      {
-        id: "mens-chain-necklace",
-        title: "Men’s 925 Sterling Silver Chain Necklace 2MM–12MM, 16–30 Inch",
-        category: "jewelry",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 2.30,
-        discount: 57,
-        badge: "Men’s Jewelry",
-        image: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c32jmhKj",
-        tags: ["Men", "Chain", "Style"],
-        desc: "A men’s fashion chain listing. Confirm exact size, material and seller policies on the merchant website."
-      },
-      {
-        id: "yoga-leggings-pocket",
-        title: "Yoga Fitness Women Leggings High Waist Tights with Pocket for Gym & Running",
-        category: "fitness",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 12.91,
-        discount: 92,
-        badge: "Mega Discount",
-        image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c3LHYRix",
-        tags: ["Leggings", "Gym", "Women"],
-        desc: "High-discount activewear deal. Review sizing charts and fabric details carefully before checkout."
-      },
-      {
-        id: "micro-horn-leggings",
-        title: "Fashion Micro Horn Leggings Women V-Back High Waist Sports Pants",
-        category: "fitness",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 14.06,
-        discount: 93,
-        badge: "Top Discount",
-        image: "https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c4ktOvzt",
-        tags: ["Sports Pants", "Women", "Fitness"],
-        desc: "A strong discount activewear listing. Always check user photos and size reviews on the merchant page."
-      },
-      {
-        id: "fitness-shorts",
-        title: "Fitness Shorts Female Tight Cycling Yoga Breathable Sports Pants High Waist",
-        category: "fitness",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 6.32,
-        discount: 84,
-        badge: "Fitness Deal",
-        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c4bElNvD",
-        tags: ["Shorts", "Yoga", "Cycling"],
-        desc: "Breathable fitness shorts listing. Check fabric, transparency, length and sizing before purchasing."
-      },
-      {
-        id: "floral-bodysuit",
-        title: "Women Floral Print Bodysuit Lace Trim Sleeveless Slim Fit Summer Romper",
-        category: "women",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 10.75,
-        discount: 91,
-        badge: "Women’s Style",
-        image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c3Th9jdt",
-        tags: ["Summer", "Bodysuit", "Women"],
-        desc: "A women’s fashion listing. Review product photos, sizing and return conditions on the merchant website."
-      },
-      {
-        id: "wide-leg-pants",
-        title: "Women Fashion Summer Wide Leg Pants Pleated Ice Silk Casual Trousers",
-        category: "women",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 9.44,
-        discount: 90,
-        badge: "Summer Pick",
-        image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c3pORkL1",
-        tags: ["Pants", "Summer", "Casual"],
-        desc: "A lightweight summer pants listing. Always check the material, length and size chart before ordering."
-      },
-      {
-        id: "tshirt-dress",
-        title: "Women’s Summer Casual Swing T-Shirt Dress Beach Cover Up with Pockets",
-        category: "women",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 5.37,
-        discount: 82,
-        badge: "Casual Wear",
-        image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c4FH9F23",
-        tags: ["Dress", "Beach", "Casual"],
-        desc: "A casual summer dress listing. Verify size, fabric and merchant shipping information before checkout."
-      },
-      {
-        id: "sports-bra",
-        title: "Women Sports Bra Shockproof Running Fitness Anti-Sagging Yoga Vest",
-        category: "fitness",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 7.00,
-        discount: 86,
-        badge: "Workout Pick",
-        image: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c3WUY52j",
-        tags: ["Sports Bra", "Running", "Yoga"],
-        desc: "A sports bra listing for workouts. Carefully check support level, sizing and customer photos."
-      },
-      {
-        id: "mens-sports-pants",
-        title: "Men Casual Fashion Sports Pants Gym Jogger Sweatpants for Workout",
-        category: "men",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 14.55,
-        discount: 93,
-        badge: "Men’s Deal",
-        image: "https://images.unsplash.com/photo-1506629905607-d405b7a30db9?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c2xrpKPh",
-        tags: ["Joggers", "Gym", "Men"],
-        desc: "Men’s jogger pants listing. Check inseam, waist fit and material details before buying."
-      },
-      {
-        id: "mens-casual-pants",
-        title: "Men’s Casual Pants Straight Slim Fit Elastic Waist Korean Classic Trousers",
-        category: "men",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 11.18,
-        discount: 91,
-        badge: "Casual Men",
-        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c4WvANND",
-        tags: ["Pants", "Casual", "Men"],
-        desc: "Casual men’s pants listing. Verify sizing, color options and delivery estimates on merchant site."
-      },
-      {
-        id: "hair-trimmer",
-        title: "Retro T9 Haircutting Machine Set Men’s Electric Barber Trimmer & Shaver",
-        category: "beauty",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 10.76,
-        discount: 91,
-        badge: "Grooming",
-        image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c3O3HRNt",
-        tags: ["Trimmer", "Grooming", "Men"],
-        desc: "A grooming tool listing. Check voltage, included accessories, reviews and safety notes before purchase."
-      },
-      {
-        id: "solar-inverter",
-        title: "Sumry 4KW 120V Off Grid Solar Inverter 24V MPPT Charger Pure Sine Wave",
-        category: "home",
-        merchant: "AliExpress",
-        price: 278.25,
-        original: 662.93,
-        discount: 58,
-        badge: "Home Tech",
-        image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c2QBK4fh",
-        tags: ["Solar", "Home", "Power"],
-        desc: "A higher-ticket home energy product. Please verify specifications, compatibility, warranty, shipping and local electrical requirements."
-      },
-      {
-        id: "wireless-earbuds",
-        title: "X15 TWS Wireless Bluetooth Headset LED Display Gamer Earbuds with Mic",
-        category: "electronics",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 4.59,
-        discount: 78,
-        badge: "Tech Deal",
-        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c3aTd5nd",
-        tags: ["Earbuds", "Bluetooth", "Gaming"],
-        desc: "Wireless earbuds listing. Check battery life, Bluetooth version, mic quality reviews and return terms."
-      },
-      {
-        id: "honey-cream",
-        title: "Tallow Honey Cream Glow Hydrating Skin Moisturizer Face & Body Lotion",
-        category: "beauty",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 6.45,
-        discount: 85,
-        badge: "Beauty",
-        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c2xMq1MB",
-        tags: ["Skincare", "Moisturizer", "Glow"],
-        desc: "A skincare listing. Review ingredients, seller details and patch-test recommendations before using any skincare product."
-      },
-      {
-        id: "nail-clippers",
-        title: "16pcs Professional Nail Clippers and Cuticle Nippers Manicure Pedicure Set",
-        category: "beauty",
-        merchant: "AliExpress",
-        price: 0.99,
-        original: 11.22,
-        discount: 91,
-        badge: "Nail Care",
-        image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80",
-        link: "https://s.click.aliexpress.com/e/_c3HxQr1D",
-        tags: ["Manicure", "Nail Set", "Travel"],
-        desc: "A manicure and pedicure tool set listing. Check stainless steel quality, included pieces and seller reviews."
-      }
-    ];
-
-    let currentCategory = "all";
-    let saved = JSON.parse(localStorage.getItem("consumerLuxeSaved") || "[]");
-
-    function money(num) {
-      return "$" + Number(num).toFixed(2).replace(".00", "");
-    }
-
-    function categoryLabel(id) {
-      return categories.find(c => c.id === id)?.label || id;
-    }
-
-    function renderCategoryCards() {
-      const wrap = document.getElementById("categoryCards");
-      wrap.innerHTML = categories.slice(1).map(cat => `
-        <button class="cat-card" type="button" onclick="setCategoryFromLink('${cat.id}')">
-          <span class="cat-icon">${cat.icon}</span>
-          <strong>${cat.label}</strong>
-          <span>${cat.sub}</span>
-        </button>
-      `).join("");
-    }
-
-    function renderFilters() {
-      const pills = document.getElementById("filterPills");
-      pills.innerHTML = categories.slice(0, 9).map(cat => `
-        <button class="filter-btn ${currentCategory === cat.id ? "active" : ""}" type="button" onclick="setCategory('${cat.id}')">
-          ${cat.icon} ${cat.label}
-        </button>
-      `).join("");
-    }
-
-    function setCategory(cat) {
-      currentCategory = cat;
-      renderFilters();
-      renderProducts();
-    }
-
-    function setCategoryFromLink(cat) {
-      currentCategory = cat;
-      setTimeout(() => {
-        renderFilters();
-        renderProducts();
-      }, 10);
-    }
-
-    function renderProducts() {
-      const grid = document.getElementById("productGrid");
-      const q = document.getElementById("searchInput").value.trim().toLowerCase();
-      const sort = document.getElementById("sortSelect").value;
-
-      let list = products.filter(p => {
-        const matchCat = currentCategory === "all" || p.category === currentCategory;
-        const searchable = `${p.title} ${p.category} ${p.merchant} ${p.tags.join(" ")}`.toLowerCase();
-        return matchCat && (!q || searchable.includes(q));
-      });
-
-      if (sort === "discount") list.sort((a,b) => b.discount - a.discount);
-      if (sort === "price-low") list.sort((a,b) => a.price - b.price);
-      if (sort === "price-high") list.sort((a,b) => b.price - a.price);
-
-      if (!list.length) {
-        grid.innerHTML = `
-          <div class="empty-state">
-            <h3>No deals found</h3>
-            <p>Try another category or search term.</p>
-          </div>
-        `;
-        return;
-      }
-
-      grid.innerHTML = list.map(p => {
-        const isSaved = saved.includes(p.id);
-        return `
-          <article class="product-card">
-            <div class="product-media">
-              <img src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80'">
-              <span class="badge">${p.badge}</span>
-              <button class="save-btn ${isSaved ? "saved" : ""}" type="button" onclick="toggleSave('${p.id}', this)" aria-label="Save product">${isSaved ? "♥" : "♡"}</button>
-            </div>
-
-            <div class="product-body">
-              <div class="product-meta">
-                <span class="category-name">${categoryLabel(p.category)}</span>
-                <span class="merchant">${p.merchant}</span>
-              </div>
-
-              <h3 class="product-title">${escapeHtml(p.title)}</h3>
-
-              <div class="price-row">
-                <span class="price">${money(p.price)}</span>
-                <span class="original">${money(p.original)}</span>
-                <span class="discount">${p.discount}% off</span>
-              </div>
-
-              <div class="tag-row">
-                ${p.tags.slice(0,3).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}
-              </div>
-
-              <div class="card-actions">
-                <a class="deal-link" href="${p.link}" target="_blank" rel="nofollow sponsored noopener noreferrer" onclick="trackDeal('${p.id}')">
-                  View Deal ↗
-                </a>
-                <button class="details-btn" type="button" onclick="openProduct('${p.id}')" aria-label="View details">i</button>
-              </div>
-
-              <p class="small-disclosure">
-                Affiliate link. Final price, shipping and availability are confirmed on the merchant website.
-              </p>
-            </div>
-          </article>
-        `;
-      }).join("");
-
-      updateSavedCount();
-    }
-
-    function openProduct(id) {
-      const p = products.find(x => x.id === id);
-      if (!p) return;
-
-      document.getElementById("modalContent").innerHTML = `
-        <div class="modal-grid">
-          <div class="modal-img">
-            <img src="${p.image}" alt="${escapeHtml(p.title)}">
-          </div>
-
-          <div>
-            <div class="section-kicker" style="justify-content:flex-start;">${categoryLabel(p.category)} · ${p.merchant}</div>
-            <h2 class="modal-title">${escapeHtml(p.title)}</h2>
-            <p class="modal-desc">${escapeHtml(p.desc)}</p>
-
-            <div class="price-row">
-              <span class="price">${money(p.price)}</span>
-              <span class="original">${money(p.original)}</span>
-              <span class="discount">${p.discount}% off</span>
-            </div>
-
-            <div class="tag-row">
-              ${p.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("")}
-            </div>
-
-            <div class="info-card" style="padding:18px;border-radius:20px;margin:16px 0;">
-              <h3 style="font-size:22px;">Before You Buy</h3>
-              <ul>
-                <li><span class="check">✓</span><span>Check final price, shipping time and seller terms on the merchant page.</span></li>
-                <li><span class="check">✓</span><span>Review product photos, size charts and customer feedback before ordering.</span></li>
-                <li><span class="check">✓</span><span>Consumer Luxe may earn commission, but does not sell or ship the product.</span></li>
-              </ul>
-            </div>
-
-            <div class="modal-actions">
-              <a class="btn btn-gold" href="${p.link}" target="_blank" rel="nofollow sponsored noopener noreferrer" onclick="trackDeal('${p.id}')">Go to Merchant Deal ↗</a>
-              <button class="btn btn-dark" type="button" onclick="toggleSave('${p.id}')">Save Deal</button>
-              <button class="btn btn-dark" type="button" onclick="shareProduct('${p.id}')">Share</button>
-            </div>
-
-            <div class="review-box">
-              <h4>Review this deal</h4>
-              <p style="color:#6b7280;font-size:13px;">No fake reviews are shown. This feedback form is ready for future backend integration.</p>
-              <input type="text" id="reviewName" placeholder="Your name">
-              <textarea id="reviewText" placeholder="Write your honest feedback or question..."></textarea>
-              <button class="btn btn-dark" style="margin-top:10px;" type="button" onclick="submitReview('${p.id}')">Submit Feedback</button>
-            </div>
-          </div>
-        </div>
-      `;
-
-      document.getElementById("productModal").classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeModal() {
-      document.getElementById("productModal").classList.remove("active");
-      document.body.style.overflow = "";
-    }
-
-    function toggleSave(id, btn) {
-      if (saved.includes(id)) {
-        saved = saved.filter(x => x !== id);
-        showToast("Removed from saved deals.");
-      } else {
-        saved.push(id);
-        showToast("Saved to your deal list.");
-      }
-
-      localStorage.setItem("consumerLuxeSaved", JSON.stringify(saved));
-      updateSavedCount();
-
-      if (btn) {
-        btn.classList.toggle("saved");
-        btn.textContent = saved.includes(id) ? "♥" : "♡";
-      }
-    }
-
-    function updateSavedCount() {
-      document.getElementById("savedCount").textContent = saved.length;
-    }
-
-    function showSaved() {
-      if (!saved.length) {
-        showToast("No saved deals yet.");
-        return;
-      }
-      currentCategory = "all";
-      document.getElementById("searchInput").value = "";
-      renderFilters();
-
-      const grid = document.getElementById("productGrid");
-      const list = products.filter(p => saved.includes(p.id));
-
-      grid.innerHTML = list.map(p => `
-        <article class="product-card">
-          <div class="product-media">
-            <img src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy">
-            <span class="badge">Saved</span>
-            <button class="save-btn saved" type="button" onclick="toggleSave('${p.id}', this)">♥</button>
-          </div>
-          <div class="product-body">
-            <div class="product-meta">
-              <span class="category-name">${categoryLabel(p.category)}</span>
-              <span class="merchant">${p.merchant}</span>
-            </div>
-            <h3 class="product-title">${escapeHtml(p.title)}</h3>
-            <div class="price-row">
-              <span class="price">${money(p.price)}</span>
-              <span class="original">${money(p.original)}</span>
-              <span class="discount">${p.discount}% off</span>
-            </div>
-            <div class="card-actions">
-              <a class="deal-link" href="${p.link}" target="_blank" rel="nofollow sponsored noopener noreferrer">View Deal ↗</a>
-              <button class="details-btn" type="button" onclick="openProduct('${p.id}')">i</button>
-            </div>
-            <p class="small-disclosure">Affiliate link. Final terms are confirmed on the merchant website.</p>
-          </div>
-        </article>
-      `).join("");
-
-      document.getElementById("deals").scrollIntoView({ behavior: "smooth" });
-      showToast("Showing saved deals.");
-    }
-
-    function shareProduct(id) {
-      const p = products.find(x => x.id === id);
-      if (!p) return;
-
-      const text = `${p.title} — ${money(p.price)} on Consumer Luxe`;
-      if (navigator.share) {
-        navigator.share({
-          title: "Consumer Luxe Deal",
-          text,
-          url: p.link
-        }).catch(() => {});
-      } else {
-        navigator.clipboard.writeText(p.link).then(() => showToast("Product link copied."));
-      }
-    }
-
-    function shareSite() {
-      const url = "https://consumerluxe.xyz/";
-      if (navigator.share) {
-        navigator.share({
-          title: "Consumer Luxe",
-          text: "Curated rewards for smart shoppers.",
-          url
-        }).catch(() => {});
-      } else {
-        navigator.clipboard.writeText(url).then(() => showToast("Website link copied."));
-      }
-    }
-
-    function submitReview(id) {
-      const name = document.getElementById("reviewName")?.value.trim();
-      const text = document.getElementById("reviewText")?.value.trim();
-
-      if (!name || !text) {
-        showToast("Please write your name and feedback.");
-        return;
-      }
-
-      const reviews = JSON.parse(localStorage.getItem("consumerLuxeReviews") || "[]");
-      reviews.push({ id, name, text, date: new Date().toISOString() });
-      localStorage.setItem("consumerLuxeReviews", JSON.stringify(reviews));
-
-      document.getElementById("reviewName").value = "";
-      document.getElementById("reviewText").value = "";
-      showToast("Thanks! Feedback saved locally. Backend can be connected later.");
-    }
-
-    function handleNewsletter(e) {
-      e.preventDefault();
-      const input = e.target.querySelector("input");
-      input.value = "";
-      showToast("Thanks for joining Consumer Luxe.");
-    }
-
-    function trackDeal(id) {
-      console.log("Affiliate click:", id);
-    }
-
-    function toggleMobileMenu(force) {
-      const nav = document.getElementById("mobileNav");
-      if (typeof force === "boolean") {
-        nav.classList.toggle("open", force);
-      } else {
-        nav.classList.toggle("open");
-      }
-    }
-
-    function showToast(message) {
-      const toast = document.getElementById("toast");
-      toast.textContent = message;
-      toast.classList.add("show");
-      clearTimeout(window.toastTimer);
-      window.toastTimer = setTimeout(() => toast.classList.remove("show"), 2500);
-    }
-
-    function acceptCookies() {
-      localStorage.setItem("consumerLuxeCookies", "accepted");
-      document.getElementById("cookieNotice").classList.remove("show");
-    }
-
-    function openLegal(type) {
-      const content = {
-        affiliate: {
-          title: "Affiliate Disclosure",
-          body: `
-            <p>Consumer Luxe participates in affiliate and advertising programs. This means we may earn a commission when you click a link and make a qualifying purchase on a third-party merchant website.</p>
-            <p>This does not increase the price you pay. We aim to provide helpful shopping recommendations, but final price, shipping, return policy and product availability are controlled by the merchant.</p>
-          `
-        },
-        privacy: {
-          title: "Privacy Policy",
-          body: `
-            <p>Consumer Luxe may collect basic information such as email addresses submitted through forms, anonymous analytics data and cookie-based browsing data.</p>
-            <p>We may use third-party tools for analytics, advertising and affiliate tracking. We do not sell personal information directly. For questions, contact ${CONTACT_EMAIL}.</p>
-          `
-        },
-        terms: {
-          title: "Terms of Service",
-          body: `
-            <p>By using Consumer Luxe, you agree that our website provides shopping discovery, editorial recommendations and third-party links. We do not directly sell, ship or guarantee third-party products.</p>
-            <p>You are responsible for reviewing merchant terms before buying. Consumer Luxe is not liable for merchant pricing changes, stock changes, shipping delays or product issues.</p>
-          `
-        },
-        cookie: {
-          title: "Cookie Policy",
-          body: `
-            <p>Consumer Luxe may use cookies for analytics, advertising, affiliate attribution and user experience features such as saved deals.</p>
-            <p>You can control cookies through your browser settings. Some features may not work properly if cookies or local storage are disabled.</p>
-          `
-        },
-        disclaimer: {
-          title: "Disclaimer",
-          body: `
-            <p>Product prices, discounts, descriptions and availability can change without notice. We make reasonable efforts to present useful information, but merchant pages are the final source of truth.</p>
-            <p>Gift card or reward content, if shown, is informational or partner-based. Consumer Luxe does not directly issue gift cards unless clearly stated in a separate official promotion.</p>
-          `
-        }
-      };
-
-      const item = content[type] || content.disclaimer;
-
-      document.getElementById("legalContent").innerHTML = `
-        <div class="section-kicker" style="justify-content:flex-start;">Consumer Luxe Legal</div>
-        <h2 class="modal-title">${item.title}</h2>
-        <div class="modal-desc" style="font-size:15px;display:grid;gap:12px;">${item.body}</div>
-        <p class="small-disclosure" style="font-size:12px;margin-top:18px;">Last updated: 2025. Contact: ${CONTACT_EMAIL}</p>
-      `;
-
-      document.getElementById("legalModal").classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeLegal() {
-      document.getElementById("legalModal").classList.remove("active");
-      document.body.style.overflow = "";
-    }
-
-    function escapeHtml(str) {
-      return String(str)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-
-    document.getElementById("productModal").addEventListener("click", function(e) {
-      if (e.target === this) closeModal();
-    });
-
-    document.getElementById("legalModal").addEventListener("click", function(e) {
-      if (e.target === this) closeLegal();
-    });
-
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape") {
-        closeModal();
-        closeLegal();
-      }
-    });
-
-    window.addEventListener("DOMContentLoaded", function() {
-      renderCategoryCards();
-      renderFilters();
-      renderProducts();
-      updateSavedCount();
-
-      if (!localStorage.getItem("consumerLuxeCookies")) {
-        setTimeout(() => {
-          document.getElementById("cookieNotice").classList.add("show");
-        }, 1200);
-      }
-    });
-
-    /*
-      Important:
-      The auto/pop/redirect style ad script was intentionally NOT included.
-      Reason: it may harm user trust, SEO, Google/affiliate approval and mobile experience.
-      Use banner/native ads only until your site is approved and stable.
-    */
-  </script>
+
+<div class="top"><div class="c">Affiliate Disclosure: <strong>Consumer Luxe may earn a commission from qualifying purchases at no extra cost to you.</strong> Prices and availability can change on merchant websites.</div></div>
+
+<header class="hd"><div class="c">
+<div class="hd-in">
+<a href="/" class="br"><div class="br-m">CL</div><div><div class="br-t">Consumer Luxe</div><span class="br-s">Curated Rewards</span></div></a>
+<nav class="nv"><a href="#deals">Deals</a><a href="#categories">Categories</a><a href="#giftcards">Gift Cards</a><a href="#guides">Guides</a><a href="#youtube">YouTube</a><a href="#" onclick="openLegal('about');return false">About</a><a href="#" onclick="openLegal('contact');return false">Contact</a></nav>
+<div class="ac">
+<button class="btn btn-l" onclick="showSaved()" type="button">♡ <span id="savedCount">0</span></button>
+<a class="btn btn-g jt" href="#newsletter">Join Free</a>
+<button class="mb" onclick="toggleMenu()" type="button">☰</button>
+</div>
+</div>
+<nav id="mobileNav" class="mn">
+<a href="#deals" onclick="toggleMenu(false)">Deals</a>
+<a href="#categories" onclick="toggleMenu(false)">Categories</a>
+<a href="#giftcards" onclick="toggleMenu(false)">Gift Cards</a>
+<a href="#guides" onclick="toggleMenu(false)">Guides</a>
+<a href="#youtube" onclick="toggleMenu(false)">YouTube</a>
+<a href="#" onclick="openLegal('about');toggleMenu(false);return false">About</a>
+<a href="#" onclick="openLegal('contact');toggleMenu(false);return false">Contact</a>
+</nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="c"><div class="hg">
+<div>
+<div class="eb"><span class="dot"></span> US-Focused Smart Shopping Hub</div>
+<h1>Curated Rewards for <span>Smart Shoppers</span></h1>
+<p>Discover premium fashion, jewelry, beauty, fitness, electronics and everyday lifestyle deals in one trusted place. Consumer Luxe is built for clean recommendations, transparent disclosures and faster mobile browsing.</p>
+<div class="hc"><a class="btn btn-g" href="#deals">Explore Today's Deals</a><a class="btn btn-l" href="#" onclick="openLegal('about');return false">How We Curate</a></div>
+<div class="sts">
+<div class="st"><strong>12+</strong><span>Categories</span></div>
+<div class="st"><strong>Daily</strong><span>Updates</span></div>
+<div class="st"><strong>FTC</strong><span>Compliant</span></div>
+<div class="st"><strong>Fast</strong><span>Mobile-First</span></div>
+</div>
+</div>
+<div class="hrc"><div class="hrm">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=70" alt="Premium fashion shopping" loading="eager"/>
+<div class="hrp"><h3>Premium Deal Shelf</h3><p>Fashion, jewelry, beauty, fitness and everyday essentials — curated with a luxury shopping feel.</p>
+<div class="pr"><span class="pl">Fashion</span><span class="pl">Jewelry</span><span class="pl">Beauty</span><span class="pl">Fitness</span><span class="pl">Tech</span></div>
+</div></div></div>
+</div></div></section>
+
+<div id="categories" class="cs"><div class="c"><div class="cb"><div class="cg" id="categoryCards"></div></div></div></div>
+
+<section><div class="c">
+<div class="sh"><div class="kk">✦ Trust First</div><h2>Built Like a Real Shopping Brand</h2><p>Consumer Luxe is a transparent affiliate shopping destination — no fake countdowns, no hidden redirects, no misleading promises.</p></div>
+<div class="tg">
+<div class="tc"><div class="ti">✓</div><h3>Transparent Disclosure</h3><p>Every purchase may generate commission, but shoppers do not pay extra because of our links.</p></div>
+<div class="tc"><div class="ti">★</div><h3>Curated Experience</h3><p>Products organized by lifestyle categories so visitors quickly find what they need.</p></div>
+<div class="tc"><div class="ti">⚡</div><h3>Mobile-First Speed</h3><p>Built for modern mobile shoppers with fast browsing and clean product cards.</p></div>
+<div class="tc"><div class="ti">🔒</div><h3>No Forced Popups</h3><p>We avoid intrusive ad behavior that damages trust, SEO and affiliate approval chances.</p></div>
+</div>
+</div></section>
+
+<div class="c"><div class="as"><div class="ab"><span class="al">Advertisement</span>
+<script>atOptions={'key':'e17b4c9d672c26e069960b87e1050631','format':'iframe','height':50,'width':320,'params':{}};</script>
+<script src="https://www.highperformanceformat.com/e17b4c9d672c26e069960b87e1050631/invoke.js"></script>
+<div class="an">Sponsored placement. Ads are separated from editorial recommendations.</div>
+</div></div></div>
+
+<section id="deals"><div class="c">
+<div class="sh"><div class="kk">✦ Top On-Sale Product Recommendations</div><h2>Today's Curated Deal Collection</h2><p>Browse fashion, jewelry, beauty, fitness, tech and lifestyle picks. Product links lead to third-party merchant websites.</p></div>
+<div class="tb"><div class="sb"><input id="searchInput" type="search" placeholder="Search deals, categories, products..." oninput="renderProducts()"/></div><select id="sortSelect" class="ss" onchange="renderProducts()"><option value="featured">Sort: Featured</option><option value="discount">Highest Discount</option><option value="price-low">Price: Low → High</option><option value="price-high">Price: High → Low</option></select></div>
+<div class="fp" id="filterPills"></div>
+<div class="pg" id="productGrid"></div>
+<div class="na"><span class="al">Sponsored Native Recommendations</span>
+<script async data-cfasync="false" src="https://pl30329464.effectivecpmnetwork.com/1fc61a1244a0fb91cae53c28da258d58/invoke.js"></script>
+<div id="container-1fc61a1244a0fb91cae53c28da258d58"></div>
+<p class="an">Native sponsored content is separate from Consumer Luxe editorial recommendations.</p>
+</div>
+</div></section>
+
+<section id="about"><div class="c"><div class="ft">
+<div class="kk">✦ How Consumer Luxe Works</div>
+<h2>A premium shopping experience without pretending to be the merchant.</h2>
+<p>We help shoppers discover products from third-party merchants. We do not directly sell, ship or issue warranty. Always check final price, shipping and terms on the merchant website before purchasing.</p>
+<div class="fg">
+<div class="fl"><span>🔎</span><h3>Discover</h3><p>Browse curated deal cards organized by fashion, jewelry, beauty, fitness, tech and essentials.</p></div>
+<div class="fl"><span>🛍️</span><h3>Compare</h3><p>Check current sale price, original price, discount percentage and product category.</p></div>
+<div class="fl"><span>↗</span><h3>Shop Securely</h3><p>Click merchant link and complete purchase directly on the third-party store website.</p></div>
+</div>
+</div></div></section>
+
+<section id="giftcards"><div class="c"><div class="tw">
+<div class="ic"><div class="kk">✦ Gift Card Guide</div><h3>Gift Cards & Rewards — Clear Disclaimer</h3><p>Consumer Luxe does not issue, sell or guarantee gift cards directly. Any gift card or reward content is for shopping education, partner offers or merchant promotions only.</p><ul>
+<li><span class="ck">✓</span><span>Gift card content is clearly labeled as guide, partner offer or merchant promotion.</span></li>
+<li><span class="ck">✓</span><span>No fake "free gift card" promise unless the offer is real and verified.</span></li>
+<li><span class="ck">✓</span><span>Users should always read merchant terms before joining any reward offer.</span></li>
+</ul></div>
+<div class="ic"><div class="kk">✦ Referral Ready</div><h3>Invite Friends Transparently</h3><p>Referral features are safe when transparent. This site includes a share system. Real reward tracking can be added later with backend integration.</p><ul>
+<li><span class="ck">✓</span><span>Uses native mobile sharing where available.</span></li>
+<li><span class="ck">✓</span><span>No fake earning claim is shown.</span></li>
+<li><span class="ck">✓</span><span>Backend referral tracking can be added later.</span></li>
+</ul><button class="btn btn-d" style="margin-top:18px" onclick="shareSite()">Share Consumer Luxe</button></div>
+</div></div></section>
+
+<section id="youtube"><div class="c"><div class="yt">
+<div class="kk">✦ YouTube Channel</div>
+<h3>Video Reviews & Shopping Guides</h3>
+<p>YouTube channel link will be added later. Product reviews, deal roundups and shopping tips increase trust and support affiliate approval.</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-g" href="#" onclick="event.preventDefault();toast('YouTube link will be added later.')">Subscribe Placeholder</a><a class="btn btn-l" href="#guides">Read Shopping Guides</a></div>
+</div></div></section>
+
+<section id="guides"><div class="c">
+<div class="sh"><div class="kk">✦ Editorial Guides</div><h2>Smart Shopping Content</h2><p>These guide sections make the site complete and trusted. Full blog posts should be added later for SEO and network approval.</p></div>
+<div class="ag">
+<article class="ac2"><div class="ai"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=70" alt="Fashion guide" loading="lazy"></div><div class="ab2"><span class="lbl">Fashion Guide</span><h3>How to Build a Premium Wardrobe on a Smart Budget</h3><p>Simple tips for choosing versatile clothing, accessories and seasonal essentials without overspending.</p><a href="#" onclick="event.preventDefault();toast('Full article page can be added later.')">Read guide →</a></div></article>
+<article class="ac2"><div class="ai"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=70" alt="Jewelry guide" loading="lazy"></div><div class="ab2"><span class="lbl">Jewelry Guide</span><h3>What to Check Before Buying Budget Sterling Silver Jewelry</h3><p>Understand material claims, plating, sizing, shipping time and merchant reviews before purchasing.</p><a href="#" onclick="event.preventDefault();toast('Full article page can be added later.')">Read guide →</a></div></article>
+<article class="ac2"><div class="ai"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=70" alt="Beauty guide" loading="lazy"></div><div class="ab2"><span class="lbl">Beauty Guide</span><h3>Beauty Deals: How to Shop Safely for Skincare Online</h3><p>Always check ingredients, seller ratings, patch-test recommendations and return policies.</p><a href="#" onclick="event.preventDefault();toast('Full article page can be added later.')">Read guide →</a></div></article>
+</div>
+</div></section>
+
+<section id="newsletter"><div class="c"><div class="nl">
+<div class="kk">✦ Luxe Club</div>
+<h2>Join the Smart Shopper List</h2>
+<p>Get curated deal alerts, style guides and product recommendations. No spam — just shopping intelligence.</p>
+<form onsubmit="joinNL(event)"><input type="email" placeholder="Enter your email address" required><button class="btn btn-g" type="submit">Join Free</button></form>
+<p style="font-size:11px;margin-top:14px;color:rgba(255,255,255,.52)">By joining, you agree to receive emails from Consumer Luxe. You can unsubscribe anytime.</p>
+</div></div></section>
+</main>
+
+<footer class="fo"><div class="c">
+<div class="fgg">
+<div><h3>Consumer Luxe</h3><p>Curated rewards for smart shoppers. Consumer Luxe is an affiliate-style shopping discovery platform. We recommend third-party products and may earn commission from qualifying purchases.</p><p style="margin-top:12px">Contact: <a href="mailto:contact@consumerluxe.xyz">contact@consumerluxe.xyz</a></p>
+<div class="sc"><a href="#" onclick="event.preventDefault();toast('Facebook link coming soon.')">f</a><a href="#" onclick="event.preventDefault();toast('Instagram link coming soon.')">◎</a><a href="#" onclick="event.preventDefault();toast('YouTube link coming soon.')">▶</a><a href="#" onclick="event.preventDefault();toast('TikTok link coming soon.')">♪</a></div></div>
+<div><h4>Categories</h4><ul>
+<li><a href="#deals" onclick="setCategory('women',true)">Women's Fashion</a></li>
+<li><a href="#deals" onclick="setCategory('jewelry',true)">Jewelry</a></li>
+<li><a href="#deals" onclick="setCategory('beauty',true)">Beauty</a></li>
+<li><a href="#deals" onclick="setCategory('fitness',true)">Fitness</a></li>
+<li><a href="#deals" onclick="setCategory('electronics',true)">Electronics</a></li>
+</ul></div>
+<div><h4>Company</h4><ul>
+<li><a href="#" onclick="openLegal('about');return false">About Us</a></li>
+<li><a href="#guides">Shopping Guides</a></li>
+<li><a href="#youtube">YouTube</a></li>
+<li><a href="#" onclick="openLegal('contact');return false">Contact Us</a></li>
+<li><a href="#" onclick="openLegal('sitemap');return false">Sitemap</a></li>
+</ul></div>
+<div><h4>Legal</h4><ul>
+<li><a href="#" onclick="openLegal('affiliate');return false">Affiliate Disclosure</a></li>
+<li><a href="#" onclick="openLegal('privacy');return false">Privacy Policy</a></li>
+<li><a href="#" onclick="openLegal('terms');return false">Terms of Service</a></li>
+<li><a href="#" onclick="openLegal('cookie');return false">Cookie Policy</a></li>
+<li><a href="#" onclick="openLegal('disclaimer');return false">Disclaimer</a></li>
+</ul></div>
+</div>
+<div class="fb2"><span>© 2025 Consumer Luxe. All rights reserved.</span><span>Prices, availability and discount information are subject to change on merchant websites.</span></div>
+</div></footer>
+
+<!-- Product Modal -->
+<div class="mo" id="productModal"><div class="mc"><button class="mx" onclick="closeModal()">×</button><div class="mi" id="modalContent"></div></div></div>
+
+<!-- Legal Modal -->
+<div class="mo" id="legalModal"><div class="mc" style="max-width:820px"><button class="mx" onclick="closeLegal()">×</button><div class="lm" id="legalContent"></div></div></div>
+
+<!-- Cookie -->
+<div class="ck2" id="cookieNotice"><p>We use cookies and third-party tools to improve browsing and display ads. Read our <a href="#" onclick="openLegal('cookie');return false">Cookie Policy</a>.</p><button class="btn btn-g" onclick="acceptCookies()">Accept</button></div>
+
+<div class="ts" id="toast"></div>
+
+<script>
+const EMAIL="contact@consumerluxe.xyz";
+
+const categories=[
+{id:"all",label:"All Deals",icon:"✦",sub:"Full collection"},
+{id:"women",label:"Women's Fashion",icon:"👗",sub:"Clothing & style"},
+{id:"jewelry",label:"Jewelry",icon:"💍",sub:"Bracelets & chains"},
+{id:"beauty",label:"Beauty",icon:"💄",sub:"Skincare & grooming"},
+{id:"fitness",label:"Fitness",icon:"🧘",sub:"Activewear"},
+{id:"men",label:"Men's Fashion",icon:"👔",sub:"Casual essentials"},
+{id:"electronics",label:"Electronics",icon:"🎧",sub:"Gadgets & gear"},
+{id:"home",label:"Home & Living",icon:"🏡",sub:"Essentials"},
+{id:"gifts",label:"Gifts",icon:"🎁",sub:"Gift ideas"},
+{id:"sports",label:"Sports",icon:"⚽",sub:"Event picks"},
+{id:"kitchen",label:"Food & Kitchen",icon:"🍽️",sub:"Coming soon"},
+{id:"travel",label:"Travel",icon:"✈️",sub:"Smart packing"}
+];
+
+const products=[
+{id:"bracelet-snake",title:"Handmade 925 Sterling Silver Charm Bracelet for Women",category:"jewelry",merchant:"AliExpress",price:.99,original:1.57,discount:37,badge:"Jewelry Pick",image:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c2yOaaPZ",tags:["Bracelet","Gift","Women"],desc:"Budget-friendly jewelry listing. Check sizing, material details and seller rating before purchasing."},
+{id:"silver-chain-set",title:"925 Sterling Silver 4MM Chain Bracelet Necklace Set",category:"jewelry",merchant:"AliExpress",price:.99,original:2.30,discount:57,badge:"Gift Deal",image:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c3w4pxqF",tags:["Chain","Unisex","Gift"],desc:"Chain jewelry listing for gift browsing. Verify material claims on the product page."},
+{id:"silver-necklace",title:"925 Sterling Silver Necklace Chain 2-12mm Width",category:"jewelry",merchant:"AliExpress",price:.99,original:2.23,discount:56,badge:"On Sale",image:"https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c4dUgwaR",tags:["Necklace","Chain","Unisex"],desc:"Low-price necklace chain listing. Compare width and length before ordering."},
+{id:"mens-chain",title:"Men's 925 Sterling Silver Chain Necklace 2-12MM",category:"jewelry",merchant:"AliExpress",price:.99,original:2.30,discount:57,badge:"Men's Jewelry",image:"https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c32jmhKj",tags:["Men","Chain","Style"],desc:"Men's fashion chain listing. Confirm size and material on the merchant website."},
+{id:"yoga-leggings",title:"Yoga Fitness Women Leggings High Waist with Pocket",category:"fitness",merchant:"AliExpress",price:.99,original:12.91,discount:92,badge:"Mega Discount",image:"https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c3LHYRix",tags:["Leggings","Gym","Women"],desc:"High-discount activewear listing. Review sizing charts carefully."},
+{id:"micro-leggings",title:"Micro Flare Leggings Women High Waist Sports Pants",category:"fitness",merchant:"AliExpress",price:.99,original:14.06,discount:93,badge:"Top Discount",image:"https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c4ktOvzt",tags:["Sports","Women","Fitness"],desc:"Activewear listing with strong discount. Check user photos and size reviews."},
+{id:"fitness-shorts",title:"Women Fitness Shorts Tight Cycling Yoga High Waist",category:"fitness",merchant:"AliExpress",price:.99,original:6.32,discount:84,badge:"Fitness Deal",image:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c4bElNvD",tags:["Shorts","Yoga","Cycling"],desc:"Breathable fitness shorts listing. Check fabric and sizing."},
+{id:"floral-bodysuit",title:"Women Floral Print Lace-Trim Bodysuit Summer",category:"women",merchant:"AliExpress",price:.99,original:10.75,discount:91,badge:"Women's Style",image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c3Th9jdt",tags:["Summer","Bodysuit","Women"],desc:"Women's fashion listing. Review sizing and return conditions."},
+{id:"wide-pants",title:"Women Summer Wide Leg Pleated Casual Trousers",category:"women",merchant:"AliExpress",price:.99,original:9.44,discount:90,badge:"Summer Pick",image:"https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c3pORkL1",tags:["Pants","Summer","Casual"],desc:"Lightweight summer pants listing. Check material and size chart."},
+{id:"tshirt-dress",title:"Women Summer Casual Swing T-Shirt Dress with Pockets",category:"women",merchant:"AliExpress",price:.99,original:5.37,discount:82,badge:"Casual Wear",image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c4FH9F23",tags:["Dress","Beach","Casual"],desc:"Casual summer dress listing. Verify size and merchant shipping info."},
+{id:"sports-bra",title:"Women Sports Bra Running Fitness Yoga Vest",category:"fitness",merchant:"AliExpress",price:.99,original:7.00,discount:86,badge:"Workout Pick",image:"https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c3WUY52j",tags:["Sports Bra","Running","Yoga"],desc:"Sports bra listing. Check support level and sizing."},
+{id:"men-joggers",title:"Men Casual Fashion Sports Pants Gym Jogger",category:"men",merchant:"AliExpress",price:.99,original:14.55,discount:93,badge:"Men's Deal",image:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c2xrpKPh",tags:["Joggers","Gym","Men"],desc:"Men's jogger pants listing. Check inseam and waist fit."},
+{id:"men-pants",title:"Men's Casual Straight Slim Fit Elastic Trousers",category:"men",merchant:"AliExpress",price:.99,original:11.18,discount:91,badge:"Casual Men",image:"https://images.unsplash.com/photo-1506629905607-d405b7a30db9?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c4WvANND",tags:["Pants","Casual","Men"],desc:"Casual men's pants. Verify sizing and delivery estimates."},
+{id:"hair-trimmer",title:"Retro T9 Haircutting Machine Men's Electric Trimmer",category:"beauty",merchant:"AliExpress",price:.99,original:10.76,discount:91,badge:"Grooming",image:"https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c3O3HRNt",tags:["Trimmer","Grooming","Men"],desc:"Grooming tool listing. Check voltage and accessories."},
+{id:"solar-inverter",title:"4KW 120V Off Grid Solar Inverter Pure Sine Wave",category:"home",merchant:"AliExpress",price:278.25,original:662.93,discount:58,badge:"Home Tech",image:"https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c2QBK4fh",tags:["Solar","Home","Power"],desc:"Home energy product. Verify specifications and local electrical requirements."},
+{id:"earbuds",title:"X15 TWS Wireless Bluetooth Headset LED Earbuds",category:"electronics",merchant:"AliExpress",price:.99,original:4.59,discount:78,badge:"Tech Deal",image:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c3aTd5nd",tags:["Earbuds","Bluetooth","Gaming"],desc:"Wireless earbuds listing. Check battery life and Bluetooth version."},
+{id:"honey-cream",title:"Honey Glow Hydrating Skin Moisturizer Face & Body",category:"beauty",merchant:"AliExpress",price:.99,original:6.45,discount:85,badge:"Beauty",image:"https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c2xMq1MB",tags:["Skincare","Moisturizer","Glow"],desc:"Skincare listing. Review ingredients and patch-test recommendations."},
+{id:"nail-set",title:"16pcs Professional Nail Clippers Manicure Pedicure Set",category:"beauty",merchant:"AliExpress",price:.99,original:11.22,discount:91,badge:"Nail Care",image:"https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=70",link:"https://s.click.aliexpress.com/e/_c3HxQr1D",tags:["Manicure","Nail Set","Travel"],desc:"Manicure tool set listing. Check stainless steel quality and seller reviews."}
+];
+
+let currentCategory="all";
+let saved=JSON.parse(localStorage.getItem("clSaved")||"[]");
+
+function money(n){return "$"+Number(n).toFixed(2).replace(".00","")}
+function catLabel(id){return categories.find(c=>c.id===id)?.label||id}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;")}
+
+function renderCats(){
+document.getElementById("categoryCards").innerHTML=categories.slice(1).map(c=>`<button class="ct" type="button" onclick="setCategory('${c.id}',true)"><span>${c.icon}</span><b>${c.label}</b><small>${c.sub}</small></button>`).join("")}
+
+function renderFilters(){
+document.getElementById("filterPills").innerHTML=categories.slice(0,9).map(c=>`<button class="fb ${currentCategory===c.id?'active':''}" type="button" onclick="setCategory('${c.id}')">${c.icon} ${c.label}</button>`).join("")}
+
+function setCategory(id,scroll){
+currentCategory=id;renderFilters();renderProducts();
+if(scroll)document.getElementById("deals").scrollIntoView({behavior:"smooth"})}
+
+function renderProducts(){
+const q=document.getElementById("searchInput").value.trim().toLowerCase();
+const sort=document.getElementById("sortSelect").value;
+const grid=document.getElementById("productGrid");
+let list=products.filter(p=>{
+const mc=currentCategory==="all"||p.category===currentCategory;
+const h=`${p.title} ${p.category} ${p.merchant} ${p.tags.join(" ")}`.toLowerCase();
+return mc&&(!q||h.includes(q))});
+if(sort==="discount")list.sort((a,b)=>b.discount-a.discount);
+if(sort==="price-low")list.sort((a,b)=>a.price-b.price);
+if(sort==="price-high")list.sort((a,b)=>b.price-a.price);
+if(!list.length){grid.innerHTML=`<div class="empty"><h3>No deals found</h3><p>Try another category or search term.</p></div>`;return}
+grid.innerHTML=list.map(p=>{const s=saved.includes(p.id);return`
+<article class="pc"><div class="pm"><img src="${p.image}" alt="${esc(p.title)}" loading="lazy"><span class="bd">${esc(p.badge)}</span><button class="sv ${s?'saved':''}" onclick="toggleSave('${p.id}',this)" type="button">${s?'♥':'♡'}</button></div>
+<div class="pb"><div class="mt"><span class="cn">${catLabel(p.category)}</span><span class="mr">${p.merchant}</span></div>
+<h3 class="tt">${esc(p.title)}</h3>
+<div class="pw"><span class="pp">${money(p.price)}</span><span class="po">${money(p.original)}</span><span class="pd">${p.discount}% off</span></div>
+<div class="tgs">${p.tags.slice(0,3).map(t=>`<span class="tg2">${esc(t)}</span>`).join("")}</div>
+<div class="ca"><a class="dl" href="${p.link}" target="_blank" rel="nofollow sponsored noopener noreferrer" onclick="trackDeal('${p.id}')">View Deal ↗</a><button class="ib" onclick="openProduct('${p.id}')" type="button">i</button></div>
+<p class="md">Affiliate link. Final price, shipping and availability are confirmed on the merchant website. Images are illustrative.</p>
+</div></article>`}).join("");
+updateSaved()}
+
+function openProduct(id){
+const p=products.find(x=>x.id===id);if(!p)return;
+document.getElementById("modalContent").innerHTML=`
+<div class="mg"><div class="mimg"><img src="${p.image}" alt="${esc(p.title)}"></div><div>
+<div class="kk">${catLabel(p.category)} · ${p.merchant}</div>
+<h2 class="mtl">${esc(p.title)}</h2>
+<p class="mds">${esc(p.desc)}</p>
+<div class="pw"><span class="pp">${money(p.price)}</span><span class="po">${money(p.original)}</span><span class="pd">${p.discount}% off</span></div>
+<div class="tgs">${p.tags.map(t=>`<span class="tg2">${esc(t)}</span>`).join("")}</div>
+<div class="ic" style="padding:18px;border-radius:20px;margin:16px 0"><h3 style="font-size:22px">Before You Buy</h3><ul>
+<li><span class="ck">✓</span><span>Check final price, shipping and seller terms on the merchant page.</span></li>
+<li><span class="ck">✓</span><span>Review photos, size charts and customer feedback before ordering.</span></li>
+<li><span class="ck">✓</span><span>Consumer Luxe may earn commission, but does not sell or ship the product.</span></li>
+</ul></div>
+<div class="ma"><a class="btn btn-g" href="${p.link}" target="_blank" rel="nofollow sponsored noopener noreferrer" onclick="trackDeal('${p.id}')">Go to Merchant ↗</a><button class="btn btn-d" onclick="toggleSave('${p.id}')" type="button">Save Deal</button><button class="btn btn-d" onclick="shareProduct('${p.id}')" type="button">Share</button></div>
+<div class="rv"><h4>Feedback</h4><p style="color:#6b7280;font-size:13px">No fake reviews. Feedback is saved locally; backend can connect later.</p><input id="rvN" type="text" placeholder="Your name"><textarea id="rvT" placeholder="Write honest feedback..."></textarea><button class="btn btn-d" style="margin-top:10px" onclick="submitReview('${p.id}')" type="button">Submit</button></div>
+</div></div>`;
+document.getElementById("productModal").classList.add("active");
+document.body.style.overflow="hidden"}
+
+function closeModal(){document.getElementById("productModal").classList.remove("active");document.body.style.overflow=""}
+
+function toggleSave(id,btn){
+if(saved.includes(id)){saved=saved.filter(x=>x!==id);toast("Removed from saved.")}
+else{saved.push(id);toast("Saved!")}
+localStorage.setItem("clSaved",JSON.stringify(saved));updateSaved();
+if(btn){btn.classList.toggle("saved");btn.textContent=saved.includes(id)?"♥":"♡"}}
+
+function updateSaved(){document.getElementById("savedCount").textContent=saved.length}
+
+function showSaved(){
+if(!saved.length){toast("No saved deals yet.");return}
+currentCategory="all";document.getElementById("searchInput").value="";
+renderFilters();
+const list=products.filter(p=>saved.includes(p.id));
+document.getElementById("productGrid").innerHTML=list.map(p=>`
+<article class="pc"><div class="pm"><img src="${p.image}" alt="${esc(p.title)}" loading="lazy"><span class="bd">Saved</span><button class="sv saved" onclick="toggleSave('${p.id}',this)" type="button">♥</button></div>
+<div class="pb"><div class="mt"><span class="cn">${catLabel(p.category)}</span><span class="mr">${p.merchant}</span></div>
+<h3 class="tt">${esc(p.title)}</h3>
+<div class="pw"><span class="pp">${money(p.price)}</span><span class="po">${money(p.original)}</span><span class="pd">${p.discount}% off</span></div>
+<div class="ca"><a class="dl" href="${p.link}" target="_blank" rel="nofollow sponsored noopener noreferrer">View Deal ↗</a><button class="ib" onclick="openProduct('${p.id}')" type="button">i</button></div>
+<p class="md">Affiliate link. Terms confirmed on merchant website.</p></div></article>`).join("");
+document.getElementById("deals").scrollIntoView({behavior:"smooth"});toast("Showing saved deals.")}
+
+function shareProduct(id){const p=products.find(x=>x.id===id);if(!p)return;
+if(navigator.share)navigator.share({title:"Consumer Luxe Deal",text:`${p.title} — ${money(p.price)}`,url:p.link}).catch(()=>{});
+else navigator.clipboard.writeText(p.link).then(()=>toast("Link copied."))}
+
+function shareSite(){const u="https://consumerluxe.xyz/";
+if(navigator.share)navigator.share({title:"Consumer Luxe",text:"Curated rewards for smart shoppers.",url:u}).catch(()=>{});
+else navigator.clipboard.writeText(u).then(()=>toast("Link copied."))}
+
+function submitReview(id){
+const n=document.getElementById("rvN")?.value.trim();
+const t=document.getElementById("rvT")?.value.trim();
+if(!n||!t){toast("Please write name and feedback.");return}
+const r=JSON.parse(localStorage.getItem("clReviews")||"[]");
+r.push({id,name:n,text:t,date:new Date().toISOString()});
+localStorage.setItem("clReviews",JSON.stringify(r));
+document.getElementById("rvN").value="";document.getElementById("rvT").value="";
+toast("Thanks! Feedback saved locally.")}
+
+function joinNL(e){e.preventDefault();e.target.querySelector("input").value="";toast("Thanks for joining Consumer Luxe!");if(window.gtag)gtag("event","newsletter_signup")}
+
+function trackDeal(id){if(window.gtag){const p=products.find(x=>x.id===id);gtag("event","affiliate_click",{event_category:"outbound",event_label:id,merchant:p?.merchant||"merchant"})}}
+
+function toggleMenu(force){const n=document.getElementById("mobileNav");typeof force==="boolean"?n.classList.toggle("open",force):n.classList.toggle("open")}
+
+function toast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.add("show");clearTimeout(window.tt);window.tt=setTimeout(()=>el.classList.remove("show"),2500)}
+
+function acceptCookies(){localStorage.setItem("clCookies","ok");document.getElementById("cookieNotice").classList.remove("show")}
+
+// Legal Pages (all inside index.html as modals)
+const legalPages={
+about:{title:"About Consumer Luxe",body:`
+<h3>Who We Are</h3><p>Consumer Luxe is a hybrid affiliate and deal discovery website. We do not directly sell or ship products. Instead, we curate product recommendations, shopping guides and offer links from third-party merchants.</p>
+<h3>Our Mission</h3><p>Our mission is to help smart shoppers find useful products and deals with clear information, transparent disclosures and a clean mobile-first experience.</p>
+<h3>How We Curate</h3><ul><li>We organize deals by lifestyle categories.</li><li>We clearly label outbound merchant links.</li><li>We avoid fake countdowns, misleading gift card claims and forced redirects.</li><li>We encourage shoppers to verify final price, shipping and terms on merchant websites.</li></ul>
+<h3>Contact</h3><p>Email us at <a href="mailto:${EMAIL}">${EMAIL}</a>.</p>`},
+contact:{title:"Contact Us",body:`
+<h3>Email</h3><p>You can reach us at <a href="mailto:${EMAIL}">${EMAIL}</a>.</p>
+<h3>Business Inquiries</h3><p>For partnership, advertising or affiliate questions, please email us with subject line "Business Inquiry".</p>
+<h3>Support</h3><p>For deal-related questions, product concerns or website feedback, send us an email and we will respond within 48 hours.</p>
+<div class="nt"><strong>Note:</strong> Consumer Luxe does not directly sell, ship or handle product returns. For order issues, please contact the merchant directly.</div>`},
+affiliate:{title:"Affiliate Disclosure",body:`
+<h3>Affiliate Relationship</h3><p>Some links on Consumer Luxe are affiliate links. If you click a link and make a purchase on a third-party merchant website, Consumer Luxe may receive a commission.</p>
+<h3>No Extra Cost to You</h3><p>This does not increase the price you pay. The final price, shipping cost, availability and product terms are determined by the merchant website.</p>
+<h3>Editorial Independence</h3><p>We aim to present useful shopping recommendations and guides. However, shoppers should always verify product details, seller reviews and policies before purchasing.</p>
+<h3>Third-Party Merchants</h3><p>Consumer Luxe does not directly sell, ship or warranty third-party products. Any purchase is completed directly with the merchant.</p>
+<div class="nt"><strong>FTC Compliance:</strong> This disclosure is provided in accordance with the Federal Trade Commission's guidelines on affiliate marketing.</div>`},
+privacy:{title:"Privacy Policy",body:`
+<h3>Information We May Collect</h3><ul><li>Email addresses submitted through newsletter or contact.</li><li>Anonymous analytics data (pages visited, device type, traffic source).</li><li>Cookie or local storage data for saved deals and user experience.</li></ul>
+<h3>How We Use Information</h3><ul><li>To improve website performance and content.</li><li>To measure affiliate link clicks and advertising performance.</li><li>To respond to contact requests.</li><li>To send newsletter emails if you subscribe.</li></ul>
+<h3>Third-Party Tools</h3><p>We may use Google Analytics, advertising networks and affiliate tracking platforms. These may use cookies or similar technologies.</p>
+<h3>Data Sharing</h3><p>We do not sell personal information directly. Third-party services may process data according to their own policies.</p>
+<h3>Your Choices</h3><p>You can disable cookies in your browser, unsubscribe from emails or contact us regarding privacy questions.</p>
+<div class="nt"><strong>Contact:</strong> <a href="mailto:${EMAIL}">${EMAIL}</a></div>`},
+terms:{title:"Terms of Service",body:`
+<h3>Website Purpose</h3><p>Consumer Luxe is a shopping discovery and affiliate recommendation website. We provide product recommendations, deal links and shopping guides.</p>
+<h3>Third-Party Products</h3><p>We do not directly sell, ship, fulfill, refund or warranty products listed on this website. Purchases are completed on third-party merchant websites.</p>
+<h3>Accuracy</h3><p>Prices, discounts, availability and descriptions may change without notice. Merchant pages are the final source of truth.</p>
+<h3>Outbound Links</h3><p>Our website contains links to third-party websites. We are not responsible for third-party content, policies, pricing or fulfillment.</p>
+<h3>Limitation of Liability</h3><p>Consumer Luxe is not liable for merchant issues, product quality, shipping delays, pricing changes or third-party website problems.</p>
+<div class="nt"><strong>Contact:</strong> <a href="mailto:${EMAIL}">${EMAIL}</a></div>`},
+cookie:{title:"Cookie Policy",body:`
+<h3>What Are Cookies?</h3><p>Cookies are small files stored on your device that help websites remember information or measure usage.</p>
+<h3>How We Use Cookies</h3><ul><li>To remember saved deals using local storage.</li><li>To understand website traffic through analytics.</li><li>To support advertising and affiliate tracking.</li><li>To improve user experience.</li></ul>
+<h3>Third-Party Cookies</h3><p>Advertising networks, analytics providers and affiliate platforms may set cookies.</p>
+<h3>Your Control</h3><p>You can disable cookies through browser settings. Some features may not work properly if cookies or local storage are disabled.</p>
+<div class="nt"><strong>Contact:</strong> <a href="mailto:${EMAIL}">${EMAIL}</a></div>`},
+disclaimer:{title:"Disclaimer",body:`
+<h3>Product Information</h3><p>Product titles, prices, discounts and availability may change without notice. Merchant websites are the final source of truth.</p>
+<h3>Illustrative Images</h3><p>Some images may be illustrative lifestyle photos and may not represent the exact merchant product.</p>
+<h3>Third-Party Responsibility</h3><p>Consumer Luxe does not directly sell, ship, refund or warranty third-party products.</p>
+<h3>Gift Cards and Rewards</h3><p>Consumer Luxe does not directly issue or guarantee gift cards. Gift card or reward content is informational, partner-based or merchant-provided.</p>
+<h3>No Professional Advice</h3><p>Shopping guides are for general informational purposes only.</p>
+<div class="nt"><strong>Contact:</strong> <a href="mailto:${EMAIL}">${EMAIL}</a></div>`},
+sitemap:{title:"HTML Sitemap",body:`
+<h3>Main Pages</h3><ul><li><a href="/">Home</a></li><li><a href="#deals">Today's Deals</a></li><li><a href="#categories">Categories</a></li><li><a href="#" onclick="openLegal('about');return false">About Us</a></li><li><a href="#" onclick="openLegal('contact');return false">Contact</a></li></ul>
+<h3>Shopping Categories</h3><ul><li>Women's Fashion</li><li>Jewelry</li><li>Beauty & Grooming</li><li>Fitness & Activewear</li><li>Men's Fashion</li><li>Electronics</li><li>Home & Living</li></ul>
+<h3>Guides & Content</h3><ul><li><a href="#guides">Shopping Guides</a></li><li><a href="#giftcards">Gift Card Guide</a></li><li><a href="#youtube">YouTube</a></li><li><a href="#newsletter">Newsletter</a></li></ul>
+<h3>Legal Pages</h3><ul><li><a href="#" onclick="openLegal('affiliate');return false">Affiliate Disclosure</a></li><li><a href="#" onclick="openLegal('privacy');return false">Privacy Policy</a></li><li><a href="#" onclick="openLegal('terms');return false">Terms of Service</a></li><li><a href="#" onclick="openLegal('cookie');return false">Cookie Policy</a></li><li><a href="#" onclick="openLegal('disclaimer');return false">Disclaimer</a></li></ul>
+<h3>Contact</h3><ul><li><a href="mailto:${EMAIL}">Email Support</a></li></ul>
+<div class="nt"><strong>Affiliate Disclosure:</strong> Consumer Luxe may earn commissions from qualifying purchases through affiliate links.</div>`}
+};
+
+function openLegal(type){
+const page=legalPages[type]||legalPages.disclaimer;
+document.getElementById("legalContent").innerHTML=`<div class="kk">Consumer Luxe</div><h2>${page.title}</h2>${page.body}<p style="font-size:12px;color:#6b7280;margin-top:22px">Last updated: 2025. Contact: <a href="mailto:${EMAIL}">${EMAIL}</a></p>`;
+document.getElementById("legalModal").classList.add("active");
+document.body.style.overflow="hidden"}
+
+function closeLegal(){document.getElementById("legalModal").classList.remove("active");document.body.style.overflow=""}
+
+// Close modals
+document.getElementById("productModal").addEventListener("click",e=>{if(e.target.id==="productModal")closeModal()});
+document.getElementById("legalModal").addEventListener("click",e=>{if(e.target.id==="legalModal")closeLegal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeModal();closeLegal()}});
+
+window.addEventListener("DOMContentLoaded",()=>{
+renderCats();renderFilters();renderProducts();updateSaved();
+if(!localStorage.getItem("clCookies"))setTimeout(()=>document.getElementById("cookieNotice").classList.add("show"),1200)});
+</script>
 </body>
 </html>
