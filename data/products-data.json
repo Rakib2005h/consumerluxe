@@ -517,7 +517,10 @@
    "title": "Synnov 15.6\" Laptop Screen Extender, 1080P FHD Portable Triple Monitor",
    "brand": "Synnov",
    "img": "71eW8nbT6NL._AC_SL1500_",
-   "cat": "Electronics"
+   "cat": "Electronics",
+   "price": 199.99,
+   "price_as_of": "2026-08-22",
+   "price_src": "camel 3P New"
   },
   {
    "n": 50,
@@ -534,8 +537,11 @@
    "asin": "B0FSZZHJKC",
    "title": "Yodoit 4K Portable Monitor 16\" 3840x2400, 1200nit Sunlight-Readable",
    "brand": "Yodoit",
-   "img": null,
-   "cat": "Electronics"
+   "img": "51rHXdw8C0L",
+   "cat": "Electronics",
+   "price": 199.99,
+   "price_as_of": "2026-08-19",
+   "price_src": "camel 3P New"
   },
   {
    "n": 52,
@@ -565,8 +571,12 @@
    "asin": "B001HKU13S",
    "title": "Cassida Money Bill Counter, Business Grade, 1,300 Notes/Min, 5520 UV/MG",
    "brand": "Cassida",
-   "img": null,
-   "cat": "Electronics"
+   "img": "51+0EnuLQTL",
+   "cat": "Electronics",
+   "price": 169.99,
+   "list_price": 187.82,
+   "price_as_of": "2026-06-27",
+   "price_src": "camel 3P New"
   },
   {
    "n": 55,
@@ -807,7 +817,6 @@
  ],
  "pending_links": [],
  "camel_needed": [
-  "B001HKU13S",
   "B09QM79CWT",
   "B09WVF8FNS",
   "B0BTY58CS4",
@@ -825,8 +834,6 @@
   "B0FFNHV6RM",
   "B0FHWP9SWB",
   "B0FJQND826",
-  "B0FSZZHJKC",
-  "B0GVMR4V37",
   "B0HDDGZBKX"
  ],
  "camel_retry": [
