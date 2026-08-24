@@ -109,7 +109,8 @@
    "img": "71a5pnTTgWL._AC_SL1500_",
    "cat": "Fashion",
    "price": null,
-   "old": null
+   "old": null,
+   "stock": "Check"
   },
   {
    "n": 10,
@@ -120,7 +121,8 @@
    "img": "917J5qW3JoL._AC_SL1500_",
    "cat": "Fashion",
    "price": null,
-   "old": null
+   "old": null,
+   "stock": "Check"
   },
   {
    "n": 11,
@@ -131,7 +133,8 @@
    "img": "71M4lTD-e9S._AC_SL1500_",
    "cat": "Fashion",
    "price": null,
-   "old": null
+   "old": null,
+   "stock": "Check"
   },
   {
    "n": 12,
@@ -141,8 +144,10 @@
    "brand": "WateLves",
    "img": "71afjzcSjHL._AC_SL1200_",
    "cat": "Fashion",
-   "price": null,
-   "old": null
+   "price": 19.99,
+   "old": 23.98,
+   "avg": 22.12,
+   "stock": "In Stock"
   },
   {
    "n": 13,
@@ -152,21 +157,102 @@
    "brand": "DOUSSPRT",
    "img": "91upvvjLlSL._AC_SL1500_",
    "cat": "Fashion",
-   "price": null,
-   "old": null
+   "price": 27.99,
+   "old": null,
+   "avg": 26.23,
+   "stock": "In Stock"
+  },
+  {
+   "n": 14,
+   "link": "https://amzn.to/4z9l1x1",
+   "asin": "B0D8WLRD1G",
+   "title": "WateLves Water Shoes Barefoot Beach Swim, Quick-Dry Aqua Socks (Sport Light Blue)",
+   "brand": "WateLves",
+   "img": "71PXeZ49TsS._AC_SL1500_",
+   "cat": "Fashion"
+  },
+  {
+   "n": 15,
+   "link": "https://amzn.to/4hp5K4W",
+   "asin": "B0CHRF49DJ",
+   "title": "PRETTYGARDEN Women's 2 Piece Matching Lounge Set Sweatsuits",
+   "brand": "PRETTYGARDEN",
+   "img": "61mVGvGfGKL._AC_SL1500_",
+   "cat": "Fashion"
+  },
+  {
+   "n": 16,
+   "link": "https://amzn.to/4q3xePz",
+   "asin": "B0HG5ZJZK5",
+   "title": "Sampeel Matching Sets Women 2 Piece Fall Outfits, Business Casual",
+   "brand": "Sampeel",
+   "img": null,
+   "cat": "Fashion"
+  },
+  {
+   "n": 17,
+   "link": "https://amzn.to/4wVpsKu",
+   "asin": "B0FFNHV6RM",
+   "title": "PINSPARK 2 Piece Outfits for Women, Half Zip Sweatsuits Matching Set",
+   "brand": "PINSPARK",
+   "img": null,
+   "cat": "Fashion"
+  },
+  {
+   "n": 18,
+   "link": "https://amzn.to/4xwvLE4",
+   "asin": "B0GWCNLVQ2",
+   "title": null,
+   "img": null,
+   "cat": null
+  },
+  {
+   "n": 19,
+   "link": "https://amzn.to/45lAHj5",
+   "asin": "B0CJBKXPJJ",
+   "title": "Casly Lamiit Women's 2 Piece Outfits, Half Zip Sweatsuits Lounge Matching Set",
+   "brand": "Casly Lamiit",
+   "img": "61ddJNWsV7L._AC_SL1500_",
+   "cat": "Fashion"
+  },
+  {
+   "n": 20,
+   "link": "https://amzn.to/45RRmuK",
+   "asin": "B0D5R3W2HK",
+   "title": "Casly Lamiit Sweat Suit for Women 2 Piece Set, Zipper Airport Outfits",
+   "brand": "Casly Lamiit",
+   "img": null,
+   "cat": "Fashion"
+  },
+  {
+   "n": 21,
+   "link": "https://amzn.to/4fZdPe3",
+   "asin": "B0CRKNRPXF",
+   "title": "PRETTYGARDEN Women's Outfits Pullover Tracksuits 2 Piece",
+   "brand": "PRETTYGARDEN",
+   "img": null,
+   "cat": "Fashion"
+  },
+  {
+   "n": 22,
+   "link": "https://amzn.to/4z9I6Q9",
+   "asin": "B0DHCQ17JQ",
+   "title": "PRETTYGARDEN Women's Oversized Matching Airport Outfits",
+   "brand": "PRETTYGARDEN",
+   "img": null,
+   "cat": "Fashion"
+  },
+  {
+   "n": 23,
+   "link": "https://amzn.to/4xvGjTU",
+   "asin": "B0F8QQQ6RX",
+   "title": "Sixstar Sweatsuit Sweatshirt Sweatpant Tracksuit 2 Piece",
+   "brand": "Sixstar",
+   "img": null,
+   "cat": "Fashion"
   }
  ],
  "pending_links": [
-  "4z9l1x1",
-  "4hp5K4W",
-  "4q3xePz",
-  "4wVpsKu",
-  "4xwvLE4",
-  "45lAHj5",
-  "45RRmuK",
-  "4fZdPe3",
-  "4z9I6Q9",
-  "4xvGjTU",
   "4bGhTyz",
   "4hpvNca",
   "45joLyl",
@@ -223,5 +309,17 @@
   "4z3sUUB",
   "45i2y3M",
   "45QuAn3"
+ ],
+ "camel_needed": [
+  "B0D8WLRD1G",
+  "B0CHRF49DJ",
+  "B0HG5ZJZK5",
+  "B0FFNHV6RM",
+  "B0GWCNLVQ2",
+  "B0CJBKXPJJ",
+  "B0D5R3W2HK",
+  "B0CRKNRPXF",
+  "B0DHCQ17JQ",
+  "B0F8QQQ6RX"
  ]
 }
