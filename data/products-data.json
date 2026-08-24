@@ -696,8 +696,11 @@
    "asin": "B08YDJS51B",
    "title": "FDW 8 Inch Twin Mattress, Gel Memory Foam, CertiPUR-US",
    "brand": "FDW",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "41nus+JpoXL",
+   "cat": "Lifestyle",
+   "price": 89.99,
+   "price_as_of": "2026-08-06",
+   "price_src": "camel Amazon"
   },
   {
    "n": 60,
@@ -830,7 +833,10 @@
    "title": "KRAUS Matte Black Stainless Pull Down Faucet KPF-1610MBSB",
    "brand": "KRAUS",
    "img": "61S9Cshhl5L._AC_SL1500_",
-   "cat": "Lifestyle"
+   "cat": "Lifestyle",
+   "price": 364.95,
+   "price_as_of": "2026-08-06",
+   "price_src": "camel Amazon"
   },
   {
    "n": 74,
@@ -847,8 +853,12 @@
    "asin": "B0D4YD4BH6",
    "title": "Superay 18\" Queen Metal Platform Bed Frame, Heavy Duty Steel Slats",
    "brand": "Superay",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "41W2ICURyoL",
+   "cat": "Lifestyle",
+   "price": 112.97,
+   "list_price": 125.97,
+   "price_as_of": "2026-08-10",
+   "price_src": "camel 3P New"
   },
   {
    "n": 76,
@@ -856,8 +866,11 @@
    "asin": "B0BCYSFL6P",
    "title": "EGOHOME Full 14\" Memory Foam Mattress, Copper Gel Infused, Fiberglass Free",
    "brand": "EGOHOME",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "51aCoDhUaFL",
+   "cat": "Lifestyle",
+   "price": 469.99,
+   "price_as_of": "2026-08-15",
+   "price_src": "camel Amazon"
   },
   {
    "n": 77,
@@ -865,8 +878,11 @@
    "asin": "B0F4JGZPXL",
    "title": "Sweetnight CoolNest Queen Mattress 14\", Cooling Memory Foam, 5-Zone",
    "brand": "Sweetnight",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "41-jz641kdL",
+   "cat": "Lifestyle",
+   "price": 469.99,
+   "price_as_of": "2026-08-14",
+   "price_src": "camel Amazon"
   },
   {
    "n": 78,
@@ -901,7 +917,6 @@
   "B0CPXW4F3B",
   "B0FGCXDCCM",
   "B072WC6Y1G",
-  "B08YDJS51B",
   "B0CKP6Y6KB",
   "B0CGMFGX87",
   "B0D1BGLW25",
@@ -913,11 +928,7 @@
   "B0DWZRJPT6",
   "B0BF9JB5RW",
   "B0GJRPCXGM",
-  "B081DJT793",
   "B09B1DKXL6",
-  "B0D4YD4BH6",
-  "B0BCYSFL6P",
-  "B0F4JGZPXL",
   "B0GF24WK7B",
   "B0GJSKY2G1"
  ],
