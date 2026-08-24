@@ -465,7 +465,9 @@
    "title": "French Toast Girls' Short Sleeve 2-Fer Pleated Dress",
    "brand": "French Toast",
    "img": "71QpSoGlqZL._AC_SL1500_",
-   "cat": "Fashion"
+   "cat": "Fashion",
+   "dead": true,
+   "note": "camel: no offers/dead variant (siblings $15-17)"
   },
   {
    "n": 39,
@@ -474,7 +476,11 @@
    "title": "The Children's Place Girls' Pique Polo Dress",
    "brand": "The Children's Place",
    "img": "61TIGGsLoVL._AC_SL1500_",
-   "cat": "Fashion"
+   "cat": "Fashion",
+   "price": 14.97,
+   "list_price": 24.95,
+   "price_as_of": "2026-08-20",
+   "price_src": "camel Amazon"
   },
   {
    "n": 40,
@@ -665,7 +671,9 @@
    "title": "The Children's Place Boys' Denim Shorts 3-Pack",
    "brand": "The Children's Place",
    "img": "91ndakLSZiL._AC_SL1500_",
-   "cat": "Fashion"
+   "cat": "Fashion",
+   "dead": true,
+   "note": "camel: no offers/dead variant (3pk siblings ~$44)"
   },
   {
    "n": 56,
@@ -847,8 +855,12 @@
    "asin": "B0DWZRJPT6",
    "title": "Japanese Floor Futon Mattress, Extra-Thick 9-Layer, Twin",
    "brand": "Feisaibaoly",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "513MH+d-X5L",
+   "cat": "Lifestyle",
+   "price": 59.97,
+   "list_price": 89.99,
+   "price_as_of": "2026-08-16",
+   "price_src": "camel 3P New"
   },
   {
    "n": 71,
@@ -868,8 +880,11 @@
    "asin": "B0GJRPCXGM",
    "title": "GEMBED Tri Folding Mattress Queen 6\", Foldable Floor Sofa Bed",
    "brand": "GEMBED",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "518WMDZ842L",
+   "cat": "Lifestyle",
+   "price": 269.99,
+   "price_as_of": "2026-08-19",
+   "price_src": "camel 3P New"
   },
   {
    "n": 73,
@@ -956,12 +971,7 @@
   "B0GF83NTY3",
   "B0CQ1X18PS",
   "B08Y67CFFB",
-  "B0CCZWJWGH",
-  "B0BSVQZGB6",
   "B0D2XQFBXZ",
-  "B0FGCXDCCM",
-  "B0DWZRJPT6",
-  "B0GJRPCXGM",
   "B0GF24WK7B",
   "B0GJSKY2G1"
  ],
