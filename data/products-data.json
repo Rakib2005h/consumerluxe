@@ -387,21 +387,116 @@
    "brand": "MoFiz",
    "img": "51KDGAAZUvL._AC_SL1201_",
    "cat": "Fashion"
+  },
+  {
+   "n": 36,
+   "link": "https://amzn.to/4xwswwl",
+   "asin": "B09QM79CWT",
+   "title": "Hugut Women's Lightweight Hiking Cargo Shorts, Quick Dry, 5 Zip Pockets, UPF 50+",
+   "brand": "Hugut",
+   "img": null,
+   "cat": "Fashion",
+   "note": "same family as n6"
+  },
+  {
+   "n": 37,
+   "link": "https://amzn.to/4z2FWBL",
+   "asin": "B08Y67CFFB",
+   "title": "French Toast Girls' Ruffle Pique Polo School Uniform Dress",
+   "brand": "French Toast",
+   "img": "81S+MFNreCL._AC_SL1500_",
+   "cat": "Fashion"
+  },
+  {
+   "n": 38,
+   "link": "https://amzn.to/4xmzpA8",
+   "asin": "B0CCZWJWGH",
+   "title": "French Toast Girls' Short Sleeve 2-Fer Pleated Dress",
+   "brand": "French Toast",
+   "img": "71QpSoGlqZL._AC_SL1500_",
+   "cat": "Fashion"
+  },
+  {
+   "n": 39,
+   "link": "https://amzn.to/4cvcvi1",
+   "asin": "B0BSVQZGB6",
+   "title": "The Children's Place Girls' Pique Polo Dress",
+   "brand": "The Children's Place",
+   "img": "61TIGGsLoVL._AC_SL1500_",
+   "cat": "Fashion"
+  },
+  {
+   "n": 40,
+   "link": "https://amzn.to/4g6EuWp",
+   "asin": "B0D2XQFBXZ",
+   "title": null,
+   "img": null,
+   "cat": null
+  },
+  {
+   "n": 41,
+   "link": "https://amzn.to/4xz5vZR",
+   "asin": "B0D4215HCX",
+   "title": "LISEN Retractable Car Charger, 84W USB-C Fast Charge, 4-in-1",
+   "brand": "LISEN",
+   "img": null,
+   "cat": "Electronics"
+  },
+  {
+   "n": 42,
+   "link": "https://amzn.to/4wRP7DR",
+   "asin": "B0FHWP9SWB",
+   "title": "ANDERY MagSafe Car Mount Charger, 15W Fast Wireless, 360 Adjustable",
+   "brand": "ANDERY",
+   "img": null,
+   "cat": "Electronics"
+  },
+  {
+   "n": 43,
+   "link": "https://amzn.to/4wIR6Kq",
+   "asin": "B0BKQDPP1Z",
+   "title": "Gaiatop Portable Treadmill (DEAD LINK)",
+   "brand": "Gaiatop",
+   "dead": true,
+   "note": "404 - removed from Amazon"
+  },
+  {
+   "n": 44,
+   "link": "https://amzn.to/4xBq9sh",
+   "asin": "B09MKPDJRT",
+   "title": null,
+   "img": null,
+   "cat": null
+  },
+  {
+   "n": 45,
+   "link": "https://amzn.to/4hY9eeD",
+   "asin": "B0BW9L8ZGK",
+   "title": "DREO 13-Inch Oscillating Table Air Circulator Fan, 25dB Quiet, Remote",
+   "brand": "DREO",
+   "img": null,
+   "cat": "Electronics"
+  },
+  {
+   "n": 46,
+   "link": "https://amzn.to/4xnni66",
+   "asin": "B0DZ6VRPT7",
+   "title": "DREO Tower Fan for Bedroom, 26ft/s Velocity, 90 Oscillating, 8H Timer",
+   "brand": "DREO",
+   "img": null,
+   "cat": "Electronics"
+  },
+  {
+   "n": 47,
+   "link": "https://amzn.to/4zqADwr",
+   "asin": "B0BTY58CS4",
+   "title": "DREO Smart Tower Fan, 28ft/s, WiFi Voice Control, Bladeless",
+   "brand": "DREO",
+   "img": null,
+   "cat": "Electronics"
   }
  ],
  "pending_links": [
-  "4xwswwl",
-  "4z2FWBL",
-  "4xmzpA8",
-  "4cvcvi1",
-  "4g6EuWp",
-  "4xz5vZR",
-  "4wRP7DR",
-  "4wIR6Kq",
-  "4xBq9sh",
-  "4hY9eeD",
-  "4xnni66",
-  "4zqADwr",
   "4calULQ",
   "4z5DeLM",
   "3RZeHaw",
@@ -436,16 +531,24 @@
   "45QuAn3"
  ],
  "camel_needed": [
+  "B09MKPDJRT",
+  "B09QM79CWT",
   "B09WVF8FNS",
+  "B0BTY58CS4",
+  "B0BW9L8ZGK",
   "B0CP6B6P56",
   "B0CQ1X18PS",
   "B0CRKNRPXF",
+  "B0D2XQFBXZ",
+  "B0D4215HCX",
   "B0D4217691",
   "B0D5R3W2HK",
   "B0D8WLRD1G",
   "B0DHCQ17JQ",
+  "B0DZ6VRPT7",
   "B0F8QQQ6RX",
   "B0FFNHV6RM",
+  "B0FHWP9SWB",
   "B0FJQND826",
   "B0GWCNLVQ2",
   "B0HDDGZBKX"
