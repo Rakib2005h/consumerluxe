@@ -708,8 +708,12 @@
    "asin": "B0CKP6Y6KB",
    "title": "Typhur Dome 2 Large AI Smart Air Fryer, 15-in-1, Self-Cleaning",
    "brand": "Typhur",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "31YcFgdYAqL",
+   "cat": "Lifestyle",
+   "price": 339.99,
+   "list_price": 499.0,
+   "price_as_of": "2026-08-06",
+   "price_src": "camel Amazon"
   },
   {
    "n": 61,
@@ -717,8 +721,12 @@
    "asin": "B0CGMFGX87",
    "title": "Chefman 12-Quart 5-in-1 Air Fryer Oven, 12 Presets",
    "brand": "Chefman",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "51JsmwD00fL",
+   "cat": "Lifestyle",
+   "price": 109.94,
+   "list_price": 149.99,
+   "price_as_of": "2026-08-18",
+   "price_src": "camel Amazon"
   },
   {
    "n": 62,
@@ -726,8 +734,11 @@
    "asin": "B0D1BGLW25",
    "title": "Midea Flexify French Door Toaster Oven Air Fryer Combo, 26.4 QT",
    "brand": "Midea",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "41PeGGlTZZL",
+   "cat": "Lifestyle",
+   "price": 174.8,
+   "price_as_of": "2026-08-19",
+   "price_src": "camel Amazon"
   },
   {
    "n": 63,
@@ -760,8 +771,12 @@
    "asin": "B0743TXF76",
    "title": "Nuwave Healthy Duralon Blue Ceramic Nonstick Cookware Set, PFAS Free",
    "brand": "Nuwave",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "41xhXXhLKuL",
+   "cat": "Lifestyle",
+   "price": 215.99,
+   "list_price": 259.99,
+   "price_as_of": "2026-08-17",
+   "price_src": "camel Amazon"
   },
   {
    "n": 66,
@@ -769,8 +784,12 @@
    "asin": "B01CHB1Y22",
    "title": "Nuwave Gold Precision Induction Cooktop, 8\" Heating Coil",
    "brand": "Nuwave",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "41Yc8IPOMtL",
+   "cat": "Lifestyle",
+   "price": 107.99,
+   "list_price": 139.99,
+   "price_as_of": "2026-08-17",
+   "price_src": "camel Amazon"
   },
   {
    "n": 67,
@@ -917,11 +936,6 @@
   "B0CPXW4F3B",
   "B0FGCXDCCM",
   "B072WC6Y1G",
-  "B0CKP6Y6KB",
-  "B0CGMFGX87",
-  "B0D1BGLW25",
-  "B0743TXF76",
-  "B01CHB1Y22",
   "B0F9DYS3BN",
   "B0H1MJC3TZ",
   "B0C7LL3SGP",
