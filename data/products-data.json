@@ -84,7 +84,9 @@
    "avg": null,
    "img": "71+7LtJsTfL._AC_SL1500_",
    "cat": "Fashion",
-   "stock": "Check"
+   "stock": "Check",
+   "dead": true,
+   "note": "Amazon 404"
   },
   {
    "n": 8,
@@ -110,7 +112,9 @@
    "cat": "Fashion",
    "price": null,
    "old": null,
-   "stock": "Check"
+   "stock": "Check",
+   "dead": true,
+   "note": "Amazon 404"
   },
   {
    "n": 10,
@@ -122,7 +126,9 @@
    "cat": "Fashion",
    "price": null,
    "old": null,
-   "stock": "Check"
+   "stock": "Check",
+   "dead": true,
+   "note": "Amazon 404"
   },
   {
    "n": 11,
@@ -134,7 +140,9 @@
    "cat": "Fashion",
    "price": null,
    "old": null,
-   "stock": "Check"
+   "stock": "Check",
+   "dead": true,
+   "note": "Amazon 404"
   },
   {
    "n": 12,
@@ -197,7 +205,8 @@
    "price": null,
    "old": null,
    "stock": "Check",
-   "note": "not in camel db (new product) camel: no offers/dead variant"
+   "note": "not in camel db (new product) camel: no offers/dead variant",
+   "dead": true
   },
   {
    "n": 17,
@@ -228,7 +237,9 @@
    "cat": "Fashion",
    "price": null,
    "old": null,
-   "stock": "Check"
+   "stock": "Check",
+   "dead": true,
+   "note": "dead parent, children OOS"
   },
   {
    "n": 20,
@@ -291,7 +302,8 @@
    "price": null,
    "old": null,
    "stock": "Check",
-   "note": "variants from $27"
+   "note": "variants from $27 dead parent (variants B0BNP5DR21/8V29K ~$27)",
+   "dead": true
   },
   {
    "n": 25,
@@ -876,7 +888,39 @@
   }
  ],
  "pending_links": [],
- "camel_needed": [],
+ "camel_needed": [
+  "B0GWCNLVQ2",
+  "B0GF83NTY3",
+  "B0CQ1X18PS",
+  "B08Y67CFFB",
+  "B0CCZWJWGH",
+  "B0BSVQZGB6",
+  "B0D2XQFBXZ",
+  "B07X8W51BD",
+  "B0FVMC4BYJ",
+  "B0CPXW4F3B",
+  "B0FGCXDCCM",
+  "B072WC6Y1G",
+  "B08YDJS51B",
+  "B0CKP6Y6KB",
+  "B0CGMFGX87",
+  "B0D1BGLW25",
+  "B0743TXF76",
+  "B01CHB1Y22",
+  "B0F9DYS3BN",
+  "B0H1MJC3TZ",
+  "B0C7LL3SGP",
+  "B0DWZRJPT6",
+  "B0BF9JB5RW",
+  "B0GJRPCXGM",
+  "B081DJT793",
+  "B09B1DKXL6",
+  "B0D4YD4BH6",
+  "B0BCYSFL6P",
+  "B0F4JGZPXL",
+  "B0GF24WK7B",
+  "B0GJSKY2G1"
+ ],
  "camel_retry": [
   "B0GWCNLVQ2"
  ]
