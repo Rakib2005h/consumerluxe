@@ -190,12 +190,12 @@
    "asin": "B0HG5ZJZK5",
    "title": "Sampeel Matching Sets Women 2 Piece Fall Outfits, Business Casual",
    "brand": "Sampeel",
-   "img": null,
+   "img": "317uwHAi88L",
    "cat": "Fashion",
    "price": null,
    "old": null,
    "stock": "Check",
-   "note": "not in camel db (new product)"
+   "note": "not in camel db (new product) camel: no offers/dead variant"
   },
   {
    "n": 17,
@@ -429,9 +429,10 @@
    "n": 40,
    "link": "https://amzn.to/4g6EuWp",
    "asin": "B0D2XQFBXZ",
-   "title": null,
-   "img": null,
-   "cat": null
+   "title": "Arshiner Girls' Special Occasion Dress, School/Graduation, Navy 14-16",
+   "img": "414w8TL+iUL",
+   "cat": "Fashion",
+   "brand": "Arshiner"
   },
   {
    "n": 41,
@@ -464,13 +465,14 @@
    "n": 44,
    "link": "https://amzn.to/4xBq9sh",
    "asin": "B09MKPDJRT",
-   "title": null,
+   "title": "DREO Tower Fan for Bedroom, 28ft/s Velocity, Ultra Quiet, 8 Speeds",
    "img": "318XyhpvUuL",
-   "cat": null,
+   "cat": "Electronics",
    "price": 64.94,
    "list_price": 79.99,
    "price_as_of": "2026-08-07",
-   "price_src": "camel Amazon"
+   "price_src": "camel Amazon",
+   "brand": "DREO"
   },
   {
    "n": 45,
@@ -588,9 +590,14 @@
    "n": 57,
    "link": "https://amzn.to/4gq5OPN",
    "asin": "B0B8YXZZL9",
-   "title": null,
-   "img": null,
-   "cat": null
+   "title": "GFQLONG Toddler Boys Girls Cotton Athletic Shorts, Soccer 2T-3T",
+   "img": "41Kw35qEmCL",
+   "cat": "Fashion",
+   "brand": "GFQLONG",
+   "price": 22.93,
+   "list_price": 29.99,
+   "price_as_of": "2026-08-19",
+   "price_src": "camel 3P New"
   },
   {
    "n": 58,
@@ -641,17 +648,26 @@
    "n": 63,
    "link": "https://amzn.to/45dc1t5",
    "asin": "B0DZY2RG4N",
-   "title": null,
-   "img": null,
-   "cat": null
+   "title": "4 Slice Toaster Touch Screen, Stainless Steel, 1650W, Black",
+   "img": "41ZE2Orod0L",
+   "cat": "Lifestyle",
+   "price": 67.99,
+   "list_price": 79.99,
+   "price_as_of": "2026-08-21",
+   "price_src": "camel 3P New"
   },
   {
    "n": 64,
    "link": "https://amzn.to/4bFeAru",
    "asin": "B00TQJWF1I",
-   "title": null,
-   "img": null,
-   "cat": null
+   "title": "T-Fal Ultimate Hard Anodized Nonstick Cookware Set 17 Piece, Onyx",
+   "img": "41W77J-ObML",
+   "cat": "Lifestyle",
+   "brand": "T-Fal",
+   "price": 229.99,
+   "list_price": 269.95,
+   "price_as_of": "2026-07-29",
+   "price_src": "camel Amazon"
   },
   {
    "n": 65,
@@ -792,15 +808,12 @@
  "pending_links": [],
  "camel_needed": [
   "B001HKU13S",
-  "B00TQJWF1I",
   "B09QM79CWT",
   "B09WVF8FNS",
-  "B0B8YXZZL9",
   "B0BTY58CS4",
   "B0BW9L8ZGK",
   "B0CP6B6P56",
   "B0CRKNRPXF",
-  "B0D2XQFBXZ",
   "B0D4215HCX",
   "B0D4217691",
   "B0D5R3W2HK",
@@ -808,14 +821,15 @@
   "B0D9Q6THT7",
   "B0DHCQ17JQ",
   "B0DZ6VRPT7",
-  "B0DZY2RG4N",
   "B0F8QQQ6RX",
   "B0FFNHV6RM",
   "B0FHWP9SWB",
   "B0FJQND826",
   "B0FSZZHJKC",
   "B0GVMR4V37",
-  "B0GWCNLVQ2",
   "B0HDDGZBKX"
+ ],
+ "camel_retry": [
+  "B0GWCNLVQ2"
  ]
 }
