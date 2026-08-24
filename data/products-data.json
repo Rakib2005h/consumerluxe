@@ -269,7 +269,11 @@
    "title": "Hanes Men's Undershirt Packs, Stay-Tucked Soft Cotton, Multipacks",
    "brand": "Hanes",
    "img": "61+jiqYxv8L._AC_SL1500_",
-   "cat": "Fashion"
+   "cat": "Fashion",
+   "price": null,
+   "old": null,
+   "stock": "Check",
+   "note": "variants from $27"
   },
   {
    "n": 25,
@@ -330,8 +334,12 @@
    "asin": "B09WJKSSHC",
    "title": "Himalaya Botanique Kids Toothpaste Fluoride-Free, Variety Pack 3-Pack",
    "brand": "Himalaya",
-   "img": null,
-   "cat": "Beauty"
+   "img": "41v9Jl1OU6L._SY300_",
+   "cat": "Beauty",
+   "price": 16.49,
+   "old": null,
+   "avg": 16.78,
+   "stock": "In Stock"
   },
   {
    "n": 32,
@@ -339,8 +347,12 @@
    "asin": "B073ZJCG5V",
    "title": "Himalaya Botanique Complete Care Toothpaste, Herbal Variety 4 Pack",
    "brand": "Himalaya",
-   "img": null,
-   "cat": "Beauty"
+   "img": "51pHmpHuMuL._SY300_",
+   "cat": "Beauty",
+   "price": 24.99,
+   "old": null,
+   "avg": 21.67,
+   "stock": "In Stock"
   },
   {
    "n": 33,
@@ -348,8 +360,12 @@
    "asin": "B09P1V89KL",
    "title": "hello Epic Whitening Activated Charcoal Fluoride Free Toothpaste, 3Pk",
    "brand": "hello",
-   "img": null,
-   "cat": "Beauty"
+   "img": "51QqmoT-DwL._SY300_",
+   "cat": "Beauty",
+   "price": 17.88,
+   "old": null,
+   "avg": 17.17,
+   "stock": "In Stock"
   },
   {
    "n": 34,
@@ -420,7 +436,6 @@
   "45QuAn3"
  ],
  "camel_needed": [
-  "B09WJKSSHC",
   "B09WVF8FNS",
   "B0CP6B6P56",
   "B0CQ1X18PS",
