@@ -797,8 +797,12 @@
    "asin": "B0F9DYS3BN",
    "title": "Kitchen Academy 17Pcs Induction Cookware Set, Granite Non Stick",
    "brand": "Kitchen Academy",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "51+u1Q1QwxL",
+   "cat": "Lifestyle",
+   "price": 229.99,
+   "price_as_of": "2025-11-03",
+   "price_src": "camel 3P New",
+   "price_stale": true
   },
   {
    "n": 68,
@@ -815,8 +819,13 @@
    "asin": "B0C7LL3SGP",
    "title": "Nuwave Duralon Ceramic Cookware Set, Diamond Infused, Induction Ready",
    "brand": "Nuwave",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "41f729iVDML",
+   "cat": "Lifestyle",
+   "price": 215.32,
+   "list_price": 259.99,
+   "price_as_of": "2026-08-21",
+   "price_src": "camel Amazon",
+   "dup_of": 65
   },
   {
    "n": 70,
@@ -833,8 +842,11 @@
    "asin": "B0BF9JB5RW",
    "title": "MAXYOYO Japanese Floor Mattress 4\" Thick, Full Size Foldable Futon",
    "brand": "MAXYOYO",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "51-oT-RsVLL",
+   "cat": "Lifestyle",
+   "price": 89.99,
+   "price_as_of": "2026-08-21",
+   "price_src": "camel 3P New"
   },
   {
    "n": 72,
@@ -863,8 +875,11 @@
    "asin": "B09B1DKXL6",
    "title": "KRAUS Black Stainless Pull Down Kitchen Faucet KPF-2820MBSFSB",
    "brand": "KRAUS",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "31vSt8elCOL",
+   "cat": "Lifestyle",
+   "price": 299.95,
+   "price_as_of": "2026-08-06",
+   "price_src": "camel Amazon"
   },
   {
    "n": 75,
@@ -936,17 +951,13 @@
   "B0CPXW4F3B",
   "B0FGCXDCCM",
   "B072WC6Y1G",
-  "B0F9DYS3BN",
-  "B0H1MJC3TZ",
-  "B0C7LL3SGP",
   "B0DWZRJPT6",
-  "B0BF9JB5RW",
   "B0GJRPCXGM",
-  "B09B1DKXL6",
   "B0GF24WK7B",
   "B0GJSKY2G1"
  ],
  "camel_retry": [
-  "B0GWCNLVQ2"
+  "B0GWCNLVQ2",
+  "B0H1MJC3TZ"
  ]
 }
