@@ -178,7 +178,11 @@
    "title": "PRETTYGARDEN Women's 2 Piece Matching Lounge Set Sweatsuits",
    "brand": "PRETTYGARDEN",
    "img": "61mVGvGfGKL._AC_SL1500_",
-   "cat": "Fashion"
+   "cat": "Fashion",
+   "price": 39.99,
+   "old": 48.99,
+   "avg": 42.54,
+   "stock": "In Stock"
   },
   {
    "n": 16,
@@ -187,7 +191,11 @@
    "title": "Sampeel Matching Sets Women 2 Piece Fall Outfits, Business Casual",
    "brand": "Sampeel",
    "img": null,
-   "cat": "Fashion"
+   "cat": "Fashion",
+   "price": null,
+   "old": null,
+   "stock": "Check",
+   "note": "not in camel db (new product)"
   },
   {
    "n": 17,
@@ -213,7 +221,10 @@
    "title": "Casly Lamiit Women's 2 Piece Outfits, Half Zip Sweatsuits Lounge Matching Set",
    "brand": "Casly Lamiit",
    "img": "61ddJNWsV7L._AC_SL1500_",
-   "cat": "Fashion"
+   "cat": "Fashion",
+   "price": null,
+   "old": null,
+   "stock": "Check"
   },
   {
    "n": 20,
@@ -311,15 +322,12 @@
   "45QuAn3"
  ],
  "camel_needed": [
-  "B0D8WLRD1G",
-  "B0CHRF49DJ",
-  "B0HG5ZJZK5",
   "B0FFNHV6RM",
   "B0GWCNLVQ2",
-  "B0CJBKXPJJ",
   "B0D5R3W2HK",
   "B0CRKNRPXF",
   "B0DHCQ17JQ",
-  "B0F8QQQ6RX"
+  "B0F8QQQ6RX",
+  "B0D8WLRD1G"
  ]
 }
