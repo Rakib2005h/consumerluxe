@@ -261,21 +261,119 @@
    "brand": "Sixstar",
    "img": null,
    "cat": "Fashion"
+  },
+  {
+   "n": 24,
+   "link": "https://amzn.to/4bGhTyz",
+   "asin": "B0B3QVQQFT",
+   "title": "Hanes Men's Undershirt Packs, Stay-Tucked Soft Cotton, Multipacks",
+   "brand": "Hanes",
+   "img": "61+jiqYxv8L._AC_SL1500_",
+   "cat": "Fashion"
+  },
+  {
+   "n": 25,
+   "link": "https://amzn.to/4hpvNca",
+   "asin": "B0HDDGZBKX",
+   "title": "KLIEGOU Men's 100% Cotton Longline T-Shirt, Curved Hem Streetwear Tee",
+   "brand": "KLIEGOU",
+   "img": null,
+   "cat": "Fashion"
+  },
+  {
+   "n": 26,
+   "link": "https://amzn.to/45joLyl",
+   "asin": "B09WVF8FNS",
+   "title": "KLIEGOU Men's T-Shirts, Elasticity Cotton Crew Neck Tees",
+   "brand": "KLIEGOU",
+   "img": null,
+   "cat": "Fashion"
+  },
+  {
+   "n": 27,
+   "link": "https://amzn.to/4gmcCij",
+   "asin": "B0GF83NTY3",
+   "title": "Herberton Men's Graphic T-Shirt, Loose Fit Cotton Streetwear Crewneck",
+   "brand": "Herberton",
+   "img": "712jVahUqIL._AC_SL1500_",
+   "cat": "Fashion"
+  },
+  {
+   "n": 28,
+   "link": "https://amzn.to/4bGVaT4",
+   "asin": "B0CQ1X18PS",
+   "title": null,
+   "img": null,
+   "cat": null
+  },
+  {
+   "n": 29,
+   "link": "https://amzn.to/4wUHnRm",
+   "asin": "B0FJQND826",
+   "title": "APTRO Men's Cargo Shorts 9\" Quick Dry, 5 Zipper Pockets",
+   "brand": "APTRO",
+   "img": null,
+   "cat": "Fashion"
+  },
+  {
+   "n": 30,
+   "link": "https://amzn.to/4fMANq1",
+   "asin": "B0CP6B6P56",
+   "title": "Boka Kids Toothpaste, Fluoride Free Nano Hydroxyapatite, Strawberry Mango",
+   "brand": "Boka",
+   "img": null,
+   "cat": "Beauty"
+  },
+  {
+   "n": 31,
+   "link": "https://amzn.to/4wIOM6a",
+   "asin": "B09WJKSSHC",
+   "title": "Himalaya Botanique Kids Toothpaste Fluoride-Free, Variety Pack 3-Pack",
+   "brand": "Himalaya",
+   "img": null,
+   "cat": "Beauty"
+  },
+  {
+   "n": 32,
+   "link": "https://amzn.to/4wmP0z0",
+   "asin": "B073ZJCG5V",
+   "title": "Himalaya Botanique Complete Care Toothpaste, Herbal Variety 4 Pack",
+   "brand": "Himalaya",
+   "img": null,
+   "cat": "Beauty"
+  },
+  {
+   "n": 33,
+   "link": "https://amzn.to/4zcZ1kY",
+   "asin": "B09P1V89KL",
+   "title": "hello Epic Whitening Activated Charcoal Fluoride Free Toothpaste, 3Pk",
+   "brand": "hello",
+   "img": null,
+   "cat": "Beauty"
+  },
+  {
+   "n": 34,
+   "link": "https://amzn.to/45jp4sZ",
+   "asin": "B09LQTPHSG",
+   "title": "Amazon eGift Card - Birthday Bright Balloons",
+   "brand": "Amazon",
+   "img": "51LqnrDIoGL._SL1266_",
+   "cat": "Special",
+   "price": null,
+   "old": null,
+   "note": "gift card - price varies"
+  },
+  {
+   "n": 35,
+   "link": "https://amzn.to/4bHmIaZ",
+   "asin": "B0D4217691",
+   "title": "MoFiz Women's Capris with Pockets, Loose Fit Casual Cargo Pants",
+   "brand": "MoFiz",
+   "img": "51KDGAAZUvL._AC_SL1201_",
+   "cat": "Fashion"
   }
  ],
  "pending_links": [
-  "4bGhTyz",
-  "4hpvNca",
-  "45joLyl",
-  "4gmcCij",
-  "4bGVaT4",
-  "4wUHnRm",
-  "4fMANq1",
-  "4wIOM6a",
-  "4wmP0z0",
-  "4zcZ1kY",
-  "45jp4sZ",
-  "4bHmIaZ",
   "4xwswwl",
   "4z2FWBL",
   "4xmzpA8",
@@ -322,12 +420,19 @@
   "45QuAn3"
  ],
  "camel_needed": [
-  "B0FFNHV6RM",
-  "B0GWCNLVQ2",
-  "B0D5R3W2HK",
+  "B09WJKSSHC",
+  "B09WVF8FNS",
+  "B0CP6B6P56",
+  "B0CQ1X18PS",
   "B0CRKNRPXF",
+  "B0D4217691",
+  "B0D5R3W2HK",
+  "B0D8WLRD1G",
   "B0DHCQ17JQ",
   "B0F8QQQ6RX",
-  "B0D8WLRD1G"
+  "B0FFNHV6RM",
+  "B0FJQND826",
+  "B0GWCNLVQ2",
+  "B0HDDGZBKX"
  ]
 }
