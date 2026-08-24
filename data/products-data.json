@@ -494,19 +494,97 @@
    "brand": "DREO",
    "img": null,
    "cat": "Electronics"
+  },
+  {
+   "n": 48,
+   "link": "https://amzn.to/4calULQ",
+   "asin": "B07X8W51BD",
+   "title": "FITRELL 3 Pairs Compression Socks 20-30mmHg, Circulation Support",
+   "brand": "FITRELL",
+   "img": "71CUmyhYe2L._AC_SL1500_",
+   "cat": "Fitness"
+  },
+  {
+   "n": 49,
+   "link": "https://amzn.to/4z5DeLM",
+   "asin": "B0GVMR4V37",
+   "title": "Synnov 15.6\" Laptop Screen Extender, 1080P FHD Portable Triple Monitor",
+   "brand": "Synnov",
+   "img": "71eW8nbT6NL._AC_SL1500_",
+   "cat": "Electronics"
+  },
+  {
+   "n": 50,
+   "link": "https://amzn.to/3RZeHaw",
+   "asin": "B0FVMC4BYJ",
+   "title": "VisionOwl Portable Monitor 15.6\" IPS USB-C HDMI, Built-in Kickstand",
+   "brand": "VisionOwl",
+   "img": "715JKJjXyRL._AC_SL1500_",
+   "cat": "Electronics"
+  },
+  {
+   "n": 51,
+   "link": "https://amzn.to/4hppWU6",
+   "asin": "B0FSZZHJKC",
+   "title": "Yodoit 4K Portable Monitor 16\" 3840x2400, 1200nit Sunlight-Readable",
+   "brand": "Yodoit",
+   "img": null,
+   "cat": "Electronics"
+  },
+  {
+   "n": 52,
+   "link": "https://amzn.to/4wQF3e0",
+   "asin": "B0CPXW4F3B",
+   "title": "cocopar Portable Monitor 18.5\" IPS, USB-C HDMI, Kickstand",
+   "brand": "cocopar",
+   "img": "81kfr9CRW-L._AC_SL1500_",
+   "cat": "Electronics"
+  },
+  {
+   "n": 53,
+   "link": "https://amzn.to/4bFdT1m",
+   "asin": "B015XURFAO",
+   "title": null,
+   "img": null,
+   "cat": null
+  },
+  {
+   "n": 54,
+   "link": "https://amzn.to/4wikpm6",
+   "asin": "B001HKU13S",
+   "title": "Cassida Money Bill Counter, Business Grade, 1,300 Notes/Min, 5520 UV/MG",
+   "brand": "Cassida",
+   "img": null,
+   "cat": "Electronics"
+  },
+  {
+   "n": 55,
+   "link": "https://amzn.to/3RSRS8B",
+   "asin": "B0FGCXDCCM",
+   "title": "The Children's Place Boys' Denim Shorts 3-Pack",
+   "brand": "The Children's Place",
+   "img": "91ndakLSZiL._AC_SL1500_",
+   "cat": "Fashion"
+  },
+  {
+   "n": 56,
+   "link": "https://amzn.to/4wLmdoJ",
+   "asin": "B072WC6Y1G",
+   "title": "Real Essentials 5-Pack Boys' Mesh Athletic Shorts, Sizes 4-18",
+   "brand": "Real Essentials",
+   "img": "81XNnn1TVYL._AC_SL1500_",
+   "cat": "Fashion"
+  },
+  {
+   "n": 57,
+   "link": "https://amzn.to/4gq5OPN",
+   "asin": "B0B8YXZZL9",
+   "title": null,
+   "img": null,
+   "cat": null
   }
  ],
  "pending_links": [
-  "4calULQ",
-  "4z5DeLM",
-  "3RZeHaw",
-  "4hppWU6",
-  "4wQF3e0",
-  "4bFdT1m",
-  "4wikpm6",
-  "3RSRS8B",
-  "4wLmdoJ",
-  "4gq5OPN",
   "4hqaze7",
   "45RWcbo",
   "4xulSqk",
@@ -531,9 +609,12 @@
   "45QuAn3"
  ],
  "camel_needed": [
+  "B001HKU13S",
+  "B015XURFAO",
   "B09MKPDJRT",
   "B09QM79CWT",
   "B09WVF8FNS",
+  "B0B8YXZZL9",
   "B0BTY58CS4",
   "B0BW9L8ZGK",
   "B0CP6B6P56",
@@ -550,6 +631,8 @@
   "B0FFNHV6RM",
   "B0FHWP9SWB",
   "B0FJQND826",
+  "B0FSZZHJKC",
+  "B0GVMR4V37",
   "B0GWCNLVQ2",
   "B0HDDGZBKX"
  ]
