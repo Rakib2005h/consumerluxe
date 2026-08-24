@@ -339,7 +339,9 @@
    "title": "Herberton Men's Graphic T-Shirt, Loose Fit Cotton Streetwear Crewneck",
    "brand": "Herberton",
    "img": "712jVahUqIL._AC_SL1500_",
-   "cat": "Fashion"
+   "cat": "Fashion",
+   "dead": true,
+   "note": "camel: no offers/dead variant"
   },
   {
    "n": 28,
@@ -347,7 +349,11 @@
    "asin": "B0CQ1X18PS",
    "title": "Men's Cargo Shorts Quick Dry Lightweight Stretch Hiking, 5 Pockets, Stone Grey",
    "img": "415YD-65Z9L",
-   "cat": "Fashion"
+   "cat": "Fashion",
+   "price": 26.99,
+   "price_as_of": "2024-08-08",
+   "price_src": "camel 3P New",
+   "price_stale": true
   },
   {
    "n": 29,
@@ -456,7 +462,9 @@
    "title": "French Toast Girls' Ruffle Pique Polo School Uniform Dress",
    "brand": "French Toast",
    "img": "81S+MFNreCL._AC_SL1500_",
-   "cat": "Fashion"
+   "cat": "Fashion",
+   "dead": true,
+   "note": "camel: no offers/dead variant (siblings $10.99)"
   },
   {
    "n": 38,
@@ -489,7 +497,11 @@
    "title": "Arshiner Girls' Special Occasion Dress, School/Graduation, Navy 14-16",
    "img": "414w8TL+iUL",
    "cat": "Fashion",
-   "brand": "Arshiner"
+   "brand": "Arshiner",
+   "price": 34.99,
+   "price_as_of": "2024-08-04",
+   "price_src": "camel 3P New",
+   "price_stale": true
   },
   {
    "n": 41,
@@ -953,8 +965,11 @@
    "asin": "B0GF24WK7B",
    "title": "Novilla AiryFlow Queen Mattress 14\", Gel Memory Foam, Green Tea-Infused",
    "brand": "Novilla",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "51CbiqID6+L",
+   "cat": "Lifestyle",
+   "price": 368.98,
+   "price_as_of": "2026-08-20",
+   "price_src": "camel Amazon"
   },
   {
    "n": 79,
@@ -962,19 +977,15 @@
    "asin": "B0GJSKY2G1",
    "title": "Novilla Queen Gel Memory Foam Mattress 12\", Spinal Alignment",
    "brand": "Novilla",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "5108dgPCcoL",
+   "cat": "Lifestyle",
+   "price": 233.99,
+   "price_as_of": "2026-08-14",
+   "price_src": "camel Amazon"
   }
  ],
  "pending_links": [],
- "camel_needed": [
-  "B0GF83NTY3",
-  "B0CQ1X18PS",
-  "B08Y67CFFB",
-  "B0D2XQFBXZ",
-  "B0GF24WK7B",
-  "B0GJSKY2G1"
- ],
+ "camel_needed": [],
  "camel_retry": [
   "B0H1MJC3TZ"
  ]
