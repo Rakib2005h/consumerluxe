@@ -223,9 +223,12 @@
    "n": 18,
    "link": "https://amzn.to/4xwvLE4",
    "asin": "B0GWCNLVQ2",
-   "title": null,
-   "img": null,
-   "cat": null
+   "title": "Casly Lamiit Sweatsuits Women 2 Piece Outfit Fall Comfy Lounge Sets 2026",
+   "img": "31hfoiEX+-L",
+   "cat": "Fashion",
+   "price": 34.99,
+   "price_as_of": "2026-08-23",
+   "price_src": "camel 3P New"
   },
   {
    "n": 19,
@@ -576,7 +579,9 @@
    "title": "FITRELL 3 Pairs Compression Socks 20-30mmHg, Circulation Support",
    "brand": "FITRELL",
    "img": "71CUmyhYe2L._AC_SL1500_",
-   "cat": "Fitness"
+   "cat": "Fitness",
+   "dead": true,
+   "note": "camel: no offers/dead variant (children OOS)"
   },
   {
    "n": 49,
@@ -597,7 +602,10 @@
    "title": "VisionOwl Portable Monitor 15.6\" IPS USB-C HDMI, Built-in Kickstand",
    "brand": "VisionOwl",
    "img": "715JKJjXyRL._AC_SL1500_",
-   "cat": "Electronics"
+   "cat": "Electronics",
+   "price": 229.99,
+   "price_as_of": "2026-08-19",
+   "price_src": "camel 3P New"
   },
   {
    "n": 51,
@@ -618,7 +626,11 @@
    "title": "cocopar Portable Monitor 18.5\" IPS, USB-C HDMI, Kickstand",
    "brand": "cocopar",
    "img": "81kfr9CRW-L._AC_SL1500_",
-   "cat": "Electronics"
+   "cat": "Electronics",
+   "price": 149.99,
+   "price_as_of": "2026-02-25",
+   "price_src": "camel 3P New",
+   "price_stale": true
   },
   {
    "n": 53,
@@ -662,7 +674,9 @@
    "title": "Real Essentials 5-Pack Boys' Mesh Athletic Shorts, Sizes 4-18",
    "brand": "Real Essentials",
    "img": "81XNnn1TVYL._AC_SL1500_",
-   "cat": "Fashion"
+   "cat": "Fashion",
+   "dead": true,
+   "note": "camel: no offers/dead variant (children OOS)"
   },
   {
    "n": 57,
@@ -939,25 +953,19 @@
  ],
  "pending_links": [],
  "camel_needed": [
-  "B0GWCNLVQ2",
   "B0GF83NTY3",
   "B0CQ1X18PS",
   "B08Y67CFFB",
   "B0CCZWJWGH",
   "B0BSVQZGB6",
   "B0D2XQFBXZ",
-  "B07X8W51BD",
-  "B0FVMC4BYJ",
-  "B0CPXW4F3B",
   "B0FGCXDCCM",
-  "B072WC6Y1G",
   "B0DWZRJPT6",
   "B0GJRPCXGM",
   "B0GF24WK7B",
   "B0GJSKY2G1"
  ],
  "camel_retry": [
-  "B0GWCNLVQ2",
   "B0H1MJC3TZ"
  ]
 }
