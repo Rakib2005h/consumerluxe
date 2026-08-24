@@ -582,20 +582,106 @@
    "title": null,
    "img": null,
    "cat": null
+  },
+  {
+   "n": 58,
+   "link": "https://amzn.to/4hqaze7",
+   "asin": "B0D9Q6THT7",
+   "title": "Furnulem Night Stand with Charging Station (Headboard Platform)",
+   "brand": "Furnulem",
+   "img": null,
+   "cat": "Lifestyle"
+  },
+  {
+   "n": 59,
+   "link": "https://amzn.to/45RWcbo",
+   "asin": "B08YDJS51B",
+   "title": "FDW 8 Inch Twin Mattress, Gel Memory Foam, CertiPUR-US",
+   "brand": "FDW",
+   "img": null,
+   "cat": "Lifestyle"
+  },
+  {
+   "n": 60,
+   "link": "https://amzn.to/4xulSqk",
+   "asin": "B0CKP6Y6KB",
+   "title": "Typhur Dome 2 Large AI Smart Air Fryer, 15-in-1, Self-Cleaning",
+   "brand": "Typhur",
+   "img": null,
+   "cat": "Lifestyle"
+  },
+  {
+   "n": 61,
+   "link": "https://amzn.to/4wS4SdS",
+   "asin": "B0CGMFGX87",
+   "title": "Chefman 12-Quart 5-in-1 Air Fryer Oven, 12 Presets",
+   "brand": "Chefman",
+   "img": null,
+   "cat": "Lifestyle"
+  },
+  {
+   "n": 62,
+   "link": "https://amzn.to/4wC2cjL",
+   "asin": "B0D1BGLW25",
+   "title": "Midea Flexify French Door Toaster Oven Air Fryer Combo, 26.4 QT",
+   "brand": "Midea",
+   "img": null,
+   "cat": "Lifestyle"
+  },
+  {
+   "n": 63,
+   "link": "https://amzn.to/45dc1t5",
+   "asin": "B0DZY2RG4N",
+   "title": null,
+   "img": null,
+   "cat": null
+  },
+  {
+   "n": 64,
+   "link": "https://amzn.to/4bFeAru",
+   "asin": "B00TQJWF1I",
+   "title": null,
+   "img": null,
+   "cat": null
+  },
+  {
+   "n": 65,
+   "link": "https://amzn.to/45gG8Qs",
+   "asin": "B0743TXF76",
+   "title": "Nuwave Healthy Duralon Blue Ceramic Nonstick Cookware Set, PFAS Free",
+   "brand": "Nuwave",
+   "img": null,
+   "cat": "Lifestyle"
+  },
+  {
+   "n": 66,
+   "link": "https://amzn.to/4hkviQw",
+   "asin": "B01CHB1Y22",
+   "title": "Nuwave Gold Precision Induction Cooktop, 8\" Heating Coil",
+   "brand": "Nuwave",
+   "img": null,
+   "cat": "Lifestyle"
+  },
+  {
+   "n": 67,
+   "link": "https://amzn.to/3U70Dwl",
+   "asin": "B0F9DYS3BN",
+   "title": "Kitchen Academy 17Pcs Induction Cookware Set, Granite Non Stick",
+   "brand": "Kitchen Academy",
+   "img": null,
+   "cat": "Lifestyle"
+  },
+  {
+   "n": 68,
+   "link": "https://amzn.to/4zr3Yqz",
+   "asin": "B0H1MJC3TZ",
+   "title": "Bazova 24Pcs Pots and Pans Set, Titanium Ceramic, Induction",
+   "brand": "Bazova",
+   "img": null,
+   "cat": "Lifestyle"
   }
  ],
  "pending_links": [
-  "4hqaze7",
-  "45RWcbo",
-  "4xulSqk",
-  "4wS4SdS",
-  "4wC2cjL",
-  "45dc1t5",
-  "4bFeAru",
-  "45gG8Qs",
-  "4hkviQw",
-  "3U70Dwl",
-  "4zr3Yqz",
   "4wVfUPu",
   "4xwGbng",
   "4cfUe8n",
@@ -610,6 +696,7 @@
  ],
  "camel_needed": [
   "B001HKU13S",
+  "B00TQJWF1I",
   "B015XURFAO",
   "B09MKPDJRT",
   "B09QM79CWT",
@@ -625,8 +712,10 @@
   "B0D4217691",
   "B0D5R3W2HK",
   "B0D8WLRD1G",
+  "B0D9Q6THT7",
   "B0DHCQ17JQ",
   "B0DZ6VRPT7",
+  "B0DZY2RG4N",
   "B0F8QQQ6RX",
   "B0FFNHV6RM",
   "B0FHWP9SWB",
