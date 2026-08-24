@@ -232,28 +232,38 @@
    "n": 20,
    "link": "https://amzn.to/45RRmuK",
    "asin": "B0D5R3W2HK",
-   "title": "Casly Lamiit Sweat Suit for Women 2 Piece Set, Zipper Airport Outfits",
+   "title": "Casly Lamiit Women's 2 Piece Lounge Outfits Zip Up Sweat Set, Wide Leg",
    "brand": "Casly Lamiit",
-   "img": null,
-   "cat": "Fashion"
+   "img": "31KixS1ni5L",
+   "cat": "Fashion",
+   "dead": true,
+   "note": "camel: no offers/dead variant"
   },
   {
    "n": 21,
    "link": "https://amzn.to/4fZdPe3",
    "asin": "B0CRKNRPXF",
-   "title": "PRETTYGARDEN Women's Outfits Pullover Tracksuits 2 Piece",
+   "title": "PRETTYGARDEN Two Piece Sets for Women Lounge Matching Set, Blue, M",
    "brand": "PRETTYGARDEN",
-   "img": null,
-   "cat": "Fashion"
+   "img": "313fD0T8Q9L",
+   "cat": "Fashion",
+   "price": 22.94,
+   "list_price": 41.99,
+   "price_as_of": "2026-08-10",
+   "price_src": "camel 3P New"
   },
   {
    "n": 22,
    "link": "https://amzn.to/4z9I6Q9",
    "asin": "B0DHCQ17JQ",
-   "title": "PRETTYGARDEN Women's Oversized Matching Airport Outfits",
+   "title": "PRETTYGARDEN Women 2 Piece Lounge Set Airport Travel Outfit, Beige, M",
    "brand": "PRETTYGARDEN",
-   "img": null,
-   "cat": "Fashion"
+   "img": "4164h4Lu3EL",
+   "cat": "Fashion",
+   "price": 29.99,
+   "list_price": 40.99,
+   "price_as_of": "2026-08-12",
+   "price_src": "camel 3P New"
   },
   {
    "n": 23,
@@ -261,8 +271,12 @@
    "asin": "B0F8QQQ6RX",
    "title": "Sixstar Sweatsuit Sweatshirt Sweatpant Tracksuit 2 Piece",
    "brand": "Sixstar",
-   "img": null,
-   "cat": "Fashion"
+   "img": "411vc1G4T9L",
+   "cat": "Fashion",
+   "price": 38.99,
+   "list_price": 45.99,
+   "price_as_of": "2026-08-10",
+   "price_src": "camel 3P New"
   },
   {
    "n": 24,
@@ -331,8 +345,12 @@
    "asin": "B0CP6B6P56",
    "title": "Boka Kids Toothpaste, Fluoride Free Nano Hydroxyapatite, Strawberry Mango",
    "brand": "Boka",
-   "img": null,
-   "cat": "Beauty"
+   "img": "31-1+GW0x0L",
+   "cat": "Beauty",
+   "price": 11.62,
+   "list_price": 13.99,
+   "price_as_of": "2026-08-10",
+   "price_src": "camel 3P New"
   },
   {
    "n": 31,
@@ -848,12 +866,7 @@
  "pending_links": [],
  "camel_needed": [
   "B09QM79CWT",
-  "B0CP6B6P56",
-  "B0CRKNRPXF",
   "B0D4217691",
-  "B0D5R3W2HK",
-  "B0DHCQ17JQ",
-  "B0F8QQQ6RX",
   "B0FFNHV6RM",
   "B0FJQND826",
   "B0HDDGZBKX"
