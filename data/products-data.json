@@ -306,9 +306,9 @@
    "n": 28,
    "link": "https://amzn.to/4bGVaT4",
    "asin": "B0CQ1X18PS",
-   "title": null,
-   "img": null,
-   "cat": null
+   "title": "Men's Cargo Shorts Quick Dry Lightweight Stretch Hiking, 5 Pockets, Stone Grey",
+   "img": "415YD-65Z9L",
+   "cat": "Fashion"
   },
   {
    "n": 29,
@@ -465,8 +465,12 @@
    "link": "https://amzn.to/4xBq9sh",
    "asin": "B09MKPDJRT",
    "title": null,
-   "img": null,
-   "cat": null
+   "img": "318XyhpvUuL",
+   "cat": null,
+   "price": 64.94,
+   "list_price": 79.99,
+   "price_as_of": "2026-08-07",
+   "price_src": "camel Amazon"
   },
   {
    "n": 45,
@@ -544,9 +548,14 @@
    "n": 53,
    "link": "https://amzn.to/4bFdT1m",
    "asin": "B015XURFAO",
-   "title": null,
-   "img": null,
-   "cat": null
+   "title": "KOLIBRI Money Counter Machine UV/MG, Set Value Count, 1,500 Notes/Min",
+   "img": "51l3rY3n8WL",
+   "cat": "Electronics",
+   "brand": "KOLIBRI",
+   "price": 88.9,
+   "list_price": 99.0,
+   "price_as_of": "2026-08-04",
+   "price_src": "camel 3P New"
   },
   {
    "n": 54,
@@ -784,15 +793,12 @@
  "camel_needed": [
   "B001HKU13S",
   "B00TQJWF1I",
-  "B015XURFAO",
-  "B09MKPDJRT",
   "B09QM79CWT",
   "B09WVF8FNS",
   "B0B8YXZZL9",
   "B0BTY58CS4",
   "B0BW9L8ZGK",
   "B0CP6B6P56",
-  "B0CQ1X18PS",
   "B0CRKNRPXF",
   "B0D2XQFBXZ",
   "B0D4215HCX",
