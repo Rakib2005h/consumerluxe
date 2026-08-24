@@ -446,8 +446,12 @@
    "asin": "B0D4215HCX",
    "title": "LISEN Retractable Car Charger, 84W USB-C Fast Charge, 4-in-1",
    "brand": "LISEN",
-   "img": null,
-   "cat": "Electronics"
+   "img": "41sr2yyAbHL",
+   "cat": "Electronics",
+   "price": 16.99,
+   "list_price": 24.99,
+   "price_as_of": "2026-08-19",
+   "price_src": "camel 3P New"
   },
   {
    "n": 42,
@@ -455,8 +459,12 @@
    "asin": "B0FHWP9SWB",
    "title": "ANDERY MagSafe Car Mount Charger, 15W Fast Wireless, 360 Adjustable",
    "brand": "ANDERY",
-   "img": null,
-   "cat": "Electronics"
+   "img": "51g0PVNycXL",
+   "cat": "Electronics",
+   "price": 31.33,
+   "list_price": 48.99,
+   "price_as_of": "2026-08-16",
+   "price_src": "camel 3P New"
   },
   {
    "n": 43,
@@ -486,8 +494,12 @@
    "asin": "B0BW9L8ZGK",
    "title": "DREO 13-Inch Oscillating Table Air Circulator Fan, 25dB Quiet, Remote",
    "brand": "DREO",
-   "img": null,
-   "cat": "Electronics"
+   "img": "41TCfGHXLAL",
+   "cat": "Electronics",
+   "price": 59.99,
+   "list_price": 66.99,
+   "price_as_of": "2026-08-22",
+   "price_src": "camel Amazon"
   },
   {
    "n": 46,
@@ -495,8 +507,12 @@
    "asin": "B0DZ6VRPT7",
    "title": "DREO Tower Fan for Bedroom, 26ft/s Velocity, 90 Oscillating, 8H Timer",
    "brand": "DREO",
-   "img": null,
-   "cat": "Electronics"
+   "img": "31MyHN2nQ3L",
+   "cat": "Electronics",
+   "price": 54.98,
+   "list_price": 74.99,
+   "price_as_of": "2026-07-31",
+   "price_src": "camel Amazon"
   },
   {
    "n": 47,
@@ -504,8 +520,12 @@
    "asin": "B0BTY58CS4",
    "title": "DREO Smart Tower Fan, 28ft/s, WiFi Voice Control, Bladeless",
    "brand": "DREO",
-   "img": null,
-   "cat": "Electronics"
+   "img": "31pzkt3Z2cL",
+   "cat": "Electronics",
+   "price": 79.95,
+   "list_price": 89.99,
+   "price_as_of": "2026-08-21",
+   "price_src": "camel Amazon"
   },
   {
    "n": 48,
@@ -828,18 +848,13 @@
  "pending_links": [],
  "camel_needed": [
   "B09QM79CWT",
-  "B0BTY58CS4",
-  "B0BW9L8ZGK",
   "B0CP6B6P56",
   "B0CRKNRPXF",
-  "B0D4215HCX",
   "B0D4217691",
   "B0D5R3W2HK",
   "B0DHCQ17JQ",
-  "B0DZ6VRPT7",
   "B0F8QQQ6RX",
   "B0FFNHV6RM",
-  "B0FHWP9SWB",
   "B0FJQND826",
   "B0HDDGZBKX"
  ],
