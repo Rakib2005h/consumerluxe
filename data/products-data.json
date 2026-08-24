@@ -168,8 +168,10 @@
    "asin": "B0D8WLRD1G",
    "title": "WateLves Water Shoes Barefoot Beach Swim, Quick-Dry Aqua Socks (Sport Light Blue)",
    "brand": "WateLves",
-   "img": "71PXeZ49TsS._AC_SL1500_",
-   "cat": "Fashion"
+   "img": "41bbg6zWe8L",
+   "cat": "Fashion",
+   "dead": true,
+   "note": "camel: no offers/dead parent"
   },
   {
    "n": 15,
@@ -290,8 +292,12 @@
    "asin": "B09WVF8FNS",
    "title": "KLIEGOU Men's T-Shirts, Elasticity Cotton Crew Neck Tees",
    "brand": "KLIEGOU",
-   "img": null,
-   "cat": "Fashion"
+   "img": "41WtLEZYOnL",
+   "cat": "Fashion",
+   "price": 24.99,
+   "list_price": 39.99,
+   "price_as_of": "2026-08-15",
+   "price_src": "camel 3P New"
   },
   {
    "n": 27,
@@ -613,10 +619,14 @@
    "n": 58,
    "link": "https://amzn.to/4hqaze7",
    "asin": "B0D9Q6THT7",
-   "title": "Furnulem Night Stand with Charging Station (Headboard Platform)",
+   "title": "Furnulem Full Size Bed Frame, Storage Headboard, LED & Charger, Black Oak",
    "brand": "Furnulem",
-   "img": null,
-   "cat": "Lifestyle"
+   "img": "51g4E33t0yL",
+   "cat": "Lifestyle",
+   "price": 118.99,
+   "list_price": 129.99,
+   "price_as_of": "2026-08-15",
+   "price_src": "camel 3P New"
   },
   {
    "n": 59,
@@ -818,7 +828,6 @@
  "pending_links": [],
  "camel_needed": [
   "B09QM79CWT",
-  "B09WVF8FNS",
   "B0BTY58CS4",
   "B0BW9L8ZGK",
   "B0CP6B6P56",
@@ -826,8 +835,6 @@
   "B0D4215HCX",
   "B0D4217691",
   "B0D5R3W2HK",
-  "B0D8WLRD1G",
-  "B0D9Q6THT7",
   "B0DHCQ17JQ",
   "B0DZ6VRPT7",
   "B0F8QQQ6RX",
