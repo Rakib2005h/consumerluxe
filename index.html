@@ -798,7 +798,7 @@ section{padding:60px 0}
 <script>
 // Real verified product data (Amazon prices/images checked Aug 2026 via camelcamelcamel)
 // Verified product data (Amazon prices/images checked Aug 2026)
-const AFF_TAG=''; // set your Amazon Associates tag here (e.g. 'yourstore-20') to monetize dp links
+const AFF_TAG='consumerluxe-20'; // Amazon Associates tracking ID - automatically added to all Amazon links
 const amazonProducts=[
 {
 "id": 201,
@@ -1942,7 +1942,7 @@ const priceHtml=p.price==null
 ?'<div class="pw"><span class="pp" style="font-size:13px;letter-spacing:0">See current price on Amazon</span></div>'
 :'<div class="pw"><span class="pp">$'+p.price.toFixed(2)+'</span>'+(p.old?'<span class="po">$'+p.old.toFixed(2)+'</span><span class="pd">-'+disc+'%</span>':'')+'</div>';
 const cta=p.price==null?'Check Price on Amazon \u2192':'Get Deal \u2192';
-return`<article class="pc"><div class="pm" onclick="openProduct(${p.id})" style="cursor:pointer" title="View details"><img src="${src}" alt="${esc(p.title)}" loading="lazy" onerror="this.onerror=null;this.src='${PH}'"/>${badge?`<span class="bd ${bdClass}">${badge}</span>`:''}<button class="sv ${saved}" onclick="toggleSave(${p.id})" aria-label="Save" aria-pressed="${saved?'true':'false'}">\u2665</button></div><div class="pb-body"><div class="mtop"><span class="cn">${p.cat}</span><span class="mr">${esc(p.brand)}</span></div><h3 class="tt" onclick="openProduct(${p.id})" style="cursor:pointer">${esc(p.title)}</h3><div class="verified-row">${meta}</div>${priceHtml}<a href="${p.link}" class="dl" data-t="${esc(p.title)}" rel="sponsored nofollow noopener" target="_blank" onclick="trackClick(this.getAttribute(\'data-t\'))">${cta}</a></div></article>`;
+return`<article class="pc"><div class="pm" onclick="openProduct(${p.id})" style="cursor:pointer" title="View details"><img src="${src}" alt="${esc(p.title)}" loading="lazy" onerror="this.onerror=null;this.src='${PH}'"/>${badge?`<span class="bd ${bdClass}">${badge}</span>`:''}<button class="sv ${saved}" onclick="toggleSave(${p.id})" aria-label="Save" aria-pressed="${saved?'true':'false'}">\u2665</button></div><div class="pb-body"><div class="mtop"><span class="cn">${p.cat}</span><span class="mr">${esc(p.brand)}</span></div><h3 class="tt" onclick="openProduct(${p.id})" style="cursor:pointer">${esc(p.title)}</h3><div class="verified-row">${meta}</div>${priceHtml}<a href="${amazonHref(p)}" class="dl" data-t="${esc(p.title)}" rel="sponsored nofollow noopener" target="_blank" onclick="trackClick(this.getAttribute(\'data-t\'))">${cta}</a></div></article>`;
 }).join('');
 setTimeout(observeReveal,50);
 }
@@ -1961,7 +1961,7 @@ document.getElementById('sortSelect').addEventListener('change',e=>{currentSort=
 // ===== Product detail modal, reviews, share (phase 2) =====
 const PH_IMG='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500"><rect width="100%" height="100%" fill="#1a1a2e"/><text x="50%" y="47%" fill="#c9a86a" font-family="serif" font-size="26" text-anchor="middle">Consumer Luxe</text><text x="50%" y="56%" fill="#8b8b9e" font-family="sans-serif" font-size="14" text-anchor="middle">Image unavailable</text></svg>');
 function escG(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
-function amazonHref(p){if(!p.link)return '#';if(p.link.indexOf('amzn.to')>-1)return p.link;return AFF_TAG?p.link+'?tag='+AFF_TAG:p.link}
+function amazonHref(p){if(!p.link)return '#';if(AFF_TAG){if(p.asin)return 'https://www.amazon.com/dp/'+p.asin+'?tag='+AFF_TAG;if(p.link.indexOf('amazon.com')>-1)return p.link+(p.link.indexOf('?')>-1?'&':'?')+'tag='+AFF_TAG}return p.link}
 function openProduct(id){
 const p=products.find(x=>x.id===id);if(!p)return;
 const q=encodeURIComponent(p.title);
