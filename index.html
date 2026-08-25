@@ -440,6 +440,52 @@ section{padding:60px 0}
 *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 </style>
+<style>
+/* Product detail modal + reviews + disclosure (phase 2) */
+.mc.pmod{max-width:900px;width:92%;max-height:88vh;overflow-y:auto;text-align:left;padding:26px}
+.pmod-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:26px}
+@media(max-width:760px){.pmod-grid{grid-template-columns:1fr}}
+.pmod-img{border-radius:14px;overflow:hidden;background:#14142a;display:flex;align-items:center;justify-content:center;min-height:260px}
+.pmod-img img{width:100%;height:auto;display:block}
+.pmod h3{font-family:'Playfair Display',Cormorant Garamond,serif;font-size:22px;line-height:1.3;margin:8px 0 10px;color:#fff}
+.pmod-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.pmod-chip{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#c9a86a;border:1px solid rgba(201,168,106,.4);border-radius:999px;padding:4px 12px}
+.pmod-price{font-size:26px;font-weight:700;color:#fff;margin:10px 0 2px}
+.pmod-price .po2{color:#8b8b9e;text-decoration:line-through;font-size:18px;margin-left:10px;font-weight:400}
+.pmod-price .pd2{color:#7fd8a4;font-size:16px;margin-left:10px;font-weight:600}
+.pmod-asof{font-size:12px;color:#8b8b9e;margin-bottom:14px}
+.plat-btns{display:flex;flex-direction:column;gap:10px;margin:16px 0}
+.plat-btn{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-radius:10px;text-decoration:none;font-size:14px;font-weight:600;border:1px solid rgba(255,255,255,.12);color:#fff;background:rgba(255,255,255,.04);transition:.2s}
+.plat-btn:hover{border-color:var(--gold);transform:translateY(-1px)}
+.plat-btn.primary{background:linear-gradient(135deg,#c9a86a,#a8863d);color:#14142a;border:none}
+.plat-btn small{font-weight:400;opacity:.75}
+.share-row{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+.share-btn{font-size:12px;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.15);color:#d9d9e8;background:transparent;cursor:pointer}
+.share-btn:hover{border-color:var(--gold);color:#fff}
+.pmod-note{font-size:12px;color:#8b8b9e;line-height:1.6;border-top:1px solid rgba(255,255,255,.08);padding-top:12px;margin-top:4px}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:10px}
+.rel-item{cursor:pointer;text-align:center}
+.rel-item img{width:100%;border-radius:10px;background:#14142a;aspect-ratio:1;object-fit:cover}
+.rel-item p{font-size:11px;color:#cfcfe4;margin-top:6px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rev-sec-h{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:#c9a86a;margin:22px 0 10px}
+.rev-form{display:grid;gap:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;margin-bottom:16px}
+.rev-form input,.rev-form textarea,.rev-form select{width:100%;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;padding:9px 12px;font-size:13px;font-family:inherit;box-sizing:border-box}
+.rev-form textarea{min-height:70px;resize:vertical}
+.rev-form button{background:linear-gradient(135deg,#c9a86a,#a8863d);border:none;color:#14142a;font-weight:700;border-radius:8px;padding:10px;cursor:pointer}
+.rev-item{border-bottom:1px solid rgba(255,255,255,.07);padding:10px 0}
+.rev-stars{color:#c9a86a;letter-spacing:2px}
+.rev-meta{font-size:11px;color:#8b8b9e;margin:2px 0 4px}
+.rev-item p{font-size:13px;color:#d9d9e8;margin:0;line-height:1.5}
+.rev-empty{font-size:13px;color:#8b8b9e;font-style:italic}
+.grid-disc{font-size:12px;color:#8b8b9e;text-align:center;margin:6px 0 18px}
+.grid-disc a{color:#c9a86a}
+.plat-strip{font-size:14px;color:#cfcfe4;margin-top:6px}
+.plat-strip strong{color:#c9a86a;font-weight:600}
+.disc-sec{padding:56px 0;border-top:1px solid rgba(255,255,255,.08)}
+.disc-sec h3{font-family:'Playfair Display',Cormorant Garamond,serif;font-size:24px;color:#fff;margin-bottom:12px}
+.disc-sec p{font-size:14px;color:#b9b9cc;line-height:1.8;max-width:820px}
+.disc-sec strong{color:#c9a86a}
+</style>
 </head>
 
 <body>
@@ -490,7 +536,7 @@ section{padding:60px 0}
 <a href="#reviews" class="btn btn-o">Read Reviews</a>
 </div>
 <div class="hero-meta">
-<div class="hero-meta-item"><span class="hero-meta-num">83</span><span class="hero-meta-lbl">Verified Picks</span></div>
+<div class="hero-meta-item"><span class="hero-meta-num">91</span><span class="hero-meta-lbl">Verified Picks</span></div>
 <div class="hero-meta-sep"></div>
 <div class="hero-meta-item"><span class="hero-meta-num">10K+</span><span class="hero-meta-lbl">Smart Shoppers</span></div>
 <div class="hero-meta-sep"></div>
@@ -555,7 +601,7 @@ section{padding:60px 0}
 <section class="trust-bar">
 <div class="c">
 <div class="trust-grid">
-<div class="trust-item reveal"><div class="trust-num" data-target="83">0</div><div class="trust-lbl">Curated Items</div></div>
+<div class="trust-item reveal"><div class="trust-num" data-target="91">0</div><div class="trust-lbl">Curated Items</div></div>
 <div class="trust-item reveal"><div class="trust-num" data-target="10000">0+</div><div class="trust-lbl">Happy Shoppers</div></div>
 <div class="trust-item reveal"><div class="trust-num" data-target="92">0%</div><div class="trust-lbl">Max Savings</div></div>
 <div class="trust-item reveal"><div class="trust-num">4.9<em style="color:var(--gold)">★</em></div><div class="trust-lbl">Reader Rating</div></div>
@@ -570,6 +616,7 @@ section{padding:60px 0}
 <div class="sec-eb">The Weekly Edit</div>
 <h2>This Week's <em>Handpicked</em> Deals</h2>
 <p>Each piece verified for quality, priced for value, and chosen by our editorial team.</p>
+<p class="plat-strip">Compare before you buy — we list each pick on <strong>Amazon</strong> plus compare links for <strong>Walmart</strong>, <strong>eBay</strong> and <strong>Target</strong>, and we feature <strong>AliExpress</strong> finds. You always choose the store you trust.</p>
 </div>
 <div class="deals-tools reveal">
 <div class="sb"><input type="text" id="searchInput" placeholder="Search the edit..." aria-label="Search"/></div>
@@ -583,6 +630,7 @@ section{padding:60px 0}
 <button class="fb" data-filter="Electronics">Electronics</button>
 <button class="fb" data-filter="Lifestyle">Lifestyle</button>
 </div>
+<p class="grid-disc">Reader-supported: we may earn an affiliate commission when you buy through links on this page — at no extra cost to you. <a href="#disclosure">Full disclosure</a></p>
 <div class="pg" id="productGrid"></div>
 <div class="ad-inline"><span class="ad-label">Sponsored Content</span><div class="ad-content"><script type="text/javascript">atOptions={'key':'a1979bdf1904c29f9b3a2111ccd58ac8','format':'iframe','height':250,'width':300,'params':{}};</script><script type="text/javascript" src="https://www.highperformanceformat.com/a1979bdf1904c29f9b3a2111ccd58ac8/invoke.js"></script></div></div>
 </div>
@@ -675,15 +723,15 @@ section{padding:60px 0}
 <div class="blog-grid">
 <article class="blog-card reveal">
 <div class="blog-img"><span class="blog-cat">Fashion</span><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=75" alt="Fashion guide"/></div>
-<div class="blog-body"><div class="blog-date">Editor's Guide</div><h3>How to Spot a Real Premium Fashion Deal</h3><p>Not every sale is real. Learn to distinguish genuine value from marketing tactics with our editorial framework.</p><a href="#blog" class="blog-read">Read Article →</a></div>
+<div class="blog-body"><div class="blog-date">Editor's Guide</div><h3>How to Spot a Real Deal — Not Just a Big Discount</h3><p>Strikethrough prices lie sometimes. Here is the exact price-history framework our editors use to verify every deal we publish.</p><a href="blog/spot-real-deals.html" class="blog-read">Read Article →</a></div>
 </article>
 <article class="blog-card reveal">
 <div class="blog-img"><span class="blog-cat">Home & Living</span><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=75" alt="Mattress buying guide"/></div>
-<div class="blog-body"><div class="blog-date">Buyer's Guide</div><h3>Buying a Memory Foam Mattress Online — A Checklist</h3><p>From firmness ratings to sleep trials and certifications — the essential checks before you order a mattress in a box.</p><a href="#blog" class="blog-read">Read Article →</a></div>
+<div class="blog-body"><div class="blog-date">Buyer's Guide</div><h3>Buying a Memory Foam Mattress Online — A Checklist</h3><p>From firmness ratings to sleep trials and certifications — the essential checks before you order a mattress in a box.</p><a href="blog/mattress-checklist.html" class="blog-read">Read Article →</a></div>
 </article>
 <article class="blog-card reveal">
-<div class="blog-img"><span class="blog-cat">Beauty</span><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=75" alt="Beauty guide"/></div>
-<div class="blog-body"><div class="blog-date">Editorial</div><h3>A Minimalist Skincare Routine That Actually Works</h3><p>The essentials-only approach to beauty products. Skip the noise, focus on results, save your money.</p><a href="#blog" class="blog-read">Read Article →</a></div>
+<div class="blog-img"><span class="blog-cat">Electronics</span><img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=800&q=75" alt="Portable monitor guide"/></div>
+<div class="blog-body"><div class="blog-date">Buyer's Guide</div><h3>Portable Monitors: 4 Real Options Compared</h3><p>1080p vs 4K, brightness, weight and ports — an honest comparison of four portable monitors we track, with verified prices.</p><a href="blog/portable-monitor-guide.html" class="blog-read">Read Article →</a></div>
 </article>
 </div>
 </div>
@@ -721,6 +769,15 @@ section{padding:60px 0}
 <div><h4>Legal</h4><ul><li><a href="#" onclick="openLegal('privacy');return false;">Privacy</a></li><li><a href="#" onclick="openLegal('terms');return false;">Terms</a></li><li><a href="#" onclick="openLegal('cookies');return false;">Cookies</a></li></ul></div>
 </div>
 <div class="featured-on"><span class="fo-label">✦ Featured On ✦</span><a href="https://launchbuff.com" target="_blank" rel="noopener noreferrer" class="lb-badge"><img src="https://launchbuff.com/badge-featured-dark.svg" alt="Featured on LaunchBuff" width="180" height="56" loading="lazy"/></a></div>
+<section class="disc-sec" id="disclosure">
+<div class="c">
+<h3>Affiliate Disclosure</h3>
+<p><strong>Consumer Luxe is an affiliate website.</strong> When you click certain links on this site and make a purchase, we may earn an affiliate commission from the seller or platform — <strong>at no extra cost to you</strong>. As an Amazon Associate, Consumer Luxe earns from qualifying purchases made through Amazon links (e.g., amzn.to short links).</p>
+<p>Not every link earns us a commission: the <strong>compare links</strong> for Walmart, eBay and Target are plain search links provided for your convenience, and AliExpress links follow the same affiliate model. Prices shown are real, verified prices (checked August 2026 via public price-history trackers and Amazon listings) and are marked with their check date — but prices and availability change often, so the store page at the moment you click is always the authoritative one. Products marked <em>"Check Price on Amazon"</em> currently have no reliably verifiable listed price.</p>
+<p>We only feature products from <strong>large, trusted platforms</strong> — Amazon, AliExpress, Walmart, eBay and Target — so you can buy wherever you already feel safe.</p>
+</div>
+</section>
+
 <div class="fb-bar"><div>© <span id="year"></span> Consumer Luxe. All rights reserved.</div><div>Crafted with care for smart shoppers.</div></div>
 </div>
 </footer>
@@ -734,14 +791,18 @@ section{padding:60px 0}
 <!-- COOKIE BANNER -->
 <div class="ck-banner" id="cookieBanner"><h4>🍪 Cookie Preferences</h4><p>We use cookies for analytics and to enhance your experience. See our <a href="#" onclick="openLegal('cookies');return false;" style="color:var(--gold2);text-decoration:underline">Cookie Policy</a>.</p><div class="ck-actions"><button class="ck-decline" onclick="setCookieConsent(false)">Decline</button><button class="ck-accept" onclick="setCookieConsent(true)">Accept All</button></div></div>
 
+<div class="mo" id="productModal" role="dialog" aria-modal="true" aria-label="Product details"><div class="mc pmod" id="productModalBody"></div></div>
 <div class="ts" id="toast" role="status" aria-live="polite"></div>
 <button class="btt" id="backTop" aria-label="Back to top">↑</button>
 
 <script>
 // Real verified product data (Amazon prices/images checked Aug 2026 via camelcamelcamel)
+// Verified product data (Amazon prices/images checked Aug 2026)
+const AFF_TAG=''; // set your Amazon Associates tag here (e.g. 'yourstore-20') to monetize dp links
 const amazonProducts=[
 {
 "id": 201,
+"asin": "B01LYC1XSM",
 "cat": "Lifestyle",
 "brand": "Beckham Hotel Collection",
 "title": "Beckham Hotel Collection Bed Pillows King Size Set of 2 (Down Alternative)",
@@ -754,6 +815,7 @@ const amazonProducts=[
 },
 {
 "id": 202,
+"asin": "B08CL4RX6F",
 "cat": "Lifestyle",
 "brand": "Royal Therapy",
 "title": "Royal Therapy 2-Pack King Size Pillows, Shredded Memory Foam, Hypoallergenic Bamboo Cover",
@@ -766,6 +828,7 @@ const amazonProducts=[
 },
 {
 "id": 203,
+"asin": "B0C5D61VZR",
 "cat": "Lifestyle",
 "brand": "Love Attitude",
 "title": "Love Attitude King Size Pillows, Shredded Memory Foam Pillows King 2 Pack",
@@ -778,6 +841,7 @@ const amazonProducts=[
 },
 {
 "id": 205,
+"asin": "B09VPNF8QJ",
 "cat": "Lifestyle",
 "brand": "SUPA MODERN",
 "title": "SUPA MODERN Cooling Pillows King Size Set of 2, CertiPUR-US Shredded Memory Foam",
@@ -790,6 +854,7 @@ const amazonProducts=[
 },
 {
 "id": 206,
+"asin": "B09QM7RXCJ",
 "cat": "Fashion",
 "brand": "Hugut",
 "title": "Hugut Women's Lightweight Hiking Cargo Shorts, Quick Dry, 5 Zip Pockets, UPF 50+",
@@ -802,6 +867,7 @@ const amazonProducts=[
 },
 {
 "id": 207,
+"asin": "B0BWYFL3Q9",
 "cat": "Fashion",
 "brand": "Ksmien",
 "title": "Ksmien Women's 9″ Hiking Cargo Shorts, Lightweight, 5 Zipper Pockets",
@@ -814,6 +880,7 @@ const amazonProducts=[
 },
 {
 "id": 208,
+"asin": "B0FQ2RY2BD",
 "cat": "Fashion",
 "brand": "ROVELLIA",
 "title": "ROVELLIA Waterproof Hiking Shoes Women, Fashion Sneakers Non-Slip, Trail Running",
@@ -826,6 +893,7 @@ const amazonProducts=[
 },
 {
 "id": 209,
+"asin": "B0DD2MMD1V",
 "cat": "Fashion",
 "brand": "OUTJET",
 "title": "OUTJET Women's Waterproof Hiking Shoes, Lightweight Non-Slip Trail Walking Sneakers",
@@ -838,6 +906,7 @@ const amazonProducts=[
 },
 {
 "id": 210,
+"asin": "B0DB65C8GS",
 "cat": "Fashion",
 "brand": "DOUSSPRT",
 "title": "DOUSSPRT Women's Water Shoes, Quick Dry for Beach Swim Pool Fishing",
@@ -850,6 +919,7 @@ const amazonProducts=[
 },
 {
 "id": 211,
+"asin": "B0C6W8G6VB",
 "cat": "Fashion",
 "brand": "WateLves",
 "title": "WateLves Water Shoes Mens Womens Beach Swim Shoes, Quick-Dry Aqua Socks",
@@ -862,6 +932,7 @@ const amazonProducts=[
 },
 {
 "id": 212,
+"asin": "B07MLYV1T3",
 "cat": "Fashion",
 "brand": "WateLves",
 "title": "WateLves Water Shoes for Men, Barefoot Quick-Dry Aqua Socks, Kayaking/Hiking",
@@ -874,6 +945,7 @@ const amazonProducts=[
 },
 {
 "id": 213,
+"asin": "B08Y8M52LM",
 "cat": "Fashion",
 "brand": "DOUSSPRT",
 "title": "DOUSSPRT Men's Water Shoes, Quick Dry for Beach Swim Pool Fishing",
@@ -886,6 +958,7 @@ const amazonProducts=[
 },
 {
 "id": 214,
+"asin": "B0D8WLRD1G",
 "cat": "Fashion",
 "brand": "WateLves",
 "title": "WateLves Water Shoes Barefoot Beach Swim, Quick-Dry Aqua Socks (Sport Light Blue)",
@@ -898,6 +971,7 @@ const amazonProducts=[
 },
 {
 "id": 215,
+"asin": "B0CHRF49DJ",
 "cat": "Fashion",
 "brand": "PRETTYGARDEN",
 "title": "PRETTYGARDEN Women's 2 Piece Matching Lounge Set Sweatsuits",
@@ -910,6 +984,7 @@ const amazonProducts=[
 },
 {
 "id": 216,
+"asin": "B0HG5ZJZK5",
 "cat": "Fashion",
 "brand": "Sampeel",
 "title": "Sampeel Matching Sets Women 2 Piece Fall Outfits, Business Casual",
@@ -922,6 +997,7 @@ const amazonProducts=[
 },
 {
 "id": 217,
+"asin": "B0FFNHV6RM",
 "cat": "Fashion",
 "brand": "PINSPARK",
 "title": "PINSPARK 2 Piece Sets for Women 1/2 Zip Sweatsuit, Straight Leg Pants",
@@ -934,6 +1010,7 @@ const amazonProducts=[
 },
 {
 "id": 218,
+"asin": "B0GWCNLVQ2",
 "cat": "Fashion",
 "brand": "Casly",
 "title": "Casly Lamiit Sweatsuits Women 2 Piece Outfit Fall Comfy Lounge Sets 2026",
@@ -946,6 +1023,7 @@ const amazonProducts=[
 },
 {
 "id": 219,
+"asin": "B0CJBKXPJJ",
 "cat": "Fashion",
 "brand": "Casly Lamiit",
 "title": "Casly Lamiit Women's 2 Piece Outfits, Half Zip Sweatsuits Lounge Matching Set",
@@ -958,6 +1036,7 @@ const amazonProducts=[
 },
 {
 "id": 220,
+"asin": "B0D5R3W2HK",
 "cat": "Fashion",
 "brand": "Casly Lamiit",
 "title": "Casly Lamiit Women's 2 Piece Lounge Outfits Zip Up Sweat Set, Wide Leg",
@@ -970,6 +1049,7 @@ const amazonProducts=[
 },
 {
 "id": 221,
+"asin": "B0CRKNRPXF",
 "cat": "Fashion",
 "brand": "PRETTYGARDEN",
 "title": "PRETTYGARDEN Two Piece Sets for Women Lounge Matching Set, Blue, M",
@@ -982,6 +1062,7 @@ const amazonProducts=[
 },
 {
 "id": 222,
+"asin": "B0DHCQ17JQ",
 "cat": "Fashion",
 "brand": "PRETTYGARDEN",
 "title": "PRETTYGARDEN Women 2 Piece Lounge Set Airport Travel Outfit, Beige, M",
@@ -994,6 +1075,7 @@ const amazonProducts=[
 },
 {
 "id": 223,
+"asin": "B0F8QQQ6RX",
 "cat": "Fashion",
 "brand": "Sixstar",
 "title": "Sixstar Sweatsuit Sweatshirt Sweatpant Tracksuit 2 Piece",
@@ -1006,6 +1088,7 @@ const amazonProducts=[
 },
 {
 "id": 224,
+"asin": "B0B3QVQQFT",
 "cat": "Fashion",
 "brand": "Hanes",
 "title": "Hanes Men's Undershirt Packs, Stay-Tucked Soft Cotton, Multipacks",
@@ -1018,6 +1101,7 @@ const amazonProducts=[
 },
 {
 "id": 225,
+"asin": "B0HDDGZBKX",
 "cat": "Fashion",
 "brand": "KLIEGOU",
 "title": "KLIEGOU Men's 100% Cotton Longline T-Shirt, Curved Hem",
@@ -1030,6 +1114,7 @@ const amazonProducts=[
 },
 {
 "id": 226,
+"asin": "B09WVF8FNS",
 "cat": "Fashion",
 "brand": "KLIEGOU",
 "title": "KLIEGOU Men's T-Shirts, Elasticity Cotton Crew Neck Tees",
@@ -1042,6 +1127,7 @@ const amazonProducts=[
 },
 {
 "id": 227,
+"asin": "B0GF83NTY3",
 "cat": "Fashion",
 "brand": "Herberton",
 "title": "Herberton Men's Graphic T-Shirt, Loose Fit Cotton Streetwear Crewneck",
@@ -1054,6 +1140,7 @@ const amazonProducts=[
 },
 {
 "id": 228,
+"asin": "B0CQ1X18PS",
 "cat": "Fashion",
 "brand": "Amazon",
 "title": "Men's Cargo Shorts Quick Dry Lightweight Stretch Hiking, 5 Pockets, Stone Grey",
@@ -1066,6 +1153,7 @@ const amazonProducts=[
 },
 {
 "id": 229,
+"asin": "B0FJQND826",
 "cat": "Fashion",
 "brand": "APTRO",
 "title": "APTRO Men's Cargo Shorts 9″ Quick Dry, 5 Zipper Pockets",
@@ -1078,6 +1166,7 @@ const amazonProducts=[
 },
 {
 "id": 230,
+"asin": "B0CP6B6P56",
 "cat": "Beauty",
 "brand": "Boka",
 "title": "Boka Kids Toothpaste, Fluoride Free Nano Hydroxyapatite, Strawberry Mango",
@@ -1090,6 +1179,7 @@ const amazonProducts=[
 },
 {
 "id": 231,
+"asin": "B09WJKSSHC",
 "cat": "Beauty",
 "brand": "Himalaya",
 "title": "Himalaya Botanique Kids Toothpaste Fluoride-Free, Variety Pack 3-Pack",
@@ -1102,6 +1192,7 @@ const amazonProducts=[
 },
 {
 "id": 232,
+"asin": "B073ZJCG5V",
 "cat": "Beauty",
 "brand": "Himalaya",
 "title": "Himalaya Botanique Complete Care Toothpaste, Herbal Variety 4 Pack",
@@ -1114,6 +1205,7 @@ const amazonProducts=[
 },
 {
 "id": 233,
+"asin": "B09P1V89KL",
 "cat": "Beauty",
 "brand": "hello",
 "title": "hello Epic Whitening Activated Charcoal Fluoride Free Toothpaste, 3Pk",
@@ -1126,6 +1218,7 @@ const amazonProducts=[
 },
 {
 "id": 234,
+"asin": "B09LQTPHSG",
 "cat": "Special",
 "brand": "Amazon",
 "title": "Amazon eGift Card - Birthday Bright Balloons",
@@ -1138,6 +1231,7 @@ const amazonProducts=[
 },
 {
 "id": 235,
+"asin": "B0D4217691",
 "cat": "Fashion",
 "brand": "MoFiz",
 "title": "MoFiz Women's Capris with Pockets, Loose Fit Casual Cargo Pants",
@@ -1150,6 +1244,7 @@ const amazonProducts=[
 },
 {
 "id": 236,
+"asin": "B09QM79CWT",
 "cat": "Fashion",
 "brand": "Hugut",
 "title": "Hugut Women's Lightweight Hiking Cargo Shorts Quick Dry, Zipper Pockets",
@@ -1162,6 +1257,7 @@ const amazonProducts=[
 },
 {
 "id": 237,
+"asin": "B08Y67CFFB",
 "cat": "Fashion",
 "brand": "French Toast",
 "title": "French Toast Girls' Ruffle Pique Polo School Uniform Dress",
@@ -1174,6 +1270,7 @@ const amazonProducts=[
 },
 {
 "id": 238,
+"asin": "B0CCZWJWGH",
 "cat": "Fashion",
 "brand": "French Toast",
 "title": "French Toast Girls' Short Sleeve 2-Fer Pleated Dress",
@@ -1186,6 +1283,7 @@ const amazonProducts=[
 },
 {
 "id": 239,
+"asin": "B0BSVQZGB6",
 "cat": "Fashion",
 "brand": "The Children's Place",
 "title": "The Children's Place Girls' Pique Polo Dress",
@@ -1198,6 +1296,7 @@ const amazonProducts=[
 },
 {
 "id": 240,
+"asin": "B0D2XQFBXZ",
 "cat": "Fashion",
 "brand": "Arshiner",
 "title": "Arshiner Girls' Special Occasion Dress, School/Graduation, Navy 14-16",
@@ -1210,6 +1309,7 @@ const amazonProducts=[
 },
 {
 "id": 241,
+"asin": "B0D4215HCX",
 "cat": "Electronics",
 "brand": "LISEN",
 "title": "LISEN Retractable Car Charger, 84W USB-C Fast Charge, 4-in-1",
@@ -1222,6 +1322,7 @@ const amazonProducts=[
 },
 {
 "id": 242,
+"asin": "B0FHWP9SWB",
 "cat": "Electronics",
 "brand": "ANDERY",
 "title": "ANDERY MagSafe Car Mount Charger, 15W Fast Wireless, 360 Adjustable",
@@ -1234,6 +1335,7 @@ const amazonProducts=[
 },
 {
 "id": 243,
+"asin": "B0BKQDPP1Z",
 "cat": "Fitness",
 "brand": "Gaiatop",
 "title": "Gaiatop Portable Treadmill (DEAD LINK)",
@@ -1246,6 +1348,7 @@ const amazonProducts=[
 },
 {
 "id": 244,
+"asin": "B09MKPDJRT",
 "cat": "Electronics",
 "brand": "DREO",
 "title": "DREO Tower Fan for Bedroom, 28ft/s Velocity, Ultra Quiet, 8 Speeds",
@@ -1258,6 +1361,7 @@ const amazonProducts=[
 },
 {
 "id": 245,
+"asin": "B0BW9L8ZGK",
 "cat": "Electronics",
 "brand": "DREO",
 "title": "DREO 13-Inch Oscillating Table Air Circulator Fan, 25dB Quiet, Remote",
@@ -1270,6 +1374,7 @@ const amazonProducts=[
 },
 {
 "id": 246,
+"asin": "B0DZ6VRPT7",
 "cat": "Electronics",
 "brand": "DREO",
 "title": "DREO Tower Fan for Bedroom, 26ft/s Velocity, 90 Oscillating, 8H Timer",
@@ -1282,6 +1387,7 @@ const amazonProducts=[
 },
 {
 "id": 247,
+"asin": "B0BTY58CS4",
 "cat": "Electronics",
 "brand": "DREO",
 "title": "DREO Smart Tower Fan, 28ft/s, WiFi Voice Control, Bladeless",
@@ -1294,6 +1400,7 @@ const amazonProducts=[
 },
 {
 "id": 248,
+"asin": "B07X8W51BD",
 "cat": "Fitness",
 "brand": "FITRELL",
 "title": "FITRELL 3 Pairs Compression Socks 20-30mmHg, Circulation Support",
@@ -1306,6 +1413,7 @@ const amazonProducts=[
 },
 {
 "id": 249,
+"asin": "B0GVMR4V37",
 "cat": "Electronics",
 "brand": "Synnov",
 "title": "Synnov 15.6″ Laptop Screen Extender, 1080P FHD Portable Triple Monitor",
@@ -1318,6 +1426,7 @@ const amazonProducts=[
 },
 {
 "id": 250,
+"asin": "B0FVMC4BYJ",
 "cat": "Electronics",
 "brand": "VisionOwl",
 "title": "VisionOwl Portable Monitor 15.6″ IPS USB-C HDMI, Built-in Kickstand",
@@ -1330,6 +1439,7 @@ const amazonProducts=[
 },
 {
 "id": 251,
+"asin": "B0FSZZHJKC",
 "cat": "Electronics",
 "brand": "Yodoit",
 "title": "Yodoit 4K Portable Monitor 16″ 3840x2400, 1200nit Sunlight-Readable",
@@ -1342,6 +1452,7 @@ const amazonProducts=[
 },
 {
 "id": 252,
+"asin": "B0CPXW4F3B",
 "cat": "Electronics",
 "brand": "cocopar",
 "title": "cocopar Portable Monitor 18.5″ IPS, USB-C HDMI, Kickstand",
@@ -1354,6 +1465,7 @@ const amazonProducts=[
 },
 {
 "id": 253,
+"asin": "B015XURFAO",
 "cat": "Electronics",
 "brand": "KOLIBRI",
 "title": "KOLIBRI Money Counter Machine UV/MG, Set Value Count, 1,500 Notes/Min",
@@ -1366,6 +1478,7 @@ const amazonProducts=[
 },
 {
 "id": 254,
+"asin": "B001HKU13S",
 "cat": "Electronics",
 "brand": "Cassida",
 "title": "Cassida Money Bill Counter, Business Grade, 1,300 Notes/Min, 5520 UV/MG",
@@ -1378,6 +1491,7 @@ const amazonProducts=[
 },
 {
 "id": 255,
+"asin": "B0FGCXDCCM",
 "cat": "Fashion",
 "brand": "The Children's Place",
 "title": "The Children's Place Boys' Denim Shorts 3-Pack",
@@ -1390,6 +1504,7 @@ const amazonProducts=[
 },
 {
 "id": 256,
+"asin": "B072WC6Y1G",
 "cat": "Fashion",
 "brand": "Real Essentials",
 "title": "Real Essentials 5-Pack Boys' Mesh Athletic Shorts, Sizes 4-18",
@@ -1402,6 +1517,7 @@ const amazonProducts=[
 },
 {
 "id": 257,
+"asin": "B0B8YXZZL9",
 "cat": "Fashion",
 "brand": "GFQLONG",
 "title": "GFQLONG Toddler Boys Girls Cotton Athletic Shorts, Soccer 2T-3T",
@@ -1414,6 +1530,7 @@ const amazonProducts=[
 },
 {
 "id": 258,
+"asin": "B0D9Q6THT7",
 "cat": "Lifestyle",
 "brand": "Furnulem",
 "title": "Furnulem Full Size Bed Frame, Storage Headboard, LED & Charger, Black Oak",
@@ -1426,6 +1543,7 @@ const amazonProducts=[
 },
 {
 "id": 259,
+"asin": "B08YDJS51B",
 "cat": "Lifestyle",
 "brand": "FDW",
 "title": "FDW 8 Inch Twin Mattress, Gel Memory Foam, CertiPUR-US",
@@ -1438,6 +1556,7 @@ const amazonProducts=[
 },
 {
 "id": 260,
+"asin": "B0CKP6Y6KB",
 "cat": "Lifestyle",
 "brand": "Typhur",
 "title": "Typhur Dome 2 Large AI Smart Air Fryer, 15-in-1, Self-Cleaning",
@@ -1450,6 +1569,7 @@ const amazonProducts=[
 },
 {
 "id": 261,
+"asin": "B0CGMFGX87",
 "cat": "Lifestyle",
 "brand": "Chefman",
 "title": "Chefman 12-Quart 5-in-1 Air Fryer Oven, 12 Presets",
@@ -1462,6 +1582,7 @@ const amazonProducts=[
 },
 {
 "id": 262,
+"asin": "B0D1BGLW25",
 "cat": "Lifestyle",
 "brand": "Midea",
 "title": "Midea Flexify French Door Toaster Oven Air Fryer Combo, 26.4 QT",
@@ -1474,6 +1595,7 @@ const amazonProducts=[
 },
 {
 "id": 263,
+"asin": "B0DZY2RG4N",
 "cat": "Lifestyle",
 "brand": "Amazon",
 "title": "4 Slice Toaster Touch Screen, Stainless Steel, 1650W, Black",
@@ -1486,6 +1608,7 @@ const amazonProducts=[
 },
 {
 "id": 264,
+"asin": "B00TQJWF1I",
 "cat": "Lifestyle",
 "brand": "T-Fal",
 "title": "T-Fal Ultimate Hard Anodized Nonstick Cookware Set 17 Piece, Onyx",
@@ -1498,6 +1621,7 @@ const amazonProducts=[
 },
 {
 "id": 265,
+"asin": "B0743TXF76",
 "cat": "Lifestyle",
 "brand": "Nuwave",
 "title": "Nuwave Healthy Duralon Blue Ceramic Nonstick Cookware Set, PFAS Free",
@@ -1510,6 +1634,7 @@ const amazonProducts=[
 },
 {
 "id": 266,
+"asin": "B01CHB1Y22",
 "cat": "Lifestyle",
 "brand": "Nuwave",
 "title": "Nuwave Gold Precision Induction Cooktop, 8″ Heating Coil",
@@ -1522,6 +1647,7 @@ const amazonProducts=[
 },
 {
 "id": 267,
+"asin": "B0F9DYS3BN",
 "cat": "Lifestyle",
 "brand": "Kitchen Academy",
 "title": "Kitchen Academy 17Pcs Induction Cookware Set, Granite Non Stick",
@@ -1534,6 +1660,7 @@ const amazonProducts=[
 },
 {
 "id": 268,
+"asin": "B0H1MJC3TZ",
 "cat": "Lifestyle",
 "brand": "Bazova",
 "title": "Bazova 24Pcs Pots and Pans Set, Titanium Ceramic, Induction",
@@ -1546,6 +1673,7 @@ const amazonProducts=[
 },
 {
 "id": 270,
+"asin": "B0DWZRJPT6",
 "cat": "Lifestyle",
 "brand": "Feisaibaoly",
 "title": "Japanese Floor Futon Mattress, Extra-Thick 9-Layer, Twin",
@@ -1558,6 +1686,7 @@ const amazonProducts=[
 },
 {
 "id": 271,
+"asin": "B0BF9JB5RW",
 "cat": "Lifestyle",
 "brand": "MAXYOYO",
 "title": "MAXYOYO Japanese Floor Mattress 4″ Thick, Full Size Foldable Futon",
@@ -1570,6 +1699,7 @@ const amazonProducts=[
 },
 {
 "id": 272,
+"asin": "B0GJRPCXGM",
 "cat": "Lifestyle",
 "brand": "GEMBED",
 "title": "GEMBED Tri Folding Mattress Queen 6″, Foldable Floor Sofa Bed",
@@ -1582,6 +1712,7 @@ const amazonProducts=[
 },
 {
 "id": 273,
+"asin": "B081DJT793",
 "cat": "Lifestyle",
 "brand": "KRAUS",
 "title": "KRAUS Matte Black Stainless Pull Down Faucet KPF-1610MBSB",
@@ -1594,6 +1725,7 @@ const amazonProducts=[
 },
 {
 "id": 274,
+"asin": "B09B1DKXL6",
 "cat": "Lifestyle",
 "brand": "KRAUS",
 "title": "KRAUS Black Stainless Pull Down Kitchen Faucet KPF-2820MBSFSB",
@@ -1606,6 +1738,7 @@ const amazonProducts=[
 },
 {
 "id": 275,
+"asin": "B0D4YD4BH6",
 "cat": "Lifestyle",
 "brand": "Superay",
 "title": "Superay 18″ Queen Metal Platform Bed Frame, Heavy Duty Steel Slats",
@@ -1618,6 +1751,7 @@ const amazonProducts=[
 },
 {
 "id": 276,
+"asin": "B0BCYSFL6P",
 "cat": "Lifestyle",
 "brand": "EGOHOME",
 "title": "EGOHOME Full 14″ Memory Foam Mattress, Copper Gel Infused, Fiberglass Free",
@@ -1630,6 +1764,7 @@ const amazonProducts=[
 },
 {
 "id": 277,
+"asin": "B0F4JGZPXL",
 "cat": "Lifestyle",
 "brand": "Sweetnight",
 "title": "Sweetnight CoolNest Queen Mattress 14″, Cooling Memory Foam, 5-Zone",
@@ -1642,6 +1777,7 @@ const amazonProducts=[
 },
 {
 "id": 278,
+"asin": "B0GF24WK7B",
 "cat": "Lifestyle",
 "brand": "Novilla",
 "title": "Novilla AiryFlow Queen Mattress 14″, Gel Memory Foam, Green Tea-Infused",
@@ -1654,6 +1790,7 @@ const amazonProducts=[
 },
 {
 "id": 279,
+"asin": "B0GJSKY2G1",
 "cat": "Lifestyle",
 "brand": "Novilla",
 "title": "Novilla Queen Gel Memory Foam Mattress 12″, Spinal Alignment",
@@ -1665,13 +1802,119 @@ const amazonProducts=[
 "dead": false
 }
 ];
+const bonusDeals=[
+{
+"id": 301,
+"asin": "B0DP1WXVK8",
+"cat": "Lifestyle",
+"brand": "atatix",
+"title": "atatix Espresso Machine with Milk Frother, 20-Bar Pressure",
+"price": 111.09,
+"old": null,
+"img": "https://m.media-amazon.com/images/I/51ezmlVu0zL._AC_SX355_.jpg",
+"link": "https://www.amazon.com/dp/B0DP1WXVK8",
+"asof": "2026-08-23",
+"dead": false
+},
+{
+"id": 302,
+"asin": "B09FJSJQ95",
+"cat": "Lifestyle",
+"brand": "AROEVE",
+"title": "AROEVE Air Purifier for Bedroom, Sleep Mode, MK01A White",
+"price": 35.98,
+"old": null,
+"img": "https://m.media-amazon.com/images/I/417iKn0PaxL._AC_SX355_.jpg",
+"link": "https://www.amazon.com/dp/B09FJSJQ95",
+"asof": "2026-08-23",
+"dead": false
+},
+{
+"id": 303,
+"asin": "B0DFLHP5J8",
+"cat": "Lifestyle",
+"brand": "Madison Park",
+"title": "Madison Park Coastal Damask Quilted Daybed Cover Set, 6PC",
+"price": 60.18,
+"old": null,
+"img": "https://m.media-amazon.com/images/I/51Jp7W8sPjL._AC_SX355_.jpg",
+"link": "https://www.amazon.com/dp/B0DFLHP5J8",
+"asof": "2026-08-23",
+"dead": false
+},
+{
+"id": 304,
+"asin": "B07PDXYP94",
+"cat": "Lifestyle",
+"brand": "Intelligent Design",
+"title": "Intelligent Design 100% Cotton Jacquard Duvet Set, Navy 7-Piece",
+"price": 50.89,
+"old": null,
+"img": "https://m.media-amazon.com/images/I/51Ugl3F7m2L._AC_SX355_.jpg",
+"link": "https://www.amazon.com/dp/B07PDXYP94",
+"asof": "2026-08-23",
+"dead": false
+},
+{
+"id": 305,
+"asin": "B08HPKCZ33",
+"cat": "Lifestyle",
+"brand": "iSpring",
+"title": "iSpring FG25B-KS Whole House Water Filter, Heavy Metals Reduction",
+"price": 92.58,
+"old": null,
+"img": "https://m.media-amazon.com/images/I/31BnoWCYWcL._AC_SX355_.jpg",
+"link": "https://www.amazon.com/dp/B08HPKCZ33",
+"asof": "2026-08-23",
+"dead": false
+},
+{
+"id": 306,
+"asin": "B0G56LZ8BM",
+"cat": "Electronics",
+"brand": "dreame",
+"title": "dreame Aqua10 Ultra Roller Robot Vacuum and Mop, AquaRoll Mopping",
+"price": 899.99,
+"old": null,
+"img": "https://m.media-amazon.com/images/I/31WeBw5c03L._AC_SX355_.jpg",
+"link": "https://www.amazon.com/dp/B0G56LZ8BM",
+"asof": "2026-08-23",
+"dead": false
+},
+{
+"id": 307,
+"asin": "B0DKQQ6Z7Q",
+"cat": "Electronics",
+"brand": "Tapo",
+"title": "Tapo Smart Wi-Fi Door Lock, Deadbolt, Fingerprint Recognition DL110",
+"price": 109.98,
+"old": null,
+"img": "https://m.media-amazon.com/images/I/416-h02w2YL._AC_SX355_.jpg",
+"link": "https://www.amazon.com/dp/B0DKQQ6Z7Q",
+"asof": "2026-08-23",
+"dead": false
+},
+{
+"id": 308,
+"asin": "B07F96NX7N",
+"cat": "Electronics",
+"brand": "Kodak",
+"title": "Kodak Printomatic Instant Camera Bundle with Zink Paper & Scrapbook",
+"price": 109.99,
+"old": null,
+"img": "https://m.media-amazon.com/images/I/51btt3IPqGL._AC_SX355_.jpg",
+"link": "https://www.amazon.com/dp/B07F96NX7N",
+"asof": "2026-08-23",
+"dead": false
+}
+];
 const products=[
 {id:1,cat:'Fashion',brand:'Willshela',title:'Black Satin Elegant Long Midi Skirt',price:3.74,old:19.49,img:'https://ae-pic-a1.aliexpress-media.com/kf/S2706c64a9b5049a0b63fb101675fda70p.jpg',badge:'HOT DEAL',tags:['Elegant'],link:'https://s.click.aliexpress.com/e/_c326ulIf',verified:'Verified today'},
 {id:2,cat:'Fashion',brand:'Urban Style',title:'Cartoon Cat Print Korean T-Shirt',price:2.44,old:8.87,img:'https://ae-pic-a1.aliexpress-media.com/kf/S6d1ac686998d4a0e82a8d7a78269ecbbx.jpg',badge:'HOT DEAL',tags:['Casual'],link:'https://s.click.aliexpress.com/e/_c3pjPYw3',verified:'Verified today'},
 {id:3,cat:'Fashion',brand:'Vestidos',title:'Floral Vintage Summer Swing Dress',price:2.74,old:13.47,img:'https://ae-pic-a1.aliexpress-media.com/kf/S1674c561c6f44cccb53d1c6051ca5b64e.jpg',badge:'HOT DEAL',tags:['Floral'],link:'https://s.click.aliexpress.com/e/_c3D1GhlN',verified:'Verified today'},
 {id:4,cat:'Fashion',brand:'PARIS',title:'Fleece Jogger Pants Women Sweatpants',price:7.25,old:13.25,img:'https://ae-pic-a1.aliexpress-media.com/kf/Saded10dd821c46798d24b95396927a464.jpg',badge:'BEST VALUE',tags:['Winter'],link:'https://s.click.aliexpress.com/e/_c3ZHh0zZ',verified:'Verified today'},
 {id:5,cat:'Fashion',brand:'Nibber',title:'Art Print Bodycon Mini Dress',price:0.99,old:12.96,img:'https://ae-pic-a1.aliexpress-media.com/kf/Saf32df4b9e2a4568b43136591aacce9aY.jpg',badge:'HOT DEAL',tags:['Chic'],link:'https://s.click.aliexpress.com/e/_c4KE14YR',verified:'Verified today'},
-{id:6,cat:'Fashion',brand:'AP Studio',title:'Premium Cotton Denim Skirt',price:36.50,old:77.00,img:'https://ae-pic-a1.aliexpress-media.com/kf/S8f8f3683c00943b99876d38c05b81f59N.jpg',badge:'EDITOR PICK',tags:['Denim'],link:'https://s.click.aliexpress.com/e/_c41UHjUL',verified:'Verified today'},...amazonProducts];
+{id:6,cat:'Fashion',brand:'AP Studio',title:'Premium Cotton Denim Skirt',price:36.50,old:77.00,img:'https://ae-pic-a1.aliexpress-media.com/kf/S8f8f3683c00943b99876d38c05b81f59N.jpg',badge:'EDITOR PICK',tags:['Denim'],link:'https://s.click.aliexpress.com/e/_c41UHjUL',verified:'Verified today'},...amazonProducts,...bonusDeals];
 
 const grid=document.getElementById('productGrid');
 let currentFilter='all',currentSort='featured',currentSearch='';
@@ -1699,7 +1942,7 @@ const priceHtml=p.price==null
 ?'<div class="pw"><span class="pp" style="font-size:13px;letter-spacing:0">See current price on Amazon</span></div>'
 :'<div class="pw"><span class="pp">$'+p.price.toFixed(2)+'</span>'+(p.old?'<span class="po">$'+p.old.toFixed(2)+'</span><span class="pd">-'+disc+'%</span>':'')+'</div>';
 const cta=p.price==null?'Check Price on Amazon \u2192':'Get Deal \u2192';
-return`<article class="pc"><div class="pm"><img src="${src}" alt="${esc(p.title)}" loading="lazy" onerror="this.onerror=null;this.src='${PH}'"/>${badge?`<span class="bd ${bdClass}">${badge}</span>`:''}<button class="sv ${saved}" onclick="toggleSave(${p.id})" aria-label="Save" aria-pressed="${saved?'true':'false'}">\u2665</button></div><div class="pb-body"><div class="mtop"><span class="cn">${p.cat}</span><span class="mr">${esc(p.brand)}</span></div><h3 class="tt">${esc(p.title)}</h3><div class="verified-row">${meta}</div>${priceHtml}<a href="${p.link}" class="dl" data-t="${esc(p.title)}" rel="sponsored nofollow noopener" target="_blank" onclick="trackClick(this.getAttribute(\'data-t\'))">${cta}</a></div></article>`;
+return`<article class="pc"><div class="pm" onclick="openProduct(${p.id})" style="cursor:pointer" title="View details"><img src="${src}" alt="${esc(p.title)}" loading="lazy" onerror="this.onerror=null;this.src='${PH}'"/>${badge?`<span class="bd ${bdClass}">${badge}</span>`:''}<button class="sv ${saved}" onclick="toggleSave(${p.id})" aria-label="Save" aria-pressed="${saved?'true':'false'}">\u2665</button></div><div class="pb-body"><div class="mtop"><span class="cn">${p.cat}</span><span class="mr">${esc(p.brand)}</span></div><h3 class="tt" onclick="openProduct(${p.id})" style="cursor:pointer">${esc(p.title)}</h3><div class="verified-row">${meta}</div>${priceHtml}<a href="${p.link}" class="dl" data-t="${esc(p.title)}" rel="sponsored nofollow noopener" target="_blank" onclick="trackClick(this.getAttribute(\'data-t\'))">${cta}</a></div></article>`;
 }).join('');
 setTimeout(observeReveal,50);
 }
@@ -1714,6 +1957,84 @@ document.querySelectorAll('.fb').forEach(b=>b.addEventListener('click',()=>{docu
 document.querySelectorAll('.cat-item[data-filter]').forEach(t=>t.addEventListener('click',()=>{const f=t.dataset.filter;const btn=document.querySelector('.fb[data-filter="'+f+'"]');if(btn)btn.click();}));
 document.getElementById('searchInput').addEventListener('input',e=>{currentSearch=e.target.value.toLowerCase();renderProducts();});
 document.getElementById('sortSelect').addEventListener('change',e=>{currentSort=e.target.value;renderProducts();});
+
+// ===== Product detail modal, reviews, share (phase 2) =====
+const PH_IMG='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500"><rect width="100%" height="100%" fill="#1a1a2e"/><text x="50%" y="47%" fill="#c9a86a" font-family="serif" font-size="26" text-anchor="middle">Consumer Luxe</text><text x="50%" y="56%" fill="#8b8b9e" font-family="sans-serif" font-size="14" text-anchor="middle">Image unavailable</text></svg>');
+function escG(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
+function amazonHref(p){if(!p.link)return '#';if(p.link.indexOf('amzn.to')>-1)return p.link;return AFF_TAG?p.link+'?tag='+AFF_TAG:p.link}
+function openProduct(id){
+const p=products.find(x=>x.id===id);if(!p)return;
+const q=encodeURIComponent(p.title);
+const disc=p.old&&p.price!=null?Math.round((1-p.price/p.old)*100):0;
+const badge=disc>=40?'HOT DEAL':disc>=15?'BEST VALUE':'';
+const meta=p.dead?'Currently unavailable — check Amazon for status':(p.asof?'Price checked '+p.asof+' · prices change, store page is authoritative':'Verified listing');
+const priceHtml=p.price==null
+?'<div class="pmod-price" style="font-size:18px">See current price on Amazon</div>'
+:'<div class="pmod-price">$'+p.price.toFixed(2)+(p.old?'<span class="po2">$'+p.old.toFixed(2)+'</span><span class="pd2">-'+disc+'%</span>':'')+'</div>';
+const rel=products.filter(x=>x.cat===p.cat&&x.id!==p.id&&x.img).slice(0,4).map(r=>'<div class="rel-item" onclick="openProduct('+r.id+')"><img src="'+r.img+'" alt="'+escG(r.title)+'" loading="lazy"/><p>'+escG(r.title)+'</p></div>').join('');
+const revs=getRevs(id);
+const revList=revs.length?revs.map(r=>'<div class="rev-item"><div class="rev-stars">'+'★'.repeat(r.stars)+'☆'.repeat(5-r.stars)+'</div><div class="rev-meta">'+escG(r.name||'Anonymous')+' · '+r.date+'</div><p>'+escG(r.text)+'</p></div>').join(''):'<p class="rev-empty">No reviews yet on this device — be the first to share your experience.</p>';
+const shareUrl=location.origin+location.pathname+'#deal-'+id;
+document.getElementById('productModalBody').innerHTML=
+'<button class="mx" onclick="closeProduct()" aria-label="Close">×</button>'
++'<div class="pmod-grid">'
++'<div class="pmod-img"><img src="'+(p.img||PH_IMG)+'" alt="'+escG(p.title)+'" onerror="this.onerror=null;this.src=PH_IMG"/></div>'
++'<div>'
++(badge?'<div class="pmod-chips"><span class="pmod-chip">'+badge+'</span></div>':'')
++'<h3>'+escG(p.title)+'</h3>'
++'<div class="pmod-chips"><span class="pmod-chip">'+p.cat+'</span><span class="pmod-chip">'+escG(p.brand)+'</span>'+(p.asin?'<span class="pmod-chip">ASIN '+p.asin+'</span>':'')+'</div>'
++priceHtml
++'<div class="pmod-asof">'+meta+'</div>'
++'<div class="plat-btns">'
++'<a class="plat-btn primary" href="'+amazonHref(p)+'" target="_blank" rel="sponsored nofollow noopener" onclick="trackClick(this.getAttribute(\'data-t\'))" data-t="'+escG(p.title)+'">Buy on Amazon <small>affiliate link · supports this site</small></a>'
++'<a class="plat-btn" href="https://www.walmart.com/search?q='+q+'" target="_blank" rel="nofollow noopener">Compare on Walmart <small>opens search</small></a>'
++'<a class="plat-btn" href="https://www.ebay.com/sch/i.html?_nkw='+q+'" target="_blank" rel="nofollow noopener">Compare on eBay <small>opens search</small></a>'
++'<a class="plat-btn" href="https://www.target.com/s?searchTerm='+q+'" target="_blank" rel="nofollow noopener">Compare on Target <small>opens search</small></a>'
++'</div>'
++'<div class="share-row">'
++'<button class="share-btn" onclick="shareDeal(\'whatsapp\','+id+')">WhatsApp</button>'
++'<button class="share-btn" onclick="shareDeal(\'facebook\','+id+')">Facebook</button>'
++'<button class="share-btn" onclick="shareDeal(\'x\','+id+')">X</button>'
++'<button class="share-btn" onclick="shareDeal(\'copy\','+id+')">Copy link</button>'
++'</div>'
++'<div class="pmod-note">Consumer Luxe is reader-supported: the Amazon link above is an affiliate link and we may earn a commission at no extra cost to you. Compare links are plain search links. Price data verified '+ (p.asof||'Aug 2026') +' — always confirm the live price on the store page.</div>'
++'</div></div>'
++'<div class="rev-sec-h">Reviews</div>'
++'<form class="rev-form" onsubmit="return submitReview(event,'+id+')">'
++'<input type="text" id="revName" placeholder="Your name (optional)" maxlength="40"/>'
++'<select id="revStars" aria-label="Rating"><option value="5">★★★★★ Excellent</option><option value="4">★★★★ Good</option><option value="3">★★★ Average</option><option value="2">★★ Poor</option><option value="1">★ Terrible</option></select>'
++'<textarea id="revText" required placeholder="Share your experience with this product…" maxlength="600"></textarea>'
++'<button type="submit">Submit Review</button>'
++'</form>'
++'<div style="font-size:11px;color:#8b8b9e;margin-bottom:8px">Reviews are stored locally on your device (this site has no account system) — honest and private.</div>'
++revList
++(rel?'<div class="rev-sec-h">More in '+p.cat+'</div><div class="rel-grid">'+rel+'</div>':'');
+document.getElementById('productModal').classList.add('active');
+document.body.style.overflow='hidden';
+if(typeof gtag==='function'&&window.__gaLoaded)gtag('event','view_item',{product_title:p.title});
+}
+function closeProduct(){document.getElementById('productModal').classList.remove('active');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProduct();});
+document.getElementById('productModal').addEventListener('click',e=>{if(e.target.id==='productModal')closeProduct();});
+function getRevs(id){try{return JSON.parse(localStorage.getItem('cl_rev_'+id)||'[]')}catch(e){return[]}}
+function submitReview(e,id){e.preventDefault();
+const name=document.getElementById('revName').value.trim();
+const stars=parseInt(document.getElementById('revStars').value,10);
+const text=document.getElementById('revText').value.trim();
+if(!text)return false;
+const revs=getRevs(id);revs.unshift({name:name,stars:stars,text:text,date:new Date().toISOString().slice(0,10)});
+localStorage.setItem('cl_rev_'+id,JSON.stringify(revs.slice(0,50)));
+showToast('✦ Thank you for your review!');openProduct(id);return false;}
+function shareDeal(kind,id){const p=products.find(x=>x.id===id);if(!p)return;
+const url=location.origin+location.pathname+'#deal-'+id;
+const txt='Check this out: '+p.title+(p.price!=null?' — $'+p.price.toFixed(2)+' on Consumer Luxe':' — on Consumer Luxe');
+if(kind==='copy'){if(navigator.clipboard)navigator.clipboard.writeText(url).then(()=>showToast('✦ Link copied'));else showToast(url);return;}
+const u=encodeURIComponent(url),t=encodeURIComponent(txt);
+if(kind==='whatsapp')window.open('https://wa.me/?text='+t+'%20'+u,'_blank','noopener');
+else if(kind==='facebook')window.open('https://www.facebook.com/sharer/sharer.php?u='+u,'_blank','noopener');
+else if(kind==='x')window.open('https://twitter.com/intent/tweet?text='+t+'&url='+u,'_blank','noopener');}
+// deep link: #deal-ID opens modal after load
+window.addEventListener('load',()=>{const m=location.hash.match(/^#deal-(\d+)$/);if(m)setTimeout(()=>openProduct(parseInt(m[1],10)),400);});
 
 // Header scroll
 const header=document.getElementById('header');
