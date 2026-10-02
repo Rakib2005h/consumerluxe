@@ -195,6 +195,7 @@ section{padding:90px 0;position:relative}
 .ad-box{max-width:100%;margin:auto;padding:16px;background:rgba(255,255,255,.6);border:1px dashed rgba(212,175,55,.35);border-radius:16px;text-align:center;position:relative}
 .ad-label{display:block;color:var(--gold3);font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
 .ad-content{display:flex;justify-content:center;align-items:center;min-height:60px;max-width:100%;overflow:hidden}.ad-content iframe{max-width:100%;border:0}.ad-content-script{min-height:24px}.ad-content-container{min-height:250px}.ad-content-container>div{max-width:100%;overflow:hidden}
+.product-pagination{display:flex;align-items:center;justify-content:center;gap:16px;margin:28px 0 8px}.page-btn{border:1px solid rgba(212,175,55,.45);background:#fff;color:var(--ink);border-radius:999px;padding:10px 16px;font-size:12px;font-weight:800;cursor:pointer}.page-btn:hover:not(:disabled){background:var(--gld);transform:translateY(-1px)}.page-btn:disabled{opacity:.4;cursor:not-allowed}.product-pagination span{min-width:70px;text-align:center;color:var(--mt);font-size:12px;font-weight:700}
 .ad-inline{margin:40px 0;padding:20px;background:linear-gradient(135deg,rgba(212,175,55,.05),rgba(10,10,10,.03));border:1px dashed rgba(212,175,55,.3);border-radius:20px;text-align:center;min-height:280px;display:flex;flex-direction:column;justify-content:center}
 
 /* ===== TRUST/STATS BAR ===== */
@@ -433,7 +434,7 @@ section{padding:60px 0}
 @media(max-width:480px){
 .c{width:min(100% - 24px,1320px)}
 .ad-strip{padding:18px 0}.ad-box{padding:12px 8px;border-radius:12px}.ad-inline{margin:24px 0;padding:14px 8px;min-height:250px;border-radius:14px}.ad-content-container{min-height:220px}
-.deals-tools{gap:8px}.sb input,.ss{min-height:46px}.fp{gap:6px;overflow-x:auto;justify-content:flex-start;padding-bottom:4px}.fb{flex:0 0 auto;padding:9px 13px}
+.product-pagination{gap:8px}.page-btn{padding:10px 12px;font-size:11px}.product-pagination span{min-width:52px}.deals-tools{gap:8px}.sb input,.ss{min-height:46px}.fp{gap:6px;overflow-x:auto;justify-content:flex-start;padding-bottom:4px}.fb{flex:0 0 auto;padding:9px 13px}
 .pg{grid-template-columns:1fr}
 .hero h1{font-size:38px}
 .br-s{display:none}
@@ -635,7 +636,9 @@ section{padding:60px 0}
 </div>
 <p class="grid-disc">Reader-supported: we may earn an affiliate commission when you buy through links on this page — at no extra cost to you. <a href="#disclosure">Full disclosure</a></p>
 <div class="pg" id="productGrid"></div>
+<div class="product-pagination" id="productPagination" aria-label="Product pages"><button type="button" class="page-btn" id="prevPage">← Previous</button><span id="pageStatus" aria-live="polite"></span><button type="button" class="page-btn" id="nextPage">Next →</button></div>
 <div class="ad-inline" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-content ad-content-container"><script async="async" data-cfasync="false" src="https://pl30329464.profitableratecpmnetwork.com/1fc61a1244a0fb91cae53c28da258d58/invoke.js"></script><div id="container-1fc61a1244a0fb91cae53c28da258d58"></div></div></div>
+<div class="ad-inline ad-inline-secondary" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-content"><script type="text/javascript">atOptions={'key':'a1979bdf1904c29f9b3a2111ccd58ac8','format':'iframe','height':250,'width':300,'params':{}};</script><script type="text/javascript" src="https://www.highperformanceformat.com/a1979bdf1904c29f9b3a2111ccd58ac8/invoke.js"></script></div></div>
 </div>
 </section>
 
@@ -713,7 +716,7 @@ section{padding:60px 0}
 </section>
 
 <!-- AD STRIP 2 -->
-
+<div class="ad-strip" aria-label="Advertisement"><div class="c"><div class="ad-box"><span class="ad-label">Advertisement</span><div class="ad-content"><script type="text/javascript">atOptions={'key':'7043409520ed4afa04b063b3bd47d59d','format':'iframe','height':60,'width':468,'params':{}};</script><script type="text/javascript" src="https://www.highperformanceformat.com/7043409520ed4afa04b063b3bd47d59d/invoke.js"></script></div></div></div></div>
 
 <!-- BLOG -->
 <section class="blog-sec" id="blog">
@@ -739,6 +742,8 @@ section{padding:60px 0}
 </div>
 </div>
 </section>
+
+<div class="ad-strip" aria-label="Advertisement"><div class="c"><div class="ad-box"><span class="ad-label">Advertisement</span><div class="ad-content"><script type="text/javascript">atOptions={'key':'e17b4c9d672c26e069960b87e1050631','format':'iframe','height':50,'width':320,'params':{}};</script><script type="text/javascript" src="https://www.highperformanceformat.com/e17b4c9d672c26e069960b87e1050631/invoke.js"></script></div></div></div></div>
 
 <!-- NEWSLETTER -->
 <section class="news-sec">
@@ -1920,7 +1925,8 @@ const products=[
 {id:6,cat:'Fashion',brand:'AP Studio',title:'Premium Cotton Denim Skirt',price:36.50,old:77.00,img:'https://ae-pic-a1.aliexpress-media.com/kf/S8f8f3683c00943b99876d38c05b81f59N.jpg',badge:'EDITOR PICK',tags:['Denim'],link:'https://s.click.aliexpress.com/e/_c41UHjUL',verified:'Verified today'},...amazonProducts,...bonusDeals];
 
 const grid=document.getElementById('productGrid');
-let currentFilter='all',currentSort='featured',currentSearch='';
+let currentFilter='all',currentSort='featured',currentSearch='',currentPage=1;
+const PRODUCTS_PER_PAGE=12;
 const savedItems=new Set(JSON.parse(localStorage.getItem('cl_saved')||'[]'));
 
 function renderProducts(){
@@ -1931,10 +1937,15 @@ if(currentSort==='low')list=list.filter(p=>p.price!=null).sort((a,b)=>a.price-b.
 else if(currentSort==='high')list=list.filter(p=>p.price!=null).sort((a,b)=>b.price-a.price).concat(list.filter(p=>p.price==null));
 else if(currentSort==='discount')list.sort((a,b)=>sv(b)-sv(a));
 function sv(p){return p.old&&p.price!=null?1-p.price/p.old:0}
+const totalPages=Math.max(1,Math.ceil(list.length/PRODUCTS_PER_PAGE));
+if(currentPage>totalPages)currentPage=totalPages;
+const pageItems=list.slice((currentPage-1)*PRODUCTS_PER_PAGE,currentPage*PRODUCTS_PER_PAGE);
+const pager=document.getElementById('productPagination');
+if(pager){pager.style.display=list.length>PRODUCTS_PER_PAGE?'flex':'none';document.getElementById('pageStatus').textContent='Page '+currentPage+' of '+totalPages;document.getElementById('prevPage').disabled=currentPage===1;document.getElementById('nextPage').disabled=currentPage===totalPages;}
 if(!list.length){grid.innerHTML='<p style="grid-column:1/-1;text-align:center;color:var(--mt);padding:40px;font-family:Cormorant Garamond,serif;font-size:18px;font-style:italic">No items match your search.</p>';return;}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
 const PH='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="355" height="355"><rect width="100%" height="100%" fill="#1a1a2e"/><text x="50%" y="46%" fill="#c9a86a" font-family="serif" font-size="22" text-anchor="middle">Consumer Luxe</text><text x="50%" y="56%" fill="#8b8b9e" font-family="sans-serif" font-size="13" text-anchor="middle">Image unavailable</text></svg>');
-grid.innerHTML=list.map(p=>{
+grid.innerHTML=pageItems.map(p=>{
 const disc=p.old&&p.price!=null?Math.round((1-p.price/p.old)*100):0;
 const saved=savedItems.has(p.id)?'saved':'';
 const badge=disc>=40?'HOT DEAL':disc>=15?'BEST VALUE':'';
@@ -1956,10 +1967,12 @@ localStorage.setItem('cl_saved',JSON.stringify([...savedItems]));renderProducts(
 }
 function trackClick(t){if(typeof gtag==='function')gtag('event','affiliate_click',{product_title:t});}
 
-document.querySelectorAll('.fb').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.fb').forEach(x=>x.classList.remove('active'));b.classList.add('active');currentFilter=b.dataset.filter;renderProducts();}));
+document.querySelectorAll('.fb').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.fb').forEach(x=>x.classList.remove('active'));b.classList.add('active');currentFilter=b.dataset.filter;currentPage=1;renderProducts();}));
 document.querySelectorAll('.cat-item[data-filter]').forEach(t=>t.addEventListener('click',()=>{const f=t.dataset.filter;const btn=document.querySelector('.fb[data-filter="'+f+'"]');if(btn)btn.click();}));
-document.getElementById('searchInput').addEventListener('input',e=>{currentSearch=e.target.value.toLowerCase();renderProducts();});
-document.getElementById('sortSelect').addEventListener('change',e=>{currentSort=e.target.value;renderProducts();});
+document.getElementById('searchInput').addEventListener('input',e=>{currentSearch=e.target.value.toLowerCase();currentPage=1;renderProducts();});
+document.getElementById('sortSelect').addEventListener('change',e=>{currentSort=e.target.value;currentPage=1;renderProducts();});
+document.getElementById('prevPage').addEventListener('click',()=>{if(currentPage>1){currentPage--;renderProducts();document.getElementById('deals').scrollIntoView({behavior:'smooth'});}});
+document.getElementById('nextPage').addEventListener('click',()=>{currentPage++;renderProducts();document.getElementById('deals').scrollIntoView({behavior:'smooth'});});
 
 // ===== Product detail modal, reviews, share (phase 2) =====
 const PH_IMG='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500"><rect width="100%" height="100%" fill="#1a1a2e"/><text x="50%" y="47%" fill="#c9a86a" font-family="serif" font-size="26" text-anchor="middle">Consumer Luxe</text><text x="50%" y="56%" fill="#8b8b9e" font-family="sans-serif" font-size="14" text-anchor="middle">Image unavailable</text></svg>');
