@@ -194,7 +194,7 @@ section{padding:90px 0;position:relative}
 .ad-strip{padding:32px 0;background:var(--cream)}
 .ad-box{max-width:100%;margin:auto;padding:16px;background:rgba(255,255,255,.6);border:1px dashed rgba(212,175,55,.35);border-radius:16px;text-align:center;position:relative}
 .ad-label{display:block;color:var(--gold3);font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
-.ad-content{display:flex;justify-content:center;align-items:center;min-height:60px}
+.ad-content{display:flex;justify-content:center;align-items:center;min-height:60px;max-width:100%;overflow:hidden}.ad-content iframe{max-width:100%;border:0}.ad-content-script{min-height:24px}.ad-content-container{min-height:250px}.ad-content-container>div{max-width:100%;overflow:hidden}
 .ad-inline{margin:40px 0;padding:20px;background:linear-gradient(135deg,rgba(212,175,55,.05),rgba(10,10,10,.03));border:1px dashed rgba(212,175,55,.3);border-radius:20px;text-align:center;min-height:280px;display:flex;flex-direction:column;justify-content:center}
 
 /* ===== TRUST/STATS BAR ===== */
@@ -431,6 +431,9 @@ section{padding:60px 0}
 .mc{border-radius:20px}.lm{padding:24px}
 }
 @media(max-width:480px){
+.c{width:min(100% - 24px,1320px)}
+.ad-strip{padding:18px 0}.ad-box{padding:12px 8px;border-radius:12px}.ad-inline{margin:24px 0;padding:14px 8px;min-height:250px;border-radius:14px}.ad-content-container{min-height:220px}
+.deals-tools{gap:8px}.sb input,.ss{min-height:46px}.fp{gap:6px;overflow-x:auto;justify-content:flex-start;padding-bottom:4px}.fb{flex:0 0 auto;padding:9px 13px}
 .pg{grid-template-columns:1fr}
 .hero h1{font-size:38px}
 .br-s{display:none}
@@ -577,7 +580,7 @@ section{padding:60px 0}
 </div>
 
 <!-- AD STRIP 1 -->
-<div class="ad-strip"><div class="c"><div class="ad-box"><span class="ad-label">Advertisement</span><div class="ad-content"><script type="text/javascript">atOptions={'key':'7043409520ed4afa04b063b3bd47d59d','format':'iframe','height':60,'width':468,'params':{}};</script><script type="text/javascript" src="https://www.highperformanceformat.com/7043409520ed4afa04b063b3bd47d59d/invoke.js"></script></div></div></div></div>
+<div class="ad-strip" aria-label="Advertisement"><div class="c"><div class="ad-box"><span class="ad-label">Advertisement</span><div class="ad-content ad-content-script"><script src="https://pl30329466.profitableratecpmnetwork.com/a6/e8/13/a6e8136e8bdc5c8de5534e73cdc04d7c.js"></script></div></div></div></div>
 
 <!-- CATEGORIES - MAGAZINE STYLE -->
 <section class="cat-sec" id="categories">
@@ -632,7 +635,7 @@ section{padding:60px 0}
 </div>
 <p class="grid-disc">Reader-supported: we may earn an affiliate commission when you buy through links on this page — at no extra cost to you. <a href="#disclosure">Full disclosure</a></p>
 <div class="pg" id="productGrid"></div>
-<div class="ad-inline"><span class="ad-label">Sponsored Content</span><div class="ad-content"><script type="text/javascript">atOptions={'key':'a1979bdf1904c29f9b3a2111ccd58ac8','format':'iframe','height':250,'width':300,'params':{}};</script><script type="text/javascript" src="https://www.highperformanceformat.com/a1979bdf1904c29f9b3a2111ccd58ac8/invoke.js"></script></div></div>
+<div class="ad-inline" aria-label="Advertisement"><span class="ad-label">Advertisement</span><div class="ad-content ad-content-container"><script async="async" data-cfasync="false" src="https://pl30329464.profitableratecpmnetwork.com/1fc61a1244a0fb91cae53c28da258d58/invoke.js"></script><div id="container-1fc61a1244a0fb91cae53c28da258d58"></div></div></div>
 </div>
 </section>
 
@@ -710,7 +713,7 @@ section{padding:60px 0}
 </section>
 
 <!-- AD STRIP 2 -->
-<div class="ad-strip"><div class="c"><div class="ad-box"><span class="ad-label">Advertisement</span><div class="ad-content"><script type="text/javascript">atOptions={'key':'e17b4c9d672c26e069960b87e1050631','format':'iframe','height':50,'width':320,'params':{}};</script><script type="text/javascript" src="https://www.highperformanceformat.com/e17b4c9d672c26e069960b87e1050631/invoke.js"></script></div></div></div></div>
+
 
 <!-- BLOG -->
 <section class="blog-sec" id="blog">
@@ -2108,7 +2111,7 @@ document.getElementById('exitPop').addEventListener('click',e=>{if(e.target.id==
 
 // Legal
 const legalContent={
-privacy:{body:`<h2>Privacy Policy</h2><p><em>Last updated: ${new Date().toLocaleDateString('en-US',{month:'long',year:'numeric'})}</em></p><p>Consumer Luxe respects your privacy. We collect anonymous usage data via Google Analytics, email addresses from newsletter subscribers, and use cookies for analytics with your consent.</p><h3>Third-Party Services</h3><p>We use Google Analytics, Amazon Associates, AliExpress Affiliate, Adsterra, and other affiliate/ad networks. These services may set their own cookies.</p><h3>Your Rights</h3><p>Unsubscribe from newsletters anytime. Decline cookies via banner or browser settings.</p><div class="nt"><strong>Contact:</strong> Via social media links in footer.</div>`},
+privacy:{body:`<h2>Privacy Policy</h2><p><em>Last updated: ${new Date().toLocaleDateString('en-US',{month:'long',year:'numeric'})}</em></p><p>Consumer Luxe respects your privacy. We collect anonymous usage data via Google Analytics, email addresses from newsletter subscribers, and use cookies for analytics with your consent.</p><h3>Third-Party Services</h3><p>We use Google Analytics, Amazon Associates, AliExpress Affiliate, Profitablerate CPM, and other affiliate/ad networks. These services may set their own cookies.</p><h3>Your Rights</h3><p>Unsubscribe from newsletters anytime. Decline cookies via banner or browser settings.</p><div class="nt"><strong>Contact:</strong> Via social media links in footer.</div>`},
 terms:{body:`<h2>Terms of Use</h2><p><em>Last updated: ${new Date().toLocaleDateString('en-US',{month:'long',year:'numeric'})}</em></p><p>By using Consumer Luxe you agree to these terms. All content is informational. Affiliate links may earn us commission at no extra cost to you.</p><h3>No Warranty</h3><p>Consumer Luxe is not the seller. Purchases are made directly through the merchant.</p><div class="nt"><strong>Continued use means acceptance of any updates.</strong></div>`},
 cookies:{body:`<h2>Cookie Policy</h2><p><em>Last updated: ${new Date().toLocaleDateString('en-US',{month:'long',year:'numeric'})}</em></p><p>We use essential, analytics, affiliate, and preference cookies. Manage via banner or browser settings.</p><div class="nt"><strong>Declining cookies may limit some features.</strong></div>`},
 affiliate:{body:`<h2>Affiliate Disclosure</h2><p><em>Last updated: ${new Date().toLocaleDateString('en-US',{month:'long',year:'numeric'})}</em></p><p>Consumer Luxe participates in affiliate programs including <strong>Amazon Associates</strong>, <strong>AliExpress Affiliate</strong>, and others. We earn commissions when you purchase through our links at <strong>no extra cost to you</strong>.</p><h3>Our Promise</h3><p>We never recommend a product just because it pays more. Our picks are based on quality, value, and reader benefit.</p><div class="nt"><strong>Your trust is more valuable than any commission.</strong></div>`},
